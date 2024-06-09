@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>Introducerea datelor în consolă. Clasa de Scanner</h1>
+	<p>De ce am selectat o clasă Scanner pentru o lecție întreagă?<br>
+		<span id="name">Scanner</span> - o clasă care va ajuta la introducerea datelor în consolă.</p>
+		<h3 id="question">Початок роботи</h3>
+		<p>Pentru a începe să lucrați cu această clasă, trebuie să o importați mai întâi:<br></p>
+		<div id="bg">
+        <p><span id="name">import</span> java.util.Scanner;
+    </div>
+    <p>importul are loc datorită cuvântului cheie <span id="name">import</span><br> Importul este scris înainte de declarația clasei:</p>
+    <div id="bg">
+        <p><span id="name">import</span> java.util.Scanner;<br>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	}<br>
+        }
+    </div>
+    <p>Acum să creăm o variabilă de tip Scanner:</p>
+    <div id="bg">
+    	Scanner scanner = <span id="name">new</span> Scanner(System.in);
+    </div>
+    <p><span id="name">Scanner</span> - clasa importată, este ca un tip de variabilă, cum ar fi <span id="name">int</span>, dar din clasa Scanner.<br> apoi am creat numele <b>scanner</b> numele poate fie orice.< br>Punem simbolul „<b>=</b>” pentru a atribui unele date.<br><span id="name">new</span> este necesar pentru a crea un nou obiect bazat pe clasa Scanner<br >Am rescris <b>Scanner</b> pentru a face referire la metoda clasei Scanner.<br><b>System.in</b> este un parametru care va permite citirea datelor din consolă, dar acest lucru nu este suficient.<br >Trebuie să creăm o variabilă:<br></p>
+    <div id="bg">
+    	<p>String s = scanner.nextLine();</p>
+    </div>
+    <p>După cum puteți vedea, am creat o variabilă <span id="variable">s</span> de tip String și am atribuit valoarea variabilei de scanare pe care am creat-o recent.<br>
+    	<span id="name">.nextLine()</span> - se întoarce la date, găsește acolo următorul rând, pe care nu a citit-o încă și îl returnează.<br>
+    	Există, de asemenea, diferite metode de tip <b>next</b>:<br>
+<ul>
+	<li><span id="name">.nextInt</span> - citește și returnează numărul introdus.</li>
+<p>In schimb nextInt puteți specifica un alt tip ca <span id="name">.nextByte</span> si asa mai departe</p>
+<li><span id="name">.hasNextInt</span> - metoda verifică dacă următoarea porțiune de intrare este un număr sau nu (returnează <span id="name">true</span> sau, respectiv, <span id="name">false</span></li>
+<p>În loc de hasNextInt, puteți specifica un alt tip, cum ar fi <span id="name">.hasNextByte</span> si asa mai departe</p>
+
+</ul>
+    </p>

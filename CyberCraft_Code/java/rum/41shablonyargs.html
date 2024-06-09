@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Modele de argumente în metodele generalizate</h1>
+<p>Să presupunem că avem o metodă care acceptă date de un anumit tip:</p>
+<div id="bg">
+<span id = "name">public int</span> method(){<br>
+}
+</div>
+<p>Dar nimeni nu ne-a interzis să specificăm un tip necunoscut. Modelul de argument este specificat de <span id = "name">?</span> și este un tip necunoscut:</p>
+<div id="bg">
+ <span id = "name">boolean</span> method(Class&lt?> name){<br>
+<span id = "text">//descriere</span><br>
+}
+</div>
+<p>De asemenea, putem limita gama de obiecte prin specificarea unei superclase:</p>
+<div id="bg">
+Metoda <span id = "name">public void</span> (ArrayList&lt? <span id = "name">extends</span> SuperClss> variable){<br>
+<span id = "text">//descriere</span><br>
+}
+</div>
+<p>În acest caz, puteți folosi clase care sunt succesoare ale SuperClss și nu putem folosi String și altele dacă nu au fost folosite în SuperClss</p>

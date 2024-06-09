@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Încapsulare. Cursuri</h1>
+<p>Să creăm o clasă <span id="class">Children</span>:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+<span id="name">int</span> age;<br>
+String name;<br>
+<span id="name">void</span> print_info(){<br>
+System.out.println(<span id="text">"Nume"</span> + name);<br>
+}<br>
+}
+</p>
+</div>
+<p>Aici am creat o metodă, dar metoda nu este publică, ceea ce înseamnă că nu poate fi folosită în alte clase.<br><span id="name">Constructorii</span> sunt o alternativă la metodele obișnuite. Acestea sunt metode atât de speciale. Ele sunt apelate atunci când este creat un nou obiect din această clasă. Constructorii inițializează obiectul și poartă numele clasei. Avem o clasă <span id="class">Children</span> și vom elimina metoda și vom scrie constructorul:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+<span id="name">int</span> age;<br>
+String name;<br>
+<span id="name">public</span> Children(String name, <span id="name">int</span> age){<br>
+<span id="name">this</span>.name = name;<br>
+<span id="name">this</span>.age = age;<br>
+}<br>
+}
+</p>
+</div>
+<p><span id="name">this</span> este un cuvânt cheie care specifică o referință la instanța curentă a clasei. Prin acest cuvânt cheie, putem accesa variabilele și metodele obiectului, precum și apelăm constructorilor acestuia. După cuvântul cheie, punem un punct și ne referim la variabila pe care am creat-o și i-am atribuit celei pe care am creat-o în constructor. Să mergem la clasa principală <span id="class">Main</span>. Să trecem la clasa <span id="class">Children</span>. Pentru a fi sincer, creăm un obiect bazat pe clasa <span id="class">Children</span>, așa că scriem:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Children children = <span id="name">new</span> Children(<span id="number">10</span>, <span id="text">"Ann"</span>);<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+<span id="name">int</span> age;<br>
+String name;<br>
+<span id="name">public</span> Children(String name, <span id="name">int</span> age){<br>
+<span id="name">this</span>.name = name;<br>
+<span id="name">this</span>.age = age;<br>
+}<br>
+}
+</p>
+</div>
+<p>Dar în paranteze, trebuie să scrieți datele, și anume vârsta, adică numele - nume. Este necesar să scrieți în ordinea așa cum am scris în metodă. Apoi ieșim în consolă:
+	<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Children children = <span id="name">new</span> Children(<span id="number">10</span>, <span id="text">"Ann"</span>);<br>
+        	System.out.println(children.age);<br>
+        	System.out.println(children.name);<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+<span id="name">int</span> age;<br>
+String name;<br>
+<span id="name">public</span> Children(String name, <span id="name">int</span> age){<br>
+<span id="name">this</span>.name = name;<br>
+<span id="name">this</span>.age = age;<br>
+}<br>
+}
+</p>
+</div>
+</p>
+<p>Să trecem la încapsulare.<br><span id="name">Încapsulare</span> - ascunderea datelor în mijlocul unui anumit domeniu. Pentru aceasta sunt folosite metode de acces. Aceștia se numesc Getters și Setters(<b>Getters și Setters</b>). Am creat o variabilă <span id="name">int</span> în clasa <span id="class">Children</span>. Dacă scriem modificatorul de acces <span id="name">private</span> în fața acestei variabile, nu vom putea scoate variabila în clasa <span id="class">Main</span> . Și în general... Nu îl vom putea folosi la alte clase. Pentru asta sunt Getter și Setter. Vom înlocui clasa <span id="class">Children</span>: </p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Children children = <span id="name">new</span> Children(<span id="text">"Ann"</span>);<br>
+        	children.setAge(<span id="number">10</span>);<br>	
+        	System.out.println(children.getAge);<br>
+        	System.out.println(children.name);<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+    <span id="name">public int</span> getAge() {<br>
+        <span id="name">return</span> age;<br>
+    }<br>
+    <span id="name">public void</span> setAge(<span id="name">int</span> age) {<br>
+        <span id="name">this</span>.age = age;<br>
+    }<br>
+    <span id="name">public</span> String getName() {<br>
+        <span id="name">return</span> name;<br>
+    }<br>
+    <span id="name">public void</span> setName(String name) {<br>
+        <span id="name">this</span>.name = name;<br>
+    }<br>
+    <span id="name">private int</span> age;<br>
+    String name;<br>
+    <span id="name">public</span> <span id="class">Children</span>(String name){<br>
+        <span id="name">this</span>.name = name;<br>
+    }<br>
+
+}<br>
+--------------------<br>
+10<br>
+Ann<br>
+</p>
+</div>
+<p>Am creat getter-ul și setter-ul în clasa <span id="class">Children</span>. Am creat pentru variabilele <b>vârsta</b> și <b>nume</b>. De ce am declarat o variabilă <span id="name">private</span> unei variabile și am folosit constructori când putem declara o variabilă <span id="name">public</span> tuturor? <br>Tocmai sa întâmplat... Chiar și foarte des, în timpul execuției programului, o valoare incorectă va fi transmisă variabilei. De exemplu, o valoare negativă va fi transmisă pentru valoarea de vârstă, care nu ar trebui să fie.
+</body>
+</html>

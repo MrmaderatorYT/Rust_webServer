@@ -1,0 +1,45 @@
+body{
+	background-color:white;
+	-ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none; 
+}
+h1{
+	color: #FFA500;
+}
+h3{
+	color: #FFA500;
+}
+h2{
+	color: #FFA500;
+}
+h4{
+	color: #FF0000;
+}
+#name{
+	color: #FF0000;
+}
+#text{
+  color: #19c37d;
+}
+#bg{
+  font-family: monospace;
+  background-color: black;
+  color: white;
+}
+#number{
+  color: #AB68DA;
+}
+#class{
+	color: #ab68ff;
+}
+#variable{
+	color: #808000;
+}
+#question{
+	color: #FFA500;
+}
+#key{
+	color: #2E95BC
+}

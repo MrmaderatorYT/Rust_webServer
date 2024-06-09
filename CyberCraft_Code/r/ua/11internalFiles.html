@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Взаємодія з іншими .R файлами</h1>
+<p>Умовно у нас є 2 файли: <b>script.r</b> - тут буде вся логіка. Інший файл - <b>main.r</b> - головний файл, де буде відбуватися звернення до файлів та виконання логіки з інших файлів.<br>Опишимо файл <b>script.r</b>:</p>
+<div id="bg">
+<span id = "text">#script.r</span><br>
+	x &lt;- c(<span id = "number">1</span>, <span id = "number">2</span>, <span id = "number">3</span>, <span id = "number">4</span>, <span id = "number">5</span>)<br>
+	mean_value &lt;- mean(x)<span id = "text"> #середнє арифметичне значення</span><br>
+	print(mean_value)<span id = "text"> #Вивід цього середнього значення</span>
+</div>
+<p>Тепер опишемо файл <b>main.r</b>:</p>
+<div id = "bg">
+source(<span id = "text">"~/script.r"</span>)
+</div>
+Символ <b>~</b> - вказує на те, що файл <b>script.r</b> знаходиться в тій же папці, що й файл <b>main.r</b>, далі ставимо символ слешу і повну назву файлу.<br>
+Якщо файл знаходиться в іншому місці - вказуємо повне розсташування файлу.<br>
+Запустивши файл - ми побачимо середнє арифметичне.<br>
+Але, що якщо нам потрібно виконати певну дію в певному місці?<br>
+Для цього в нас є функції. Перепишимо файл <b>script.r</b>:
+<div id = "bg">
+<span id = "text">#script.r</span><br>
+my_function1 &lt;- <span id = "key">function</span>() {<br>
+  <span id = "text"># код для першої функції</span><br>
+  print(<span id = "text">"Function 1 executed!"</span>)<br>
+}<br>
+my_function2 &lt;- <span id = "key">function</span>() {<br>
+  <span id = "text"># код для другої функції</span><br>
+  print(<span id = "text">"Function 2 executed!"</span>)<br>
+}
+</div>
+Тепер змінимо файл <b>main.r</b>:
+<div id = "bg">
+<span id = "text">#main.r</span>
+source(<span id = "text">"~/script.r"</span>)<br>
+my_function1()<br>
+my_function2()<br>
+</div>
+І тепер отримаємо те, що записано у функціях.
+</body>
+</html>

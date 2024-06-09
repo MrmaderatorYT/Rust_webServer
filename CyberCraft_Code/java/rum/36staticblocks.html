@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Blocuri statice</h1>
+<p>Blocurile statice sunt folosite pentru a inițializa static o clasă. Acest cod din interiorul blocului static este executat o singură dată: când class este încărcată în memorie pentru prima dată și arată astfel:</p>
+<div id="bg">
+<span id = "name">static</span>{<br>
+System.out.println(<span id = "text">„Bloc static”</span>);<br>
+}
+</div>
+<p>De asemenea, blocul static va funcționa fără metoda <b>Main</b> dacă utilizați JDK versiunea 1.6 și ulterioară (1.5, 1.4 etc.):</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Main</span>{<br>
+<span id = "name">static</span>{<br>
+System.out.println(<span id = "text">Funcționează! :0"</span>);<br>
+<br>
+<br>
+</div>
+<p>În caz contrar, adică pentru versiunea 1.7 și versiunile ulterioare, vom primi o eroare. De asemenea, aceste metode nu au nume și nici modificator de acces, așa că nu pot fi apelate și vor fi executate doar în această clasă. De asemenea, cu emulare, blocurile statice nu vor fi executate la pornirea programului.

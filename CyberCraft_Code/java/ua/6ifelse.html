@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Умовний оператор</h1>
+<h3 id="question">Умовний опертор або структура if-else</h3>
+</body>
+<p><span id="name">Умовний оператор</span>  дозволяє виконувати різні блоки команд відповідно від істониї або хибної певної умови.</p>
+<p>Для оголошення умовного оператора, потрібно написати ключове слово <span id="name">if</span> Ось вам стандартний вигляд умовного оператору:</p>
+<div id="bg">
+<p><span id="key">if </span>(умова){<br>
+код<br>
+}
+</p>
+ </div>
+ <p>Створімо приклад:</p>
+ <div id="bg">
+<p>
+ 	<span id="key">import</span> java.util.Scanner;<br>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	Scanner scanner = <span id="key">new</span> Scanner(System.in);<br>
+        	<span id="key">int</span> a = scanner.nextInt();<br>
+        	<span id="key">if</span> (a><span id="number">100</span>){<br>
+        	System.out.println(<span id="text">"Число більше 100"</span>);<br>
+        	}<br>
+        	}<br>
+        }</p>
+    </div>
+ <p>Це спрощений вигляд умовного оператора. Якщо ми введемо число більше 100 т отримаємо в консолі: Число більше 100, але якщо ми введемо число менше або дорівнює 100, ми нічого не отримаємо знову ж таки із-за спрощеної структури.<br>
+ 	Повна умова має ключове слово <span id="name">else</span><br>Повна структура умовного оператору виглядає так:</p><br>
+<div id="bg">
+<p><span id="key">if </span>(умова){<br>
+код<br>
+}<br>
+<span id="key">else</span> {<br>
+код<br>
+}
+</p>
+ </div>
+ <p>Отже, логіка виконання умовного оператора така: якщо умова в блоці <span id="name">if</span> правдива, виконується код в блоці <span id="name">if</span>, якщо умова в дужках не істина, тобто хибна - виконується блок <span id="name">else</span> в цьому блоці ми не ставимо умови, бо він буде виконуватися коли не виконається блок <span id="name">if</span>.<br>Створімо приклад:<br></p>
+ <div id="bg">
+<p> <span id="key">int</span> a=<span id="number">5</span>;<br>
+<span id="key">if </span>(a<<span id="number">4</span>){<br>
+System.out.println(<span id="text">"no"</span>)<br>
+}<br>
+<span id="key">else</span> {<br>
+System.out.println(<span id="text">"yes"</span>)<br>
+}
+</p>
+ </div>
+ <p>Тут ми створили числову змінну а і присвоїли їй число 5. На наступному рядку створили перевірку: чи змінна а менше 4. Якщо так, то отримаємо в консолі текст no, якщо ні(більше або дорівнює 4) отримаємо yes.</p><br>
+ <p>Перейдемо до іншого типу операторів - вкладених. Вкладений тип має додаткове ключове слово <span id="name">else if</span></p>
+ <div id="bg">
+<p><span id="key">if </span>(умова){<br>
+код<br>
+}<br>
+<span id="key">else if</span>(умова){<br>
+код<br>
+}<br>
+<span id="key">else</span> {<br>
+код<br>
+}
+</p>
+ </div>
+ <p><span id="name">else if</span> записується після блоку <span id="name">if</span>. Блоків <span>else if</span> може бути безліч, хоч 100. Логіка виконання так: якщо умова в блоці <span id="name">if</span> хибна, виконується блок <span id="name">else if</span>, якщо в цьому блоці виконується хибна умова, виконується інший блок і так далі, якщо існує блок <span id="name">else</span>, то після всіх хибних умов <span id="name">else if</span> виконується код в блоці <span id="name">else</span>, якщо блока <span id="name">else</span> нема, то нічого не отримаємо.</p>
+ <div id="bg">
+<p>
+<span id="key">int</span> a = <span id="number">11</span>;<br>
+<span id="key">if </span>(a<<span id="number">11</span>){<br>
+System.out.println(<span id="text">"first"</span>);<br>
+}<br>
+<span id="key">else if</span>(a==<span id="number">10</span>){<br>
+System.out.println(<span id="text">"second"</span>);<br>
+}<br>
+<span id="key">else if</span>(a==<span id="number">12</span>) {<br>
+System.out.println(<span id="text">"third"</span>);<br>
+}
+</p>
+ </div>
+ <p>Тут ми створили змінну та присвоїли число 11. Потім створили першу перевірку, якщо змінна менше 11, то в консолі отримаємо текст first, якщо ми отримаємо хибне значення, тобто якщо змінна <b>a</b> більше або дорівнює 11. Наступний блок - якщо змінна дорівнює 10, а третій, якщо 12. В цьому коді ми <b>Нічого не отримаємо</b>, бо перевірка трьох блоків не входить в діапазон числа 11, а блока <span id="name">else</span> нема</p>
+ <div id="bg">
+<p>
+<span id="key">int</span> a = <span id="number">0</span>;<br>
+<span id="key">if </span>(a==<span id="number">0</span>){<br>
+System.out.println(<span id="text">"first"</span>);<br>
+}<br>
+<span id="key">else if</span>(a>=<span id="number">0</span>){<br>
+System.out.println(<span id="text">"second"</span>);<br>
+}<br>
+<span id="key">else</span>{<br>
+System.out.println(<span id="text">"third"</span>);<br>
+}
+</p>
+ </div>
+ <p>Як бачимо у нас дві перевірки. Ми отримаємо в консоль first і все, тобто тільки його, а не first та second так як у нас змінна входить ще й в другу перевірку. Ми не отримаємо значення, бо після отримання значення <span id="name">true</span> тобто істини, перевірка завершується</p>.
+ <p>Є ще інший приклад:<br></p>
+ <div id="bg">
+<p>
+<span id="key">int</span> a = <span id="number">0</span>;<br>
+<span id="key">if </span>(a==<span id="number">0</span>){<br>
+System.out.println(<span id="text">"first"</span>);<br>
+}<br>
+<span id="key">if</span>(a>=<span id="number">0</span>){<br>
+System.out.println(<span id="text">"second"</span>);<br>
+}<br>
+<span id="key">else</span>{<br>
+System.out.println(<span id="text">"third"</span>);<br>
+}
+</p>
+ </div>
+ <p>Тут ми отримаємо в консолі два значення, а саме first та second, бо тут два блоки <span id="name">if</span>. Перший блок - це спрощений вигляд, а другий блок <span id="name">if</span> - повний, тобто <span id="name">else</span> прикріплюється до останнього блоку <span id="name">if</span>.</p>
+ <p>А якщо нам потрібно перевірити текст?<br> Створімо змінну типу <span id="name">String</span> та задамо якийсь текст:</p>
+      <div id="bg">
+<p>
+String a = <span id="text">"text"</span>;
+</p>
+</div>
+<p>Для перевірки тексту, нам допоможе метод
+<span id="name">equals()</span>. Цей метод такий самий як <b>==</b>, тобто якщо текст точно такий як в перевірці:</p>
+<div id="bg">
+<p>
+String a = <span id="text">"text"</span>;<br>
+<span id="key">if</span>(a.equals(<span id="text">"text1"</span>)){<br>
+System.out.println(<span id="text">"text1"</span>);<br>
+}<br>
+<span id="key">else if</span> (a.equals(<span id="text">"text"</span>)){<br>
+System.out.println(text);<br>
+}<br>
+<span id = "text">//text</span>
+</p>
+</div>
+<p>Якщо змінна <b>а</b> має текст ідентичний в перевірці в методі, а саме <b>text</b> отримаємо в консолі text</p>.
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operator de selecție (switch-case)</h1>
+<p>Un operator de selecție cunoscut sub numele de <span id="name">switch-case</span> permite executarea diferitelor blocuri de comenzi din valoarea unei expresii. O declarație de selecție începe cu cuvântul cheie <span id="name">switch</span>. După aceea, se pun paranteze în care se pune o expresie, care va avea semnificații diferite. Să creăm un exemplu simplu:</p>
+<div id="bg">
+	<p><span id="name">int</span> x=<span id="number">2</span>;<br>
+		<span id="name">switch</span>(x){<br>
+</div>
+<p>Am scris aici o expresie pentru a verifica valorile din variabila <b>x</b>. După cum puteți vedea, am deschis aici parantezele pentru a verifica valorile. Avem nevoie de cuvântul cheie <span id="name">case</span> pentru a valida valoarea. După cuvântul cheie, indicăm valoarea pe care o poate dobândi. Comparăm cu valoarea expresiei din variabila <b>x</b>. Deci, să scriem:</p>
+<div id="bg">
+	<p><span id="name">int</span> x=<span id="number">2</span>;<br>
+		<span id="name">switch</span>(x){<br>
+		<span id="name">case</span> <span id="number">1</span>:
+</div>
+<p>Valoarea care trebuie comparată este urmată de două puncte. Acestea sunt așa-numitele paranteze, în care va fi executat codul. Să transmitem o valoare în consolă:</p>
+<div id="bg">
+	<p><span id="name">int</span> x=<span id="number">2</span>;<br>
+		<span id="name">switch</span>(x){<br>
+		<span id="name">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Numărul 1"</span>);
+</div>
+<p>După completarea descrierii codului containerului pentru o anumită valoare, de obicei este plasat cuvântul cheie <span id="name">break</span><br>
+<span id="name">break</span> oprește execuția comenzii dacă obținem o potrivire de verificare. Să creăm pentru alte valori:</p>
+<div id="bg">
+	<p><span id="name">int</span> x=<span id="number">2</span>;<br>
+		<span id="name">switch</span>(x){<br>
+		<span id="name">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Numărul 1"</span>);<br>
+		<span id="name">break;</span><br>
+		<span id="name">case</span> <span id="number">2</span>:<br>
+		System.out.println(<span id="text">"Numărul 2"</span>);<br>
+		<span id="name">break;</span><br>
+		<span id="name">case</span> <span id="number">3</span>:<br>
+		System.out.println(<span id="text">"Numărul 3"</span>);<br>
+		<span id="name">break;</span>
+		-----------------------------<br>
+		Numărul 2
+</div>
+<p>Dar dacă trebuie să scoatem aceeași valoare pentru date diferite, de exemplu, ieșire către consolă: „Numărul 2” pentru valorile 2 și 1. Putem scrie în cod normal așa cum am făcut, înlocuind doar executarea codului, dar pentru a economisi spațiu și timp se poate face după cum urmează:</p>
+<div id="bg">
+	<p><span id="name">int</span> x=<span id="number">3</span>;<br>
+		<span id="name">switch</span>(x){<br>
+		<span id="name">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Numărul 1"</span>);<br>
+		<span id="name">break;</span><br>
+		<span id="name">case</span> <span id="number">2</span>:<br>
+		<span id="name">case</span> <span id="number">3</span>:<br>
+		<span id="name">case</span> <span id="number">4</span>:<br>
+		System.out.println(<span id="text">"Numărul 2"</span>);<br>
+		<span id="name">break;</span><br>
+		-----------------------------<br>
+		Numărul 2
+</div>
+<p>Dar dacă variabila capătă o valoare care nu există în blocul <span id="name">switch-case</span>?<br>Cuvântul cheie <span id="name">default</span> va ajuta noi pentru aceasta ></p>
+<span id="name">default</span> (din engleză implicit) - va executa codul dacă valoarea variabilei nu se află în containere. Acest cuvânt cheie este plasat la sfârșit:
+<div id="bg">
+	<p><span id="name">int</span> x=<span id="number">100</span>;<br>
+		<span id="name">switch</span>(x){<br>
+		<span id="name">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Numărul 1"</span>);<br>
+		<span id="name">break;</span><br>
+		<span id="name">case</span> <span id="number">2</span>:<br>
+		System.out.println(<span id="text">"Numărul 2"</span>);<br>
+		<span id="name">break;</span><br>
+		<span id="name">case</span> <span id="number">3</span>:<br>
+		System.out.println(<span id="text">"Numărul 3"</span>);<br>
+		<span id="name">break;</span><br>
+		<span id="name">default</span>:<br>
+		System.out.println(<span id="text">"Numărul N"</span>);<br>
+		<span id="name">break;</span><br>
+		-----------------------------<br>
+		Numărul N
+</div>
+<p>Există încă câteva variante de scriere a acestor blocuri, dar pentru versiuni ulterioare, dar aceasta este convenția standard.</p>
+</body>
+</html>

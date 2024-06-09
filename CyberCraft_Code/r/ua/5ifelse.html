@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Умовні конструкції</h1>
+<p><span id = "name">Умовні конструкції</span> - дозволяють виконувати певний блок коду залежно від умови. Ось як вони працюють:</p>
+<div id="bg">
+	x &lt;- <span id = "number">10</span><br>
+	<span id = "key">if</span> (x > <span id = "number">5</span>){<br>
+	print(<span id = "text">"x is higher than 5"</span>)
+</div>
+<p>В даному випадку ми отрмаємо в консолі <b>x is higher than 5</b> так як х більше за 5.<br> Розглянемо такий випадок:</p>
+<div id="bg">
+	x &lt;- <span id = "number">4</span><br>
+	<span id = "key">if</span> (x > <span id = "number">5</span>){<br>
+	print(<span id = "text">"x is higher than 5"</span>)
+</div>
+<p>В даному випадку ми нічого не отримали так як ми лише опрацювали момент, коли змінна х більше за 5, але не опрацювали момент, коли x менше або дорівнює за 5. Для цього в нас є блок <b>else</b>. Виглядає це так:
+<div id="bg">
+	x &lt;- <span id = "number">4</span><br>
+	<span id = "key">if</span> (x > <span id = "number">5</span>){<br>
+	print(<span id = "text">"x is higher than 5"</span>)<br>
+	}<span id = "key">else</span>{<br>
+	print(<span id = "text">"x is less than 5"</span>)<br>
+	}
+</div>
+В даному випадку ми отрмаємо вивід <b>x is less than 5</b>.
+<h4>Зверніть увагу</h4>
+<div id="bg">
+	<span id = "key">if</span> (умова){<br>
+	якась дія<br>
+	}<br><span id = "key">else</span>{<br>
+	Інша дія<br>
+	}
+</div>
+В мові R ми не можемо поставити блок else з нового рядка, там де немає іншої, закриваючої фігурної дужки. Тобто в даному прикладі ми отримаємо помилку компіляції. Отже єдий вихід такий:
+<div id="bg">
+	<span id = "key">if</span> (умова){<br>
+	якась дія<br>
+	}<span id = "key">else</span>{<br>
+	Інша дія<br>
+	}
+</div>
+Також, якщо вам потрібно зробити декілька перевірок, то існує <b>else if</b>. Виглядає це так:
+<div id="bg">
+	x &lt;- <span id = "number">5</span><br>
+	<span id = "key">if</span> (x > <span id = "number">5</span>){<br>
+	print(<span id = "text">"x is higher than 5"</span>)<br>
+	}<span id = "key">else if</span> (x==<span id = "number">5</span>){<br>
+	print(<span id = "text">"x equals 5"</span>)<br>
+	}<span id = "key">else</span>{<br>
+	print(<span id = "text">"x is lower than 5"</span>)
+</div>
+В даному випадку ми отрмаємо в консолі текст <b>x equals 5</b>
+<h4>Логічні оператори</h4>
+<ul>
+<li>
+Логчне або: '|'. Цей оператор шукає хоча б одну умову, яка дорівнює значенню TRUE: 
+<div id = "bg">
+x &lt;- <span id = "number">4</span><br>
+<span id = "key">if</span> (x==<span id = "number">3</span> | x >= <span id = "number"> 4</span>){<br>
+print(<span id = "text">"Yeah"</span><br>
+}<br>
+<span id = "text">#YEAH</span>
+</div>
+</li>
+Також є інший варіант - ||. Цей тип відрізняється від першого лише тим, що він шукає найперше значення, яке дорівнює TRUE. Якщо знайшов - далі не перевіряє, а виконує блок виконання коду.
+<li>
+І (та / й): '&'. Умовно у нас є такий код:
+<div id = "bg">
+x &lt;- <span id = "number">4</span><br>
+<span id = "key">if</span> (x==<span id = "number">3</span> & x >= <span id = "number"> 6</span>){<br>
+print(<span id = "text">"Yeah"</span>)<br>
+}<span id = "key">else</span>{<br>
+print(<span id = "text">"Not yeah"</span>)<br>
+</div>
+</li>
+Отже. Цей опертор логічного "і" перевіряє, щоб всі умови мали значення "TRUE", а якщо хоча б одне має FALSE - код в блоці не буде виконуватися.<br>
+'&&' - так само, але шукає, щоб хоча б одна з умов мала значення FALSE, то зупиняється далі йдуть інші умовні блоки, якщо вони є.
+
+<li>
+Ні: '!'. Робить навпаки (умовно):
+<div id = "bg">
+x &lt;- <span id = "number">1</span><br>
+<span id = "key">if</span> (x != <span id = "number">1</span>){<br>
+print(<span id = "text">"x is not 1"</span>)<br>
+}
+</div>
+В даному випадку ми нічого не отримаємо, бо х дорівнює 1, але тепер додамо '!':
+<div id = "bg">
+x &lt;- <span id = "number">1</span><br>
+<span id = "key">if </span> !(x != <span id = "number">1</span>){<br>
+print(<span id = "text">"x is not 1"</span>)<br>
+}
+</div>
+Тепер ми отримаємо в консолі <b>x is not 1</b>. Так як '!' робить заперечення на перевірку.
+</li>
+</ul>
+<h4>Зверніть увагу</h4>
+Усі умови записуються в дужках.
+</body>
+</html>

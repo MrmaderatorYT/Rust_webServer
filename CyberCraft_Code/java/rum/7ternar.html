@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operator ternar</h1>
+<p><span id="name">Operator ternar</span> - înlocuirea blocului <span id="name">if-else</span>. Adică, această declarație realizează munca blocului <span id="name">if</span> și a blocului <span id="name">else</span>, adică a blocului <span id=" name">else-if</span> block, operatorul ternar nu acceptă</p>
+<p>Iată vizualizarea standard a operatorului ternar condiționat:</p>
+<div id="bg">
+	<p>expression_#1 <span id="name">?</span> expression_#2 <span id="name">:</span> expression_#3;</p>
+</div>
+	<h4 id="question">Acum hai să ne dăm seama</h4>
+	<p><span id="name">Expresia #1</span> - denotă orice expresie, al cărei calcul dă o valoare logică (tip <span id="name">boolean</span>), dar pentru starters vom crea o variabilă <b>a</b>, iar în expresie vom crea o altă variabilă:</p>
+<div id="bg">
+
+	<p><span id="name">int</span> a = <span id="number">10</span>;<br>
+		<span id="name">int</span> b = <span id="name">?</span> expression_#2 <span id="name">:</span> expression_#3;</p>
+</div>
+<p>Am creat o variabilă <b>b</b> de tipul <span id="name">int</span>. După equals, creăm o verificare pentru expresie, care este aceeași cu condiția din paranteze. O afecțiune este de obicei indicată în paranteze, dar nu neapărat:</p>
+<div id="bg">
+	<p><span id="name">int</span> a = <span id="number">10</span>;<br>
+		<span id="name">int</span> b = (a>5) <span id="name">?</span> expression_#2 <span id="name">:</span> expression_#3;</p>
+</div>
+<p>În expresia <span id="name">expresia #2</span> și <span id="name">expresia #3</span> - execută codul.<br>
+<span id="name">Expresia #2</span> este codul care este executat atunci când condiția adevărată este adevărată, adică codul care se află în <span id="name">if</span> bloc.<br >
+<span id="name">Expresia #3</span> este codul care se află în blocul <span id="name">else</span>, adică codul care va fi executat dacă expresia #2 va primi o eroare.</p>
+<p>Deci, aici este codul complet folosind operatorul ternar:</p>
+<div id="bg">
+	<p><span id="name">int</span> a = <span id="number">10</span>;<br>
+		<span id="name">int</span> b = (a>5) <span id="name">?</span> ++a <span id="name">:</span> --a;</p>
+</div>
+<p>Aici punem punct și virgulă la sfârșitul expresiei. <br>Există o nuanță când se utilizează operatorul ternar: acest operator funcționează numai cu alocarea unei variabile noi de același tip sau a aceleiași variabile:</p>
+<div id="bg">
+	<p><span id="name">int</span> a = <span id="number">10</span>;<br>
+		a = a>5 <span id="name">?</span> ++a <span id="name">:</span> --a;</p>
+</div>
+<p>Si intre:</p>
+<div id="bg">
+	<p><span id="name">int</span> a = <span id="number">10</span>;<br>
+		<span id="name">int</span> b = (a>5) <span id="name">?</span> ++a <span id="name">:</span> --a;</p>
+</div>
+<p>Nu va fi nicio diferență.<br>De asemenea, există și între program: ce muncă a fost făcută? Un operator ternar sau un operator condițional.... Viteza de execuție este aceeași.</p>
+</body>
+</html>

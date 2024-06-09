@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+<h1>Gestionarea situațiilor de eroare (try-catch)</h1>
+<p>Sistemul de tratare a erorilor se bazează pe blocul <span id="name">try-catch</span>. Acest bloc va ajuta la procesarea unei anumite părți a codului, care atunci când apare, nu va duce la finalizarea programului, ci pur și simplu va executa codul. Iată un șablon standard pentru dvs.:</p>
+<div id="bg">
+	<p><span id="name">try</span>{<br>
+		cod care poate cauza o eroare<br>
+	}<br>
+<span id="name">catch</span>(classOfError variabilă){<br>
+procesarea erorilor<br>
+}
+</p>
+</div>
+<p>Deci acum clarificare. În blocul <span id="name">try</span>, scriem cod care la un moment dat poate să nu funcționeze corect.<br>În blocul <span id="name">catch</span>, vom prindeți această eroare , specificând ce clasă de eroare va fi detectată, după care descrieți cum să o gestionați.<br><b>Clasa unei erori</b> este ceea ce este între paranteze <span id="name">catch</span><br> Iată un exemplu:</p>
+<div id="bg">
+	<p>
+	<span id="name">import</span> java.util.Scanner;<br>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+	Scanner scanner = <span id="name">new</span> Scanner(System.in);<br>
+		<span id="name">try</span>{<br>
+		<span id="name">int</span> x = scanner.nextInt();<br>
+	}<br>
+<span id="name">catch</span>(InputMismatchException e){<br>
+System.out.println(<span id="text">"Nu este un număr"</span>);<br>
+}
+</p>
+</div>
+<p>Deci, am creat o variabilă <b>x</b>, datorită căreia vom introduce o valoare de tip <span id="name">int</span> în consolă. Dar există un moment în care introducem un număr greșit și apoi va rula codul din blocul <span id="name">catch</span>. În cazul nostru, textul: Nu este un număr. Iată câteva clase de erori</p> pentru tine
+<ul>
+	<li><span id="name">ArithmeticException</span> - eroarea este legată de executarea operaţiilor matematice. Pentru un exemplu simplu, nu putem împărți numerele la zero.</li>
+	<li><span id="name">ArrayStoreException</span> - eroarea este legată de o încercare de a scrie un obiect de un tip care nu corespunde tipului elementelor matricei în matrice. De exemplu, am creat o matrice de tip String și am scris un element de tipul <span id="name">char</span>.</li>
+	<li><span id = "name">ClassCastException</span> - eroarea este legată de o încercare de a arunca tipuri incorect.</li>
+<li><span id="name">IllegalArgumentException</span> - această eroare este asociată cu argumente incorecte ale metodei.</li>
+<li><span id="name">NumberFormatException</span> - o eroare care apare atunci când încercați să convertiți o reprezentare textuală incorectă a unui număr într-un număr</li>
+<li><span id="name">IndexOutOfBoundsException</span> - o eroare legată, de exemplu, de un index de matrice specificat incorect</li>
+<li><span id="name">StringIndexOutOfBoundsException</span> - corespunde unei erori care apare cu un index de element specificat incorect într-un șir de text.</li>
+<li><span id="name">NegativeArraySizeException</span> - o eroare legată de o încercare de a crea o matrice de dimensiune negativă</li>
+<li><span id="name">NoSuchElementException</span> - o eroare legată de o referire la un element inexistent</li>
+<li><span id="name">NullPointerException</span> - eroarea este legată de utilizarea unei referințe goale (valoarea <span id="name">null</span>) în locul unei referințe la obiect< /span ></li>
+<span id="name">null</span> este folosit pentru a reprezenta absența intenționată a valorilor.
+<li><span id="name">UnsupportedOperationException</span> - eroarea este legată de o încercare de a efectua o operație care nu este acceptată.</li>
+<li><span id="name">ArrayIndexOutOfBoundsException</span> - apare o eroare la accesarea unui element la un index care depășește intervalul actual de valori.</li>
+<li><span id="name">ClassNotFoundException</span> - eroarea este legată de incapacitatea de a accesa clasa.</li>
+<li><span id="name">IllegalAccessException</span> - apare o eroare la accesarea resursei.</li>
+<li><span id="name">InstantionException</span> - o eroare legată de imposibilitatea creării unui obiect (de exemplu, pe baza unei clase abstracte)</li>
+<li><span id="name">InterruptedException</span> - o eroare legată de întreruperea unui fir de către un alt fir.</li>
+<li><span id="name">NoSuchFieldException</span> - o eroare legată de absența unui câmp.</li>
+<li><span id="name">NoSuchMethodException</span> - eroarea este legată de absența unei metode.</li>
+</ul>
+</body>
+</html>

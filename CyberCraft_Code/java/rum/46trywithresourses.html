@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>try-with-resourses</h1>
+<p>Конструкція <b>try-with-resourses</b> - конструкція, яка пропонує покращення керування ресурсами, які повинні бцти зачиненими після завершення їх роботи. До таких ресурсів відносяться файли та потоки, робота з базами даними. Для цих ресурсів була створена ця конструкція. Для того щоб це було автоматично, був створений інтерфейс <b>AutoClosable</b>:
+</p>
+<div id = "bg">
+<span id = "name">public interface</span> <span id = "class">AutoClosable</span>{<br>
+<span id = "name">void</span> close() <span id = "name">throws</span> Exception;<br>
+}
+</div>
+<p>Можливо у вас з'явиться цілком логічне питання, а навіщо нам ця конструкція, якщо існує <b>try-catch</b>? Бо конструкція, яку ми зараз вивчаємо - має відсутність блоку <span id = "name">finally</span>. Ця конструкція дещо видозмінена від звичайного <b>try-catch</b>. Створімо 2 приклади. Один з <b>try-catch</b>, а другий <b>try-with-resourses</b>:</p>
+<div id = "bg">
+<span id = "name">public static</span> String read(String path) <span id = "name">throws</span> IOException{<br>
+BufferedReader br = <span id = "name">new</span> BufferedReader (<span id = "name">new</span> FileReader(path));<br>
+<span id = "name">try</span>{<br>
+<span id = "name">return</span> br.readLine();<br>
+}<br>
+<span id = "name">finally</span>{<br>
+<span id = "name">if</span>(br != <span id = "name">null</span>){<br>
+br.close();<br>
+}<br>
+}<br>
+}<br>
+</div>
+<p>Тепер запишемо, використовуючи конструкцію try-with-resourses:</p>
+<div id = "bg">
+<span id = "name">public static</span> String method(String path) <span id = "name">throws</span> IOException{<br>
+<span id = "name">try</span>(BufferedReader br = <span id = "name">new</span> FileReader(path)){<br>
+<span id = "name">return</span> br.readLine();<br>
+}<br>
+}
+</div>
+<p>Як бачимо те, що потрібно перевірити - запускається в дужках після ключового слова <span id = "name">try</span>, а в звичайному <b>try-catch</b> ми записуємо в блоці <span id = "name">try</span> після фігурної дужки. Також навідміну від <b>try-with-resourses</b>, <b>try-catch</b> можна записати в декілька рядків коду.</p>
+</body>
+</html>

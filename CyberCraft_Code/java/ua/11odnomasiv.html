@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Одновимірний масив</h1>
+<p><span id="name">Масив</span> - це послідовність однотипних елементів, об'єднаних загальним іменем.<br>Оголошення масиву подібно до звичайної змінної, але після ідентифікатора типу, тобто <span id="name">int</span>, <span id="name">char</span>, <span id="name">byte</span> та інші. Це дає для визначення типу елементів масиву, потім вказуються пусті квадратні дужки, тобто стандартний вигляд одновимірного масиву такий:</p>
+<div id="bg">
+	<p>тип[ ] ім'я змінної;</p>
+</div>
+<p>Пусті квадратні дужки можна вказувати не після ідентифікатора типу, тобто:</p>
+<div id="bg">
+	<p>тип ім'я змінної[ ];</p>
+</div>
+<p>Тут різниці взагалі нема. Перший варіант, тобто, наприкад:</p>
+<div id="bg">
+	<p><span id="key">int</span>[ ] a;</p>
+</div>
+<p>Не відрізняється від від другого варіанту, тобто наприклад:</p>
+<div id="bg">
+	<p><span id="key">int</span> a [ ];</p>
+</div>
+<p>В більшості випадках ми будемо використовувати перший варіант, бо він був створений спеціально для Java. Тобто, щоб був стиль написання, як в Java. А другий - для програмістів, які перейшли з мови програмування <b>C</b> на Java. І для того, щоб сішерам було зручно писати код - зробили цей варіант.<br>Для створення масиву використовують оператор <span id="name">new</span><br><span id="name">new</span> - виділяє пам'ять під об'єкт, в нашому випадку під масив.<br><span id="name">Розмір масиву</span> - кількість елементів в масиві.<br>Розмір масиву вказується у квадратних дужках після ідентифікатора типу елементів масиву, отже маємо:</p>
+<div id="bg">
+	<p><span id="key">new</span> a;</p>
+</div>
+<p>Завдяки цьому рядку створюється масив. Посилання на масив створюється так:</p>
+<div id="bg">
+	<p>тип[ ] змінна;</br>
+		змінна = <span id="key">new</span> тип [розмір];
+</div>
+<p>В першому рядку ми створили масив та дали йому назву та тип, на другому рядку ми виділили пам'ять на цей масив. Ці два рядки можна поєднати в  один:</p>
+<div id="bg">
+	<p>тип[ ] зміннa = <span id="key">new</span> тип [розмір];</p>
+</div>
+<p>Створимо приклад:</p>
+<div id="bg">
+	<p><span id="key">int</span>[ ] arr;</br>
+		arr = <span id="key">new</span> int [<span id="number">10</span>];
+</div>
+<p>В цьому рядку ми виділили пам'ять на 10 елементів типу <span id="name">int</span>. Ці два рядки знову ж таки можна об'єднати в один:</p>
+<div id="bg">
+	<p><span id="key">int</span>[ ] arr = <span id="key">new int</span> [<span id="number">10</span>];
+</div>
+<h4>Тепер перейдімо до ключового момента:</h4>
+<p>Перший елемент масиву має значення 0.</p>
+<p>Тепер, якщо нам необхідно мати значення при створенні масиву. Це млжна створити наступним чином:</p>
+<div id="bg">
+	<p>тип[ ] зміннa = {дані}</p>
+</div>
+<p>Ось один з прикладів:</p>
+<div id="bg">
+	<p>String [ ] cats = {<span id="text">"cat1"</span>, <span id="text">"cat2"</span>, <span id="text">"cat3"</span>, <span id="text">"cat4"</span>};</p>
+</div>
+<p>Ми створили масив <b>cats</b> та вказали значення у фігурних дужках у лапках та через кому. Це ми створили масив типу String і таким чином можна створити масив типу <span id="name">int</span></p>
+<div id="bg">
+	<p><span id="key">int</span> [ ] cats = {<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>};</p>
+</div>
+<p>Щоб отримати елемент масиву, треба посилатися на номер індексу. Для початку створимо масив, а потім виведемо текст:</p>
+<div id="bg">
+	<p>String [ ] cars = {<span id="text">"BMV"</span>, <span id="text">"Ford"</span>, <span id="text">"Mazda"</span>};<br>
+		System.out.println(cars[<span id="number">0</span>]);<br>
+		<span id = "text">//BMV</span>
+</div>
+<p>Тепер перейдімо до зміни даних елементів:</p>
+<div id="bg">
+	<p><span id="key">int</span> [ ] nums = {<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>, <span id="number">40</span>};<br>
+		cars[<span id="number">0</span>] = <span id="number">20</span>;<br>
+		System.out.println(nums[<span id="number">0</span>]);<br>
+		BMV
+</div>
+<p>Ми замінили перший елемент масиву, тобто число 10 на число 20. Але було написано що є ключове слово <span id="name">new</span>, тобто так:</p>
+<div id="bg">
+	<p>String [ ] cars = <span id="key">new</span> {<span id="text">"BMV"</span>, <span id="text">"Ford"</span>, <span id="text">"Mazda"</span>};<br>
+		System.out.println(cars[<span id="number">0</span>]);<br>
+		<span id = "text">20</span>
+</div>
+<p>Різниці між ними не буде, але в випадку без <span id="key">new</span> ми не можемо записати так:</p>
+<div id="bg">
+	<p><span id="key">int</span>[ ] arr;<br>
+		arr = {<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>};
+</div>
+Завжди повинен вказуватися тип масиву, тобто як в другому варіанті:
+<div id="bg">
+	<p>
+		arr = <span id="key">new int</span>{<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>};
+</div>
+</body>
+</html>

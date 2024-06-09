@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Двовимірний масив</h1>
+<p>Створення двовимірного масиву дуже схоже з написанням одновимірного масиву:</p>
+<div id="bg">
+	<p>тип [ ] [ ] назва = <span id="key">new</span> тип [розмір] [розмір];</p>
+</div>
+<p>Як бачимо, після типу ми написали чотири квадратні дужки. Це ми створили оголоення до двовимірного масиву. Двовимірний масив - це таблиця.<br><span id="name">Перші квадратні дужки</span> - це довжина масиву, але довжина рядку</p>
+<span id="name">Другі квадратні дужки</span> - це стовпчики.</p>
+<p>Створимо приклад:</p>
+<div id="bg">
+	<p><span id="key">int</span> [ ] [ ] numbers = <span id="key">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Цю команду можна розписати на два рядки:</p>
+<div id="bg">
+	<p><span id="key">int</span> [ ] [ ] numbers;<br>
+	 numbers = <span id="key">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Отже, командою <span id="key">int</span> та чотирма дужками разом зі змінною numbers оголошується змінна numbers двовимірного масиму. Внаслідок виконання команди</p>
+<div id="bg">
+	 numbers = <span id="key">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Створюється двовимірний масив з цілих чисел: з трьох рядків і п'яти стовпців, а отже цей масив може містити 15 елементів. Щоб отримати елемент з масиву такого типу, потрібно записати наступний код:</p>
+<div id="bg">
+	<p>System.out.println(numbers[<span id="number">1</span>] [<span id="number">2</span>]);</p>
+</div>
+<p>Ми отримаємо число з другого елемента рядка та який знаходиться у третьому ствопці. А тепер  перейдімо до ініціалізації двовимірного масиву:</p>
+<div id="bg">
+	<p><span id="key">char</span> [ ] [ ] s = {{<span id="text">'A'</span>, <span id="text">'B'</span>, <span id="text">'C'</span>},{<span id="text">'D'</span>, <span id="text">'E'</span>, <span id="text">'F'</span>}};<br>
+	 numbers = <span id="key">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Ось ми оголосили масив типу <span id="name">char</span> та записали туди значення. Ще є певні дії з масивами:<br><span id="name">.lenght</span> - довжина масиву. Мається наувазі рядок, тобто для масиву розміром 3*3 довжина дорівнює 3 і для масиву 3*4 довжина дорівнює 3.<br>
+	<span id="name">.clone</span> - ця команда виділяє новий простір пам'яті і присвоює йому скопійований масив. Це певні команди, але не всі. Поки що досить.
+</body>
+</html>

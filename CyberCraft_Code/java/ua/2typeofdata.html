@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Типи данних</h1>
+<p><span id = "key">Типи даних</span> - можливість приймати змінній саме ті значення, які вказали. В Java існує два типи даних - примітивний та вказівникові.</p>
+<h4 id="question">Всього існує 8 типів примітивних данних</h4>
+<ol>
+    <li><span id="name">byte</span> - тип, який приймає тільки цілі числа. Діапазон чисел становить від -128 до 127 (число 0 також тут) витрачає вісім біт пам'яті.</li>
+    <div id="bg">
+        <p><span id = "key">byte</span> a = <span id ="number">120</span>;</p>
+    </div>
+    <li><span id="name">short</span> - також може приймати тільки цілі числа, але діапазрн значно більший: від -32768 до 32767, але так як діапазон більший, то і використання пам'яті буде більшим, а саме 16 біт</li>
+    <div id="bg">
+        <p><span id = "key">short</span> b = <span id = "number">20</span>;</p>
+    </div>
+    <li><span id="name">int</span> - приймає тільки цілі числа в діапазоні від -2 147 483 648 до 2 147 483 647 та займає 32 біта пам'яті</li>
+    <div id="bg">
+        <p><span id = "key">int</span> a = <span id = "number">203452</span>;</p>
+    </div>
+    <li><span id="name">long</span> - які попередні, приймає цілі числа та займає 64 біта ппам'яті. Приймає діапазон від -9223372036854775808 до 9223372036854775807<br>
+    <span id="name">!</span> Якщо ввести значення більші за діапазон <span id="name">int</span>, тобто грубо кажучи більше 3-х мільйонів буде помилка. Помилка в тому, що Компілятор сприймає значення <span id="name">long</span> за <span id="name">int</span>. Щоб полагодити помилку, потрібно додати лише велику літеру <b>L</b><br>
+    <b>L</b> - скорочення від <span id="name">long</span>. Ми пишемо з великої літери, бо ми звертаємося до класу-оболонки. У кожно типу є свій клас-оболонка, наприклад, <span id="name">int</span> має клас оболонку integer.</li>
+    <div id="bg">
+        <p><span id = "key">long</span> a = <span id = "number">-15023125</span>;</p>
+    </div>
+    <li><span id="name">float</span> - приймає тільки числа в діапазоні від 3.4*10^-38 до 3.4*10^38 цей тип може приймати як і цілі, так і дробові числа. Займає 32 біта пам'яті<br> Як і <span id="name">long</span>, <span id="name">float</span>'у потрібно додаввти клас-оболонки. У <span id="name">float</span> - це... Той самий float, але з феликої літери, тобто <b>F</b></li>
+    <div id="bg">
+        <p><span id = "key">float</span> a = <span id = "number">-1.5</span>;</p>
+    </div>
+    <li><span id="name">double</span> - приймає тільки числа в діапазоні 1.7*10^308 по модулю  та займає 64 біта пам'яті. Різниця між <span id="name">double</span> та <span id="name">float</span> полягає не тільки в діапазані, а в точності. Наприклад,  <span id="name">float</span> може отримати значення: 1.6893, а <span id="name">double</span>1.6894, бо ми окрунлили до десятитисячеих, а так як <span id="name">double</span>сприймає більше значень після коми за <span id="name">float</span>, то дані будуть більш точніші.</li>
+    <div id="bg">
+        <p><span id = "key">double</span> a = <span id = "number">-15023125.225484</span>;</p>
+    </div>
+    <li><span id="name">char</span> - символьний тип. Може сприймати букви. Розмір пам'яті виділяється 16 біт.<br><span id="name">char</span> позначається в лапках, але лапки одинарні, тобто ось: <span id = "key">' '</span> в цих лапках можна поставитилише один символ, це як звичайний пробіл, цифру, бувку. Коротше кажучи, любий символ з таблиці Unicode, відома ще як utf-8.</li>
+    <div id="bg">
+        <p><span id = "key">char</span> a = <span id="text">'q'</span>;</p>
+    </div>
+    <li><span id="name">String</span> відразу кажу, що цей тип пишеться з великої літери, по друге, текст записується в подвійних лапках <span id = "key">" "</span>. Також в цей тип можна записати безліч символів, тобто на відміну від <span id="name">char</span> ми можемо записати сюди хоч "Енеїду" Котляревського.</li>
+    <div id="bg">
+        <p>String a = <span id="text">"Glory to Ukraine"</span>;</p>
+    </div>
+    
+        <p>Більшість компіляторів не позначають кольором <span id="name">String</span> так як я казав, що це не тип данних. В коді я також не буду позначати <span id="name">String</span> кольором</p>
+    <li><span id="name">boolean</span> - логічний тип. Сприймає тільки два значення, а саме <span id="name">true</span> та <span id="name">false</span></li>
+<div id="bg">
+        <p><span id="key">boolean</span> a = <span id="key">true</span>;</p>
+    </div>
+    
+    </ol>
+    <p>Я казав, що всього існує 8 типів данних, а тут 9... Комедія в тому, що <span id="name">String</span> не є примітивним типом данних. Це вказівниковий тип, тобто об'єкт. Примітиви виділяються іншим кольором, ніж звичайний чорний та білий. Перейдімо до <span id="name">приведення типів</span></p><br>
+<h4 id="question">Приведення типів</h4><br>
+<p>Тут пи будемо використовувати <span id = "key">операнд</span><br>
+<span id="name"><b>Операнд</b></span> - аргумент операції. Приведення типів поділяють на два типи: явне та неявне(або автоматичне). Явне і неявне приведення типів проводиться автоматично по певній лозіці: якщо в числовому виразі є операнд типу <span id="name">double</span>, то всі інші операнди, резулятити виразу автоматично розширується до типу <span id="name">double</span></p>
+<div id="bg">
+        <p><span id="key">double</span> a2 = <span id = "number">0.02</span>;<br>a=(<span id="key">int</span>)a</p>
+    </div>
+    Ось це приведення типів. Ми в консолі отримаємо 0, так як він змінює тип на <span id = "key">int</span>:
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Об'єкти та класи</h1>
+<p>Створімо новий клас та змінну в кінці нашого класу Main:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">One</span>{<br>
+<span id="key">int</span> a;<br>
+}
+</p>
+</div>
+<h3 id="question">Який клас є головним?</h3>
+<p>Головний клас - це той, у кого записано головний метод <span id="name">main</span>. Тобто, якщо в новому класі <span id="class">One</span> мав цей метод, тоді головний метод був би <span id="class">One</span>. Тепер в головному класі створимо об'єкт:<br><span id="name">Об'єкт</span> - це згруповані разом дані та методи для того, щоб ці дані обробляти. Коли говориться про дані, мається на увазі змінні.</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	One obj;<br>
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">One</span>{<br>
+<span id="key">int</span> a;<br>
+}
+</p>
+</div>
+<p>One - так званний тип даних, але тип даних класу.<br>obj - назва змінної.</p>
+<p>Але це не об'єкт, поки що. Ми створили змінну на основі класу <span id="class">One</span>.<br>Щоб створити об'єкт, треба на наступному рядку, завдяки ключовому слову <span id="name">new</span> сказати, що ця змінна належить класу <span id="class">One</span>:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	One obj;<br>
+        	obj = <span id="key">new</span> One();<br>
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">One</span>{<br>
+<span id="key">int</span> a;<br>
+}
+</p>
+</div>
+<p>Ці два рядки можна об'єднати в один:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	One obj = <span id="key">new</span> One();<br>
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">One</span>{<br>
+<span id="key">int</span> a;<br>
+}
+</p>
+</div>
+<p>Тепер ми можемо використовувати змінні класу <span id="class">One</span>:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	One obj = <span id="key">new</span> One();<br>
+        	obj.a=<span id="number">10</span>;<br>
+        	String text = <span id="text">"Число: "</span> + obj.a;<br>
+        	System.out.println(text);
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">One</span>{<br>
+<span id="key">int</span> a;<br>
+}
+</p>
+</div>
+<p>Поки що це все</p>
+</body>
+</html>

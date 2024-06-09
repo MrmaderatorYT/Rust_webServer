@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Obiecte și clase</h1>
+<p>Să creăm o nouă clasă și o variabilă la sfârșitul clasei noastre principale:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">One</span>{<br>
+<span id="name">int</span> a;<br>
+}
+</p>
+</div>
+<h3 id="question">Care clasă este cea principală?</h3>
+<p>Clasa principală este cea care are scrisă metoda principală <span id="name">main</span>. Adică, dacă noua clasă <span id="class">One</span> ar avea această metodă, atunci metoda principală ar fi <span id="class">One</span>. Acum să creăm un obiect în clasa principală:<br><span id="name">Obiect</span> sunt date grupate împreună și metode de procesare a acestor date. Când vorbim despre date, ne referim la variabile.</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	One obj;<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">One</span>{<br>
+<span id="name">int</span> a;<br>
+}
+</p>
+</div>
+<p>Unul este un așa-numit tip de date, dar un tip de date de clasă.<br>obj este un nume de variabilă.</p>
+<p>Dar încă nu este un obiect. Am creat o variabilă bazată pe clasa <span id="class">One</span>.<br>Pentru a crea un obiect, trebuie să utilizați cuvântul cheie <span id="name">nou</span> pe următoarea linie pentru a spune că această variabilă aparține clasei <span id="class">One</span>:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	One obj;<br>
+        	obj = <span id="name">new</span> One();<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">One</span>{<br>
+<span id="name">int</span> a;<br>
+}
+</p>
+</div>
+<p>Aceste două linii pot fi combinate într-una singură:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	One obj = <span id="name">new</span> One();<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">One</span>{<br>
+<span id="name">int</span> a;<br>
+}
+</p>
+</div>
+<p>Acum putem folosi variabile din clasa <span id="class">Una</span>:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	One obj = <span id="name">new</span> One();<br>
+        	obj.a=<span id="number">10</span>;<br>
+        	String text = <span id="text">"Numeric: "</span> + obj.a;<br>
+        	System.out.println(text);
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">One</span>{<br>
+<span id="name">int</span> a;<br>
+}
+</p>
+</div>
+<p>Asta e tot deocamdată</p>
+</body>
+</html>

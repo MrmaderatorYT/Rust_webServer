@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Робота з файлами</h1>
+<p>Для роботи з файлами, нам потрібна бібліотека:</p>
+<div id="bg">
+	<span id="key">import</span> java.io.File;
+</div>
+<p><span id="name">io</span> - I/O - Imput/Output, тобто введення та виведення.<br>Створімо об'єкт на основі класу File</p>
+<div id="bg">File file = <span id="key">new</span> File(<span id="text">"file.txt"</span>);</div>
+<p>В дужках ми створили новий файл, який має назву <b>file</b> та формат <b>txt</b>. Для роботи з файлами, краще використовувати блоки <span id="name">try-catch</span>:</p>
+<div id="bg"><span id="key">import</span> java.io.File;<br>
+<span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+<span id="key">try</span>{<br>
+File file = <span id="key">new</span> File(<span id="text">"file.txt"</span>);<br>
+file.createNewFile();<br>
+}<br>
+<span id="key">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+<p>Ми використали помилки <span id="name">IOException</span>, який допоможе нам оброблювати помилки при роботі з файлами. <b>.createNewFile</b> - метод, який створює файл. Тобто ми створили перевірку, якщо файл не створено, то ми отримаємо помилку. Але навіщо нам створювати файл кожного разу, коли стартується програма? І для цього, перед створенням файлу, створімо перевірку на наявність файлу:</p>
+<div id="bg"><span id="key">import</span> java.io.File;<br>
+<span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+<span id="key">try</span>{<br>
+File file = <span id="key">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="key">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+}<br>
+<span id="key">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+<p>В умові ми створили перевірку: якщо файл існує, то... Але перед цим, ми додали знак оклику, що означає <b>не</b>, а отже, якщо файл неіснує, ми створюємо файл.</p>
+<h3 id="question">Запис інформації в файл</h3>
+<p>Для запису інформації в файл нам потрібно імпортувати клас <span id="name">FileWriter</span>:<br><span id="name">java.io.PrintWriter;</span>	<br>Створимо об'єкт на основі цього класу в блоці <span id="name">try</span> та запишемо туди інформацію:</p>
+<div id="bg"><span id="key">import</span> java.io.File;<br>
+<span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+<span id="key">try</span>{<br>
+File file = <span id="key">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="key">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+PrintWriter pw = <span id="key">new</span> PrintWriter(file);<br>
+pw.println(<span id="text">"CCS Code"</span>);<br>
+pw.close();<br>
+}<br>
+<span id="key">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+<p>В дужках ми записали змінну назви файлу, яку ми створили на основі класу File. Для запису інформації, ми використали метод <span id="name">println</span>. Потім, ми використали метод <span id="name">close</span>, щоб закрити файл. Ми закриваємо файл, бо це як вийти з квартири на не закрити воду.</p>
+<h3 id="question">Зчитування даних</h3>
+<p>Щоб зчитувати інформацію з файла, нам потрібно імпортувати бібліотекy, а саме <span id="name">BufferedWriter</span>:<br>
+<span id="name">import</span> java.io.BufferedReader;<br>
+Для початку створимо змінну на основі BufferedReader:
+<div id="bg">BufferedReader br = <span id="key">null</span>;</div>
+Ми присвоїли значення <span id="name">null</span>, який дасть зрозуміти, що ця змінна буде означати "нічому".Цю змінну запишемо перед блоком <span id="name">try</span>. Після радка, який закриває файл ми виділимо пам'ять під змінну br та присвоємо значення i використаємо цикл <span id="name">while</span> для виводу значень в консоль та змінну, яка буде просто виводити значення в консоль::
+<div id="bg"><span id="key">import</span> java.io.File;<br>
+	<span id="key">import</span> java.io.BufferedReader;<br>
+<span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+BufferedReader br = <span id="key">null</span>;<br>
+<span id="key">try</span>{<br>
+File file = <span id="key">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="key">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+PrintWriter pw = <span id="key">new</span> PrintWriter(file);<br>
+pw.println(<span id="text">"CCS Code"</span>);<br>
+pw.close();<br>
+br = <span id="key">new</span> BufferedReader(<span id="key">new</span> FileReader(<span id="text">"file.txt"</span>));<br>
+String line;<br>
+<span id="key">while</span> ((line = br.readLine())!=<span id="key">null</span>){<br>
+System.out.println(line);<br>
+}<br>	
+}<br>
+<span id="key">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+Якщо лінія буде пустою (значення <span id="name">null</span>), то цикл завершується. Додамо блок <span id="name">finally</span>
+<span id="name">finally</span> - блок, який стосується <span id="name">try-catch</span> блокам. Цей блок буде виконаний після завершення блоку операторів. Він виконується незалежно від того, викинуто виняток чи ні. Тобто цей блок буде виконуватися 100%, якщо щось піде не так. Нам він потрібен для того, щоб закрити BufferedReader, так як його також потрібно закривати:
+<div id="bg"><span id="key">import</span> java.io.File;<br>
+	<span id="key">import</span> java.io.BufferedReader;<br>
+<span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+BufferedReader br = <span id="key">null</span>;<br>
+<span id="key">try</span>{<br>
+File file = <span id="key">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="key">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+PrintWriter pw = <span id="key">new</span> PrintWriter(file);<br>
+pw.println(<span id="text">"CCS Code"</span>);<br>
+pw.close();<br>
+br = <span id="key">new</span> BufferedReader(<span id="key">new</span> FileReader(<span id="text">"file.txt"</span>));<br>
+String line;<br>
+<span id="key">while</span> ((line = br.readLine())!=<span id="key">null</span>){<br>
+System.out.println(line);<br>
+}<br>	
+}<br>
+<span id="key">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+<span id="key">finally</span>{<br>
+<span id="key">try</span>{<br>
+br.close();<br>
+}<br>
+<span id="key">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span>+e);<br>
+}<br>
+}<br>
+}<br>
+}
+
+</div>
+</p>
+</body>
+</html>

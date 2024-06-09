@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Методи</h1>
+<p><span id="name">Метод</span> - це блок коду, який виконується тільки тоді, коли викликається. Також інша назва методів - функції.</p>
+<h3 id="question">Навіщо методи?</h3>
+<p>Методи потрібні для повторного використання коду: напиши один код в методі та викликай його, коли потрібно, а не переписувати. Ось приклад:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+			код<br>
+		}<br>
+		<span id="key">public static void</span> method(){<br>
+		код<br>
+	}<br>
+}
+</p>
+</div>
+<p>Ось стандартний метод. <b>method</b> - назва методу.<br><span id="name">public static void</span> ми будемо вивчати в майбутньому, але для розуміння я поясню:</p>
+<p><span id="name">public</span> - модифікатор, який вказує, що цей метод можна використовувати будь-де.</p>
+<p><span id="name">static</span> - модифікатор, який застосовується до поля блоку, методу. Він вказує на прив'язку на прив'язку суб'єкта. В нашому випадку - метода.</p>
+<p><span id="name">void</span> - по-перше, з англійської - це пустота, по-друге, void - це тип даних, який ми можемо отримати в результаті методі. Void - це тип даних, що і <span id="name">int</span> та інші. Це ключове слово використовує для того, щоб повертати змішані дані, тобто в одночас String та <span id="name">double</span> й інші. Створимо простий метод:</p>
+<div id="bg">
+	<p>
+		<span id="key">public static void</span> method(){<br>
+		System.out.println(<span id="text">"Текст з іншого методу"</span>);<br>
+	}<br>
+</p>
+</div>
+<p>А тепер викличемо цей метод в головному методі <span id="name">main</span></p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+			method();<br>
+		}<br>
+		<span id="key">public static void</span> method(){<br>
+		System.out.println(<span id="text">"Текст з іншого методу"</span>);<br>
+	}<br>
+}<br>
+<span id = "text">
+Текст з іншого методу</span>
+</p>
+</div>
+<p>Але так буває, що нам потрібно передавати якусь інформацію в метод. В цьому нам допоможуть пареметри, які ми запишемо в дужках:</p>
+<div id="bg">
+	<p>
+	<span id="key">public static void</span> method(String name, <span id="key">int</span> age){<br>
+	System.out.println(<span id="text">"My name: " + name</span>);<br>
+	System.out.println(<span id="text">"My age: "</span> + age);<br>
+}
+</p>
+</div>
+<p>І тепер викличемо цей метод в головному методі:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+			method(<span id="text">"Ann"</span>, <span id="number">15</span>);<br>
+		}<br>
+		<span id="key">public static void</span> method(String name, <span id="key">int</span> age){<br>
+	System.out.println(<span id="text">"My name: " + name</span>);<br>
+	System.out.println(<span id="text">"My age: "</span> + age);<br>
+	}<br>
+}<br>
+<span id = "text">
+// My name: Ann<br>
+// My  age: 15</span>
+</p>
+</div>
+<p>В головному методі викликали метод <b>method</b> та записали туди значення. Але є нюанс - виклик методу повинен мати туку ж кількість аргументів та послідовність типів як в описі, тобто ми створили метод в якому записали два типи даних - String, <span id="name">int</span>. При виклику метода, ми повинні вказати їх, тобто спочатку ми вказуємо тип String, а потім <span id="name">int</span><br>
+Перейдімо до повернення певних значень. Замість ключового слова <span id="name">void</span> ми повинні вказати потрібний нам тип, нехай буде String.</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	String s = <span id="text">"Hi"</span>;<br>
+        	s = method(s);<br>
+        	System.out.println(s);<br>
+		}<br>
+		<span id="key">static</span> String method(String str){<br>
+	str=str+<span id="text">"world"</span>;<br>
+	<span id="key">return</span> str;<br>
+	}<br>
+}<br>
+<span id = "text">// Hi world</span>
+</p>
+</div>
+<p>В цьому коді ми створили змінну <b>s</b> типу String та записали текст. В методі <b>method</b> ми замінили аргументи на один - str типу String. ми привоїли змінній str до пустого рядка текст world, а завдяки ключовому слову <span id="name">return</span> ми повертаємо дані змінної str. В головному методі ми присвоємо змінній <b>s</b> метод <b>method</b> та в дужках ми запишемо змінну <b>s</b>, яку будемо записувати в метод. На наступному рядку ми виводимо в консоль змінну <b>s</b>.</p>
+</body>
+</html>

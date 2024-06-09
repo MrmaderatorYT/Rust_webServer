@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Списки</h1>
+<p>Списки в R є складовим типом даних, який може містити різні типи об'єктів, включаючи числа, символи, інші списки, функції та навіть NULL.</p><br>
+Створюємо список:
+<div id="bg">
+	my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = c(<span id = "number">85</span>, <span id = "number">90</span>, <span id = "number">78</span>))
+</div>
+<p>В даному випадку ми створюємо змінну <b>my_list</b>, яка містить три елменти - ім'я, вік, вектор з 3ма значеннями.<br>Також, щоб отримати дані зі списку, ми звертаємося за індексами:</p>
+<div id="bg">
+	my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = c(<span id = "number">85</span>, <span id = "number">90</span>, <span id = "number">78</span>))<br>
+	print(my_list[<span id = "number">1</span>])<br>
+	<span id = "text">#Abra</span>
+</div>
+<h4>Звернення по імені</h4>
+<div id="bg">
+	my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = c(<span id = "number">85</span>, <span id = "number">90</span>, <span id = "number">78</span>))<br>
+	print(my_list$scores)<br>
+	<span id = "text">#85 90 78</span>
+</div>
+Таким чином можна звернутися до вектора:
+<div id="bg">
+	my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = c(<span id = "number">85</span>, <span id = "number">90</span>, <span id = "number">78</span>))<br>
+	print(my_list$scores[2])<br>
+	<span id = "text">#90</span>
+</div>
+Можна також створити список в списку:
+<div id="bg">
+	my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = list(a = <span id = "number">85</span>, b = <span id = "number">90</span>, c = <span id = "number">78</span>))<br>
+	print(my_list$scores$c)<br>
+	<span id = "text">#78</span>
+</div>
+Щоб змінити дані елемента в списку ми можемо так само працювати, як і із векторами:
+<div id="bg">
+	my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = list(a = <span id = "number">85</span>, b = <span id = "number">90</span>, c = <span id = "number">78</span>))<br>
+	my_list[<span id = "number">1</span>] &lt;- <span id = "text">"John"</span><br>
+	<span id = "text">#Або ж можна звертатися по імені:<br></span>
+	my_list$name &lt;- <span id = "text">"John"</span><br>
+</div>
+<h4>Функції в списку</h4>
+:Списки можуть містити функції:
+<div id = "bg">
+my_list &lt;- list(name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>, scores = list(a = <span id = "number">85</span>, b = <span id = "number">90</span>, c = <span id = "number">78</span>))<br>
+my_function &lt;- <span id = "key">function</span>(x){<br>
+return(x^<span id = "number">2</span>)<br>
+}<br>
+my_list$func &lt;- my_function
+</div>
+Зараз у списку <b>my_list</b> є новий елемент <b>func</b>, який є функцією <b>my_function</b>.
+<h4>Пару питань</h4>
+Символ долару '$' в R використовується для отримання доступу до елементів списку за їх назвою або ідентифікатором. Він дозволяє звертатися до конкретних елементів списку без необхідності використовувати індексацію.<br>
+Зауважте, що використання $ працює лише зі списками та фреймами даних. Якщо ви намагаєтеся використовувати $ з іншими типами даних, ви отримаєте помилку. <br>
+Також, якщо ім'я елемента списку містить пробіл або спеціальний символ, ви повинні використовувати двокрапку та подвійні квадратні дужки для звернення до нього:
+<div id = "bg">
+my_list &lt;- list(<span id = "text">"first name"</span> = <span id = "text">"John"</span>, age = <span id = "number">30</span>)<br>
+print(my_list$<span id = "text">"first name"</span>)<span id = "text">  # Виведе "John"</span>
+
+</body>
+</html>

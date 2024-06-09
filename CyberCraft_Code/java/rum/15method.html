@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Metode</h1>
+O <p><span id="name">Metodă</span> este un bloc de cod care este executat numai atunci când este apelat. De asemenea, un alt nume pentru metode este funcții.</p>
+<h3 id="question">De ce metode?</h3>
+<p>Sunt necesare metode pentru reutilizarea codului: scrieți un cod într-o metodă și apelați-l când aveți nevoie, în loc să îl rescrieți. Iată un exemplu:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+			cod<br>
+		}<br>
+		<span id="name">public static void</span> method(){<br>
+		cod<br>
+	}<br>
+}
+</p>
+</div>
+<p>Iată metoda standard. <b>metoda</b> - numele metodei.<br><span id="name">public static void</span> vom studia în viitor, dar pentru înțelegere voi explica:</p >
+<p><span id="name">public</span> - modificator care indică faptul că această metodă poate fi folosită oriunde.</p>
+<p><span id="name">static</span> - un modificator care este aplicat câmpului blocului, metodei. Ea indică o legare pe un subiect. În cazul nostru - o metodă.</p>
+<p><span id="name">void</span> - în primul rând, din engleză - acesta este gol, în al doilea rând, void este un tip de date pe care le putem obține ca urmare a metodei. Void este un tip de date, la fel ca <span id="name">int</span> și altele. Acest cuvânt cheie este folosit pentru a returna date mixte, adică simultan String și <span id="name">double</span> și altele. Să creăm o metodă simplă:</p>
+<div id="bg">
+	<p>
+		<span id="name">public static void</span> method(){<br>
+		System.out.println(<span id="text">"Text dintr-o altă metodă"</span>);<br>
+	}<br>
+</p>
+</div>
+<p>Și acum vom numi această metodă în metoda principală <span id="name">main</span></p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+			method();<br>
+		}<br>
+		<span id="name">public static void</span> method(){<br>
+		System.out.println(<span id="text">"Text dintr-o altă metodă"</span>);<br>
+	}<br>
+}<br>
+--------------------<br>
+Text dintr-o altă metodă</p>
+</div>
+<p>Dar se întâmplă că trebuie să transmitem câteva informații metodei. Parametrii pe care îi vom scrie între paranteze ne vor ajuta în acest sens:</p>
+<div id="bg">
+	<p>
+	<span id="name">public static void</span> method(String name, <span id="name">int</span> age){<br>
+	System.out.println(<span id="text">"My name: " + name</span>);<br>
+	System.out.println(<span id="text">"My age: "</span> + age);<br>
+}
+</p>
+</div>
+<p>Și acum să numim această metodă în metoda principală:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+			method(<span id="text">"Ann"</span>, <span id="number">15</span>);<br>
+		}<br>
+		<span id="name">public static void</span> method(String name, <span id="name">int</span> age){<br>
+	System.out.println(<span id="text">"My name: " + name</span>);<br>
+	System.out.println(<span id="text">"My age: "</span> + age);<br>
+	}<br>
+}<br>
+--------------------<br>
+My name: Ann<br>
+My  age: 15
+</p>
+</div>
+<p>În metoda principală, metoda <b>metoda</b> a fost apelată și valoarea a fost scrisă acolo. Dar există o nuanță - apelul de metodă trebuie să aibă același număr de argumente și secvență de tipuri ca în descriere, adică am creat o metodă în care au fost înregistrate două tipuri de date - String, <span id="name" >int</span>. Când apelăm metoda, trebuie să le specificăm, adică mai întâi specificăm tipul String, apoi <span id="name">int</span><br>
+Să trecem la returnarea unor valori specifice. În loc de cuvântul cheie <span id="name">void</span>, trebuie să specificăm tipul pe care îl dorim, să fie String.</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	String s = <span id="text">"Hi"</span>;<br>
+        	s = method(s);<br>
+        	System.out.println(s);<br>
+		}<br>
+		<span id="name">static</span> String method(String str){<br>
+	str=str+<span id="text">"world"</span>;<br>
+	<span id="name">return</span> str;<br>
+	}<br>
+}<br>
+--------------------<br>
+Hi world
+</p>
+</div>
+<p>În acest cod, am creat o variabilă <b>s</b> de tip String și am scris textul. În metoda <b>method</b>, am înlocuit argumentele cu one - str de tip String. am atașat lumea textului la variabila str la un șir gol, iar datorită cuvântului cheie <span id="name">return</span> returnăm datele variabilei str. În metoda principală atribuim variabilei <b>s</b> metoda <b>metoda</b> iar între paranteze scriem variabila <b>s</b> pe care o vom scrie în metodă . Pe linia următoare, scoatem variabila <b>s</b>.</p> în consolă
+</body>
+</html>

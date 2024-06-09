@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Referință pentru metodă și clasă</h1>
+<p>Dacă vorbim despre executarea unei referințe la o metodă non-statică a unui obiect specific și numele metodei este indicat prin operatorul <span id = "name">::</span>. Adică, modelul de execuție al unei referințe la o metodă non-statică este următorul:</p>
+<div id="bg">
+obiect :: nume obiect;
+</div>
+<p>Aceasta a fost referința la metoda obiectului, acum să trecem la referința la metoda non-statică a clasei. În acest din urmă caz, contează dacă metoda este statică sau nu. O referire la o metodă nestatică dintr-o anumită clasă este indicată în următoarea formă:</p>
+<div id="bg">
+Class :: nameMethod;
+</div>
+<p>Referință pentru metoda statică...<br>
+O referire la o metodă statică este în mod formal aceeași cu o referire la o metodă non-statică a unei clase, dar consecințele sunt diferite. Referințele la metode pot fi scrise ca o expresie lambda. De exemplu, o referire la metoda unui obiect care utilizează o expresie lambda arată astfel:</p>
+<div id="bg">
+argumente -> object.method(argumente)
+</div>
+<p>Dacă scrieți o referință la o metodă de clasă non-statică ca expresie lambda, arată astfel:</p>
+<div id="bg">
+(obiect, argumente) -> object.method(argumente)
+</div>
+<p>Și o referire la o metodă statică printr-o expresie lambda arată astfel:</p>
+<div id="bg">
+(arguments) -> class.method(arguments)
+</div>
+<p>De exemplu, referință la o metodă statică:</p>
+<div id="bg">
+System.out::println
+</div>
+<p>Echivalent cu:</p>
+<div id="bg">
+t -> System.out.println(t);
+</div>
+<p>Iată un exemplu de referință la o metodă non-statică a unei clase:</p>
+<div id="bg">
+MyClass :: method
+</div>
+<p>Și aceasta este echivalentă cu:</p>
+<div id="bg">
+(MyClass obj, <span id = "name">int</span> num, <span id = "name">char</span> symb)-><br>
+obj.method(num, symb)
+</div>
+<p>Să trecem la ultimul link: către constructor. Arată astfel:</p>
+<div id="bg">
+class::<span id = "name">new</span>
+</div>
+<p>După cum puteți vedea, clasa este scrisă cu litere mici, așa că acesta este numele clasei. Această referință este echivalentă cu următoarea expresie lambda:</p>
+<div id="bg">
+(argumente) -> <span id = "name">new</span> clasă (argumente)
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Cursuri anonime</h3>
+<p>Destul de des este nevoie de a crea o clasă care este folosită o singură dată. În astfel de cazuri, sunt folosite <b>clase anonime</b><br>
+<span id = "name">Clasuri anonime</span> - clase care nu au „nume propriu”. Există două moduri de a crea clase anonime: prin moștenirea unei clase abstracte și prin implementarea unei interfețe. Să presupunem că avem o clasă abstractă care are numele condiționat „SuperClass”. Vom crea o clasă anonimă prin moștenirea SuperClass. Dar există o caracteristică a claselor anonime - un obiect este creat pe baza acestei clase. Cu alte cuvinte, nu are sens să vorbim despre descrierea unei clase anonime, dacă nu este vorba despre crearea unui obiect. În principiu, un obiect poate fi și anonim, dar poate fi și cazul în care o referință la un obiect creat pe baza unei clase anonime să fie scrisă într-o variabilă obiect. O referință la un obiect dintr-o clasă anonimă poate fi scrisă într-o modificare SuperClass și obținem următorul șablon:</p>
+<div id="bg">
+SuperClass var = <span id = "name">new</span> SuperClass(argumente){<br>
+<span id = "text">//descriere</span><br>
+};
+</div>
+<p>Adică însăși construcția creării unui obiect bazat pe o clasă anonimă începe așa cum ar trebui cu construcția <span id = "name">new</span>, după care constructorul superclasei este specificat în curly paranteze - codul care conține descrierea metodelor abstracte din SuperClass. Dacă vorbim despre un obiect anonim creat pe baza unei clase anonime, atunci cel mai probabil, un astfel de obiect anonim este transmis ca argument metodei sau metoda este apelată de la aceasta. În orice caz, se folosește o construcție de forma:</p>
+<div id="bg">
+<span id = "name">new</span> SuperClass (argumentes){<br>
+<span id = "text">//descrierea metodelor</span><br>
+}
+</div>
+<p>Acum să creăm un exemplu pentru crearea unei clase anonime prin inițializarea interfeței. Abordarea aici este exact aceeași ca și în cazul moștenirii clasei - cu excepția că avem de-a face cu o interfață:</p>
+<div id="bg">
+Variabilă de interfață = <span id = "name">new</span> Interface(){<br>
+<span id = "text">//descrierea metodelor</span><br>
+};
+</div>
+<p>Un obiect anonim al unei clase anonime, cu condiția să implementeze interfața:</p>
+<div id="bg">
+<span id = "name">nouă</span> Interfață(){<br>
+<span id = "text">//descrierea metodelor</span><br>
+}
+</div>

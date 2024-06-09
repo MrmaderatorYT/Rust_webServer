@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Comentarii</h1>
+<p><span id="name">Comentariul</span> este, să zicem, note din cod. După cum știm, compilatorul citește întregul cod, iar un comentariu este un gol în cod pe care compilatorul îl ignoră. Există trei tipuri de comentarii.</p>
+<ul>
+	<li>
+		<span id="name">//</span> - un comentariu care face ca întreaga linie în care comentariul pare să nu fie citită de compilator.
+		<div id="bg">
+			<p>
+				<span id="name">int</span> a;<br>
+				<span id="text">//sfdfdsfdsfdsf</span>
+			</p>
+		</div>
+	</li>
+	<li>
+		<span id="name">/* */</span> - comentariu de gamă. Acest tip de comentariu face codul imposibil de citit de către compilator în dimensiunea dorită de utilizator:
+			<div id="bg">
+				<p>
+					<span id="name">int</span> a;<br>
+					<span id="text">/* sfdfdsfdsfdsf</span><br>
+					<span id="text">2324dsdsf */</span>
+				</p>
+			</div>
+	</li>
+	<li>
+		<span id="name">/** */</span> - comentariu pentru documentare. Când doriți să citiți documentația, puteți întâlni câteva elemente:
+		<ul>
+			<li>
+				<span id="name">@param</span> - este folosit pentru a arăta ce parametri trec metodei și ce valoare ar trebui să aibă aceștia.
+			</li>
+			<li>
+				<span id="name">@return</span> - este folosit pentru a indica rezultatul pe care îl va produce metoda
+			</li>
+			<li>
+				<span id="name">@throw</span> - este folosit pentru a indica faptul că o metodă va arunca o excepție sau o eroare dacă este dată o anumită intrare.
+			</li>
+			<li>
+				<span id="name">@since</span> - este folosit pentru a indica cea mai veche versiune de Java în care această clasă sau metodă a fost disponibilă.
+			</li>
+			<li>
+				<span id="name">@author</span> - folosit pentru a identifica autorul.
+			</li>
+			<li>
+				<span id="name">@exception</span> - це те саме, що й <span id="name">@throw</span>, dar <span id="name">@exception</span> funcționează pe o versiune anterioară.
+			</li>
+			<li>
+				<span id="name">{@code</span> cod <span id="name">}</span> - afișează informațiile așa cum sunt, fără procesare html
+			</li>
+			<li>
+				<span id="name">@deprecated</span> - descrie o clasă sau un membru depreciat.</li>
+		</ul>
+
+
+	</li>
+</ul>
+</body>
+</html>

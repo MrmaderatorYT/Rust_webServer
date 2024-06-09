@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Constante</h1>
+<p>Constantele pot fi folosite pentru a salva date. Variabilelor constante li se poate atribui o valoare o singură dată. Există un cuvânt cheie <span id="name">final</span> pentru aceasta. De obicei, numele variabilelor constante sunt scrise cu majuscule, adică astfel:</p>
+<div id="bg">
+	<span id="name">final int</span> NUMBER = <span id="number">50</span>
+</div>
+<p>Dar puteți scrie din registrul inferior:</p>
+<div id="bg"><span id="name">final int</span> number = <span id="number">50</span>;</div>
+<p>De obicei, constantele sunt statice, adică:</p>
+<div id="bg"><span id="name">static final int</span> a;</div>
+<p>Dar ele sunt utilizate în general atunci când se declară în interfețe, deoarece trebuie întotdeauna inițializate direct în interfață.</p>
+<h3>Clasuri constante</h3>
+<p>Dacă clasa este constantă, atunci nu poate avea subclase, adică moștenirea este interzisă:</p>
+<div id="bg"><span id="name">public final class</span> <span id="class">String</span>{<br>
+}<br>
+<span id="name">class</span> <span id="class">String1</span> <span id="name">extends</span> <span id="class">String</span>{<br>}
+</div>
+<p>În acest caz, va apărea o eroare. Există și o nuanță cu clasele abstracte, deoarece acestea sunt concepte care se exclud reciproc.<br>Folosind tablouri statice, nu putem modifica referința la obiect, dar putem modifica datele:</p>
+<div id="bg">
+	<span id="name">final int</span> [ ] array = {<span id="number">1</span>, <span id="number">2</span>, <span id="number">3</span>, <span id="number">4</span>, <span id="number">5</span>};<br>
+	array[<span id="number">0</span>] = <span id="number">0</span>;<br>
+	array = <span id="name">new int</span> [<span id="number">5</span>];<span id="text"> // eroare</span>
+</div>
+</body>
+</html>

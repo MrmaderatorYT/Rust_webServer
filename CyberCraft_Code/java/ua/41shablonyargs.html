@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Шаблони аргументів в узагальнених методах</h1>
+<p>Допустимo, що в нас є метод, який приймає дані якогось типу:</p>
+<div id = "bg">
+<span id = "key">public int</span> method(){<br>
+}
+</div>
+<p>Але ніхто нам не забороняв вказувати невідомий тип. Шаблон аргументів вказується символом <span id = "key">?</span> і це є невідомим типом:</p>
+<div id = "bg">
+<span id = "key">boolean</span> method(Class&lt?> name){<br>
+<span id = "text">//описання</span><br>
+}
+</div>
+<p>Також ми можемо обмежити діапазон об'єктів, вказавши суперклас:</p>
+<div id = "bg">
+<span id = "key">public void</span> method(ArrayList&lt? <span id = "key">extends</span> SuperClss> variable){<br>
+<span id = "text">//описання</span><br>
+}
+</div>
+<p>У цьому випадку можна використовувати класи, які є спадкоємниками SuperClss, а String та інші ми не можемо використовувати, якщо вони не використовувалися в SuperClss</p>

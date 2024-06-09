@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Obiecte subclase și modificarea superclasei. Moștenire.</h1>
+<p>Voi începe cu moștenirea. Moștenirea este, să spunem, cel mai puternic mecanism de programare. Logica moștenirii este foarte simplă: atunci când se creează sau se descrie o clasă, o clasă exterioară, creată anterior sau, din nou, descrisă este luată ca bază. Acest lucru economisește timp, volumul codului și compatibilitatea codului. Cuvântul cheie <span id="name">extends</span>:</p> este folosit pentru imitare
+<div id="bg">
+	<p><span id="name">class</span> <span id="class">subclasă</span> <span id="name">extends</span> <span id="class">Super clasa</span>{<br>
+	cod și așa mai departe<br>
+}
+</p>
+</div>
+<p>Să creăm o superclasă <span id="class">SuperClass</span> și să o lăsăm goală. Și avem o subclasă <span id="class">Main</span> și acum putem moșteni superclasa <span id="class">SuperClass</span>:</p>
+<div id="bg">
+	<p><span id="name">class</span> <span id="class">Main</span> <span id="name">extends</span> <span id="class">SuperClass</span>{<br>
+	cod și așa mai departe<br>
+}<br>
+<span id="name">class</span> <span id="class">SuperClass</span>{<br>
+}
+</p>
+</div>
+<p>Hai să mergem la superclasă. Dar să scriem o variabilă care va fi egală cu 1 cu o metodă care va scoate valoarea:</p>
+<div id="bg">
+	<p><span id="name">class</span> <span id="class">Main</span> <span id="name">extends</span> <span id="class">SuperClass</span>{<br>
+	cod și așa mai departe<br>
+}<br>
+<span id="name">class</span> <span id="class">SuperClass</span>{<br>
+<span id="name">int</span> number = <span id="number">1</span>;<br>
+<span id="name">void</span> show(){<br>
+System.out.println(<span id="text">"Numeric: "</span>+number);<br>
+}<br>
+}
+</p>
+</div>
+<p>Să revenim la subclasa <span id="class">Main</span> și să creăm o variabilă <b>s</b> de tipul <span id="name">char</span></span> p>
+<div id="bg">
+	<p><span id="name">class</span> <span id="class">Main</span> <span id="name">extends</span> <span id="class">SuperClass</span>{<br>
+	<span id="name">char</span> s;<br>
+}<br>
+<span id="name">class</span> <span id="class">SuperClass</span>{<br>
+<span id="name">int</span> number = <span id="number">1</span>;<br>
+<span id="name">void</span> show(){<br>
+System.out.println(<span id="text">"Numeric: "</span>+number);<br>
+}<br>
+}
+</p>
+</div>
+<p>Ми в підкласі <span id="class">Main</span> спадкували суперклас
+<span id="class">SuperClass</span> și datorită acesteia, subclasa <span id="class">Main</span> descrie metoda <b>show</b> și variabila <b> număr</ b>.<br>
+Conceptul de superclasă este relativ: o clasă poate fi o superclasă a unei clase și, în același timp, poate fi ea însăși o subclasă a unei alte clase. Acest tip de moștenire se numește moștenire pe mai multe niveluri.<br>Un subiect anterior a folosit cuvântul cheie <span id="name">this</span>. Astăzi ni se alătură „antonimul” acestui cuvânt cheie, și anume - <span id="name">super</span><br>
+<span id="name">this</span> - reprezintă instanța curentă a clasei.<br>
+<span id="name">super</span> - reprezintă o superclasă.<br>Să creăm un exemplu:
+</p>
+<div id="bg">
+	<p>
+		<span id="name">class</span> <span id="class">A</span>{<br>
+	А(){<br>
+System.out.println(<span id="text">"Constructor fără argumente din clasa A"</span>);<br>
+	}<br>
+A(String args){<br>
+System.out.println(<span id="text">"Un constructor cu un argument din clasa A"</span>);<br>
+}<br>
+	}<br>
+	<span id="name">class</span> <span id="class">B</span> <span id="name">extends</span> <span id="class">A</span>{<br>
+	B(){<br>
+<span id="name">this</span>(<span id="text">""</span>); <span id="text">// apelarea constructorului cu un argument din clasa B</span><br>
+System.out.println(<span id="text">"Конструктор без аргументів класу В"</span>);<br>
+}<br>
+B(String args){<br>
+<span id="name">super</span>(<span id="text">""</span>); <span id="text">//apel cu un argument de clasa A</span><br> 
+System.out.println(<span id="text">"Un constructor cu un argument din clasa B"</span>);
+}<br>
+	}<br>
+	<span id="name">public class</span> Main{<br>
+<span id="name">public static void</span> main(String args[]){<br>
+B b = <span id="name">new</span> B();<br>
+}<br>
+}
+	</p>
+</div>
+</body>
+</html>

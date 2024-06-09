@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Цикл while</h1>
+<p>Ось вам стандартний код виконання циклу <span id="name">while</span>:
+	</p>
+<div id="bg">
+	<p><span id="key">while</span> (умова){<br>
+		команди<br>
+	}<br></p>
+</div>
+<p><span id="name">While </span> з англійської означає <u>поки</u>. Цей цикл перевіряє умову, яка в дужках. І якщо перевірка умови отримає значення <span id="name">true</span>, виконуються команди, а потім цей цикл знову запуститься і знову буде виконуватися команди і так далі. Щоб вийти з циклу, потрібно, щоб вийти з циклу, потрібно, щоб умова була <span id="name">false</span></p>
+<p>Ось простий код з використанням циклу:</p>
+<div id="bg">
+	<p>
+		<span id="key">int</span> a = <span id="number">0</span>;<br>
+		<span id="key">while</span> (a<<span id="number">5</span>){<br>
+			System.out.println(a);<br>
+		++a;<br>
+	}<br></p>
+</div>
+<p>Ми отримаємо в консолі п'ять значень: 0,1,2,3,4. Ми отримали число 0, бо це початок відліку і нуль також перевіряється Якщо код замінити місцями, тобто.</p>
+<div id="bg">
+	<p>
+		<span id="key">int</span> a = <span id="number">0</span>;<br>
+		<span id="key">while</span> (a<<span id="number">5</span>){<br>
+			++a;<br>
+		System.out.println(a);<br>
+	}<br></p>
+</div>
+<p>Ми отримаємо п'ять значень, але відповідь буде інша: 1,2,3,4,5. Ми спочатку додали значення, а потім ми його виводимо. Тобто  перше число - 0 і ми його додали і вийшло 1 і цю одиничку ми виводимо. В останній перевірці ми мали число 4, потім додали, а потім виводили і в цьому випадку ми отримали значення 5, хоч умова строга.</p>
+</body>
+</html>

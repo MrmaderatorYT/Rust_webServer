@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>HashMap</h1>
+<p>Розглянемо задачу, коли нам потрібно обробляти безліч даних... Мільйони даних інформації. І для цього є <span id="name">HashMap</span><br>
+<span id="name">HashMap</span> - це асоціативний масив. Але в нас може виникнути складність пошуку людини по паспорту чи внесення двох людей з однаковими паспортними даними, що є неможливим. І знову ж, тут нам допоможе HashMap.<br>
+Структура створення цього типу масиву дуже схожа з написанням ArrayList, де на першому місці ключ (Integer), далі значення (String):
+<div id="bg">
+	<p>
+		HashMap &lt;Integer, String> hashmap = <span id="key">new</span> HashMap&lt;>();
+
+	</p>
+</div>
+Додамо значення в HashMap завдяки методу <span id="name">put</span>:
+<div id="bg">
+	<p>
+		<span id="key">import</span> java.util.HashMap;<br>
+		<span id="key">public class</span> Main{<br>
+		<span id="key">public static void</span> main(String[] args){<br>
+		HashMap &lt;Integer, String> hashmap = <span id="key">new</span> HashMap&lt;>();<br>
+		hashmap.put(<span id="number">1</span>, <span id="text">"Ім'я"</span>);<br>
+		hashmap.put(<span id="number">2</span>, <span id="text">"Ім'я1"</span>);<br>
+		System.out.println(hashmap);<br>
+<span id = "text">#		{1=Ім'я, 2=Ім'я1}</span>
+
+	</p>
+</div>
+Ось інші методи:
+<ul>
+	<li>
+		<span id="name">put()</span> - додає елемент в кінці структури
+	</li>
+	<li>
+		<span id="name">get()</span> - повертає значення вказаного елементу
+	</li>
+	<li>
+		<span id="name">size()</span> - повертає кількість елементів структури
+	</li>
+	<li>
+		<span id="name">remove()</span> - видаляє вказаний елемент зі структури
+	</li>
+	<li>
+		<span id="name">containsKey()</span> - перевіряє наявність вказаного ключа
+	</li>
+	<li>
+		<span id="name">containsValue()</span> - перевіряє наявність вказаного елемента
+	</li>
+	<li>
+		<span id="name">clear()</span> - видаляє всі елементи зі структури
+	</li>
+	<li>
+		<span id="name">isEmpty()</span> - повертає наявність хоча б одного елементу
+	</li>
+	<li> <span id="name">putAll()</span> - поєднує два мапа в один
+	</li>
+</ul>
+<h3>Нюанси</h3>
+<p>Якщо ми захочемо створити новий елемент структури, але не вкажемо новий ключ, а тільки нове значення зі створеним ключем - елемент просто перезапише під відповідним ключем:</p>
+<div id="bg">
+	<p>
+		<span id="key">import</span> java.util.HashMap;<br>
+		<span id="key">public class</span> Main{<br>
+		<span id="key">public static void</span> main(String[] args){<br>
+		HashMap &lt;Integer, String> hashmap = <span id="key">new</span> HashMap&lt;>();<br>
+		hashmap.put(<span id="number">1</span>, <span id="text">"Ім'я"</span>);<br>
+		hashmap.put(<span id="number">2</span>, <span id="text">"Ім'я1"</span>);<br>
+		System.out.println(hashmap);<br>
+		hashmap.put(<span id="number">1</span>, <span id="text">"Ім'я1"</span>);<br>
+		System.out.println(hashmap);<br>
+<span id = "text">		{1=Ім'я, 2=Ім'я1}<br>
+		{1=Ім'я1, 2=Ім'я1}<br></span>
+
+	</p>
+</div>
+</p>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Змінні</h1>
+Змінні утворюють фундаментальні будівельні блоки будь-якої мови програмування. Програмування скриптів shell і bash пропонує змінні, як і інші мови.<br>
+
+Змінна служить контейнером для зберігання даних у програмуванні. Він містить вказівник на розташування даних у пам’яті.<br>
+Оголошення змінної відбувається так:
+<div id = "bg">
+variableName=VariableValue
+</div>
+variableName - це ім’я змінної, яка може містити будь-яку комбінацію букв (від a до z, від A до Z), цифр (від 0 до 9) і символів підкреслення (_).<br>
+VariableValue - це значення, яке зберігається в змінній, і воно може бути рядком чисел або логічним значенням. Символ рівності (=) використовується для присвоєння значення змінній.<br>
+Ось більш детальний приклад:
+<div id = "bg">
+AGE = <span id = "number">25</span>
+</div>
+В даному прикладі ми створили змінну <b>age</b> із значенням 25.<br>
+Після оголошення та присвоєння змінним значень ви можете отримати доступ до них за допомогою символу долара <b>$</b>, за яким слідує назва змінної:
+
+<div id = "bg">
+AGE = <span id = "number">25</span><br>
+<span id = "key">echo</span> $AGE
+</div>
+Цей код оголошує змінну AGE зі значенням 25 і потім використовує <b>echo</b> для відображення значення AGE змінної. Символ <b>$</b> перед назвою змінної має вирішальне значення для доступу до її значення.<br>
+Також, ми можемо змінити значення тієїж змінної:
+<div id = "bg">
+AGE = <span id = "number">25</span><br>
+<span id = "key">echo</span> $AGE<br>
+AGE = <span id = "number">35</span><br>
+<span id = "key">echo</span> $AGE<br>
+<span id = "text">
+Вивід:<br>
+25<br>
+35
+</span>
+</div>
+<h4>Змінні тільки для читання</h4>
+Ці змінні фактично робляться константами. Цей тип змінної запобігає оновлення змінної:
+<div id = "bg">
+AGE = <span id = "number">25</span><br>
+<span id = "key">echo</span> $AGE<br>
+<span id = "key">readonly</span> AGE<br>
+AGE = <span id = "number">35</span><br>
+<span id = "key">echo</span> $AGE<br>
+<span id = "text">
+25<br>
+line 6: AGE: is read-only</span>
+</div>
+Присвоєння нового значення для змінної Age викликає помилку, а повідомлення про помилку: AGE: is read-only.
+<h4>Значення unset</h4>
+Ключове слово <b>unset</b> допомагає видалити значення з указаної змінної. Змінна залишається доступною, але друкує порожнє значення:
+<div id = "bg">
+AGE = <span id = "number">25</span><br>
+<span id = "key">echo</span> $AGE<br>
+<span id = "key">unset</span> AGE<br>
+<span id = "key">echo</span> "empty":$AGE<br>
+<span id = "text">
+25<br>
+empty:</span>
+</div>
+<h2>Область змінних</h2>
+<ul>
+<li>Локальні змінні</li>
+<li>Глобальні змінні</li>
+</ul>
+<h4>Глобальні змінні</h4>
+Змінні, оголошені в сценарії оболонки, називаються глобальними змінними.<br>
+Доступ до глобальних змінних можна отримати в межах функції або будь-яких вкладених блоків файлу сценарію оболонки.<br>
+Змінна за замовчуванням, оголошена у файлі сценарію, називається глобальною змінною.
+<div id = "bg">
+setAge() {<br>
+    <span id = "key">echo</span> <span id = "text">"Inside Function Age: $AGE"</span><br>
+}<br>
+AGE = <span id = "number">40</span><br>
+setAge<br>
+<span id = "key">echo</span> <span id = "text">"Script Age: $tmp"</span><br>
+<br>
+<span id = "text">Inside Function Age: 40<br>
+Script Age: 40</span>
+</div>
+<h4>Локальні змінні</h4>
+Локальні змінні оголошуються всередині блоку коду або функції. Область цих змінних видима лише в межах блоку, де вони оголошені.
+<div id = "bg">
+<span id = "key">local</span> variableName = VariableValue
+</div>
+Створимо тепер більший приклад:
+<div id = "bg">
+setAge() {<br>
+    <span id = "key">local</span> AGE = <span id = "number">25</span><br>
+    <span id = "key">echo</span> <span id = "text">"Local Variable Age: $AGE"</span><br>
+}<br>
+AGE = <span id = "number">40</span><br>
+setAge<br>
+<span id = "key">echo</span> <span id = "text">"Global Age: $tmp"</span><br><br>
+<span id = "text">
+Local Variable Age: 25<br>
+Global Age: 40
+</span></div>
+<h2>Типи даних</h2>
+Сценарії Bash не є типізованою мовою, однак ви можете оголосити змінну з типом даних за допомогою команди declare. Залежно від типу змінної, вона дозволяє тип даних.
+<div id = "bg">
+<span id = "key">declare</span> options variablename = value
+</div>
+<h4>Усі типи даних</h4>
+<table>
+<th style="text-align:left">Тип зміннї</th>
+<th>Синтакс</th>
+<th>Опис</th>
+</tr></thead><tbody>
+<tr><td style="text-align:left">Масив</td><td>declare -a змінна</td><td>Створення масиву, яка зберігає якийсь текст/дані</td>	</tr>
+<tr><td style="text-align:left">Асоціативні масиви</td><td>declare -A змінна</td><td>Асоціативний масив</td></tr>
+<tr><td style="text-align:left">Integer</td><td>declare -i змінна</td><td>Числове значення, яке засунуте в змінну</td></tr>
+<tr><td style="text-align:left">Readonly</td><td>declare -r змінна</td><td>readonly змінні, не можуть змінити дані не пересвоєнням, не за допомогою <b>unset</b></td></tr>
+<tr><td style="text-align:left">Export</td><td>declare -x змінна</td><td>Експортує змінну та використовується всіма дочірніми процесами
+</td></tbody></table>
+<h4>Вивід змінних</h4>
+Є дві команди: <b>env</b>, <b>printenv</b>. Обидві ці команди перелічують усі змінні середовища терміналу. Різниця між цими командами та <b>echo</b> полягає в тому, що ця команда призначена для відображення тексту, переданого їй в аргументах. Наприклад, виклик <b>echo Hello, World!</b> виведе на екран рядок <b>"Hello, World!"</b>. Вона зазвичай використовується для виведення простих повідомлень на екран або для відображення значень змінних середовища.<br>
+Отже, основна різниця між цими командами полягає у їхній функціональності: echo виводить текст, env виводить список змінних середовища та їхні значення, а printenv лише виводить список змінних середовища без іншої функціональності.
+<h4>Змінні SHELL</h4>
+Це змінні, які встановлює Shell, а не користувач. Вони потрібні Shell для безперебійної роботи:
+<ul>
+<li>
+PWD - поточна директорія в якому відбуваютсья дії.</li>
+<li>Set-Location - змінити поточну директорії на нову, де будуть відбуватися наступні дії</li>
+<li>Rename-Item - перейменувати файл</li>
+<li>IFS - Internal Field Separator (внутрішній розділювач полів). За замовчуванням він є пробілом, встановлений оболонкою. Використовується для розділення рядків.</li>
+<li>PATH - містить розділений крапкою з комою шлях команд, налаштований на пошук команд</li>
+<li>UID - друкує ідентифікаційний номер користувача</li>
+<li>Home - домашній каталог поточного користувача</li>
+
+</body>
+</html>

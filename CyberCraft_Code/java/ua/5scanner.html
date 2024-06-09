@@ -1,0 +1,42 @@
+	<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>Введення даних в консоль. Клас Scanner</h1>
+	<p>Навіщо я виділив якийсь клас Scanner під цілий урок?<br>
+		<span id="name">Scanner</span> - клас, який допоможе вводити дані в консоль.</p>
+		<h3 id="question">Початок роботи</h3>
+		<p>Щоб почати працювати з цим класом, потрібно його спочатку імпортувати:<br></p>
+		<div id="bg">
+        <p><span id="key">import</span> java.util.Scanner;
+    </div>
+    <p>імпорт відбувається завдяки ключовому слову <span id="name">import</span><br> Імпорт записується перед оголошенням класу:</p>
+    <div id="bg">
+        <p><span id="key">import</span> java.util.Scanner;<br>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+        	}<br>
+        }
+    </div>
+    <p>Створімо тепер змінну типу Scanner:</p>
+    <div id="bg">
+    	Scanner scanner = <span id="key">new</span> Scanner(System.in);
+    </div>
+    <p><span id="name">Scanner</span> - імпортований клас, це як тип змінної, як <span id="key">int</span>, але класу Scanner.<br> потім ми створили назву <b>scanner</b> назва може бути будь-якою.<br>Ми поставили символ "<b>=</b>", щоб присвоїти певні данні.<br><span id="name">new</span> потрібно для створення нового об'єкту на основі класу Scanner<br>Ми знову записали <b>Scanner</b>, щоб звернутися до методу класу Scanner.<br><b>System.in</b> - параметр, який дозволить зчитувати дані з консолі, але цього не достатньо.<br>Ми повинні створити змінну:<br></p>
+    <div id="bg">
+    	<p>String s = scanner.nextLine();</p>
+    </div>
+    <p>Як бачимо ми створили змінну <span id="variable">s</span> типу String та присвоїли значення змінної scanner, яку ми ствворили нещодавно.<br>
+    	<span id="name">.nextLine()</span> - звертається до данних, знаходить там наступний рядок, який він ще не зчитував та повертає його.<br>
+    	Також є різні методи типу <b>next</b>:<br>
+<ul>
+	<li><span id="name">.nextInt</span> - зчитує і повертає введене число.</li>
+<p>Замість nextInt можна вказати інший тип, як <span id="name">.nextByte</span> і так далі</p>
+<li><span id="name">.hasNextInt</span> - метод перевіряє, чи є наступна порція введених данних числом чи ні (повертає відповідно, <span id="name">true</span> чи <span id="name">false</span></li>
+<p>Замість hasNextInt можна вказати інший тип, як <span id="name">.hasNextByte</span> і так далі</p>
+
+</ul>
+    </p>

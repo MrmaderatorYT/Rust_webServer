@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Класи</h1>
+<p>В мові програмування R можна створити класи. В R існують два основних типи систем класів: <b>S3</b> та <b>S4</b></p>
+<h4>S3 клас</h4>
+<p>S3 класи - це найбільш простий та найпопулярніший тип класів у R. Вони дозволяють нам легко визначити класи та методи для цих класів без великої кількості коду. Як створюється клас такого типу:
+
+<div id="bg">
+	setClass(<span id = "text">"Person"</span>, slots = c(name = <span id = "text">"character"</span>, age = <span id = "text">"numeric</span>))
+</div>
+<p>В цьому прикладі ми створюємо клас <b>Person</b> з двома атрибутами. Також ми сказали, що атрибут <b>name</b> має рядковий тип даних, а <b>age</b> - числовий. <br>Тепер створимо об'єкт:</p>
+<div id = "bg">
+person1 &lt;- new(<span id = "text">"Person"</span>, name = <span id = "text">"Abra"</span>, age = <span id = "number">30</span>)
+</div>
+Ми створили змінну, яка є об'єктом класу <b>Person</b>, потім ми записали атрибути. Створюємо об'єкт за допомогою функції <b>new</b>.<br>
+Тепер, ми можемо додати метод до класу, тобто створюємо методи для роботи з цим класом:<br>
+<div id = "bg">
+print.Person &lt;- <span id = "key">function</span>(x){<br>
+cat(<span id = "text">"Person:"</span>, x@name, <span id = "text">", Age:"</span>, x@age, <span id = "text">"\n"</span>)<br>}
+</div>
+Тобто цей метод буде використовуватися для друку об'єктів класу <b>Person</b>. Також, тут присутній символ <b>@</b>. Він означає, що ми отримуємо доступ до слотів(по іншому атрибути, але змінна slots в параметрах класу говорить сама за себе) об'єкта використовується цей символ. Тобто, коли ми хочемо отримати доступ до слоту (атрибуту) об'єкта, ми використовуємо спочатку ім'я об'єкта, а потім ім'я слоту. В нашому випадку об'єкт <b>x</b> слоту(атрибуту) <b>name</b> та <b>age</b>.<br>Тепер використаємо об'єкт:
+<div id = "bg">
+print.Person(person1)<br>
+<span id = "text">#Person: Abra , Age: 30</span>
+</div>
+<h4>S4 класи</h4>
+Для роботи з цим типом класів ми повинні використовувати бібліотеку <b>methods</b>:
+<div id = "bg">
+library(methods)<br>
+setClass(<span id = "text">"Car"</span>,
+         slots = c(
+           make = <span id = "text">"character"</span>,
+           model = <span id = "text">"character"</span>,
+           year = <span id = "text">"integer"</span>
+         ))
+
+</div>
+У цьому прикладі ми визначаємо клас <b>Car</b> з трьома атрибутами: <b>make</b> (марка автомобіля), <b>model</b> (модель автомобіля) і <b>year</b> (рік випуску).<br>Тепер створимо об'єкт цього класу:
+<div id = "bg">
+my_car &lt;- new(<span id = "text">"Car"</span>, make = <span id = "text">"Toyota"</span>, model = <span id = "text">"Camry"</span>, year = <span id = "number">2020</span>)
+</div>
+Тепер додамо методи до класу. Для цього використовується функція <b>setMethod</b>:
+<div id = "bg">
+setMethod(<span id = "text">"show"</span>, <span id = "text">"Car"</span>,
+          <span id = "key">function</span>(object) {<br>
+            cat(<span id = "text">"Car Make:"</span>, object@make, <span id = "text">"\n"</span>)<br>
+            cat(<span id = "text">"Car Model:"</span>, object@model, <span id = "text">"\n"</span>)<br>
+            cat(<span id = "text">"Year:"</span>, object@year, <span id = "text">"\n"</span>)<br>
+          })
+</div>
+Цей метод <b>show</b> буде використовуватися для виведення деталей про автомобіль при виклику функції <b>print</b> або просто введення об'єкта <b>my_car</b> в консолі.<br>Тепер використаємо об'єкт:
+<div id = "bg">
+print(my_car)<br>
+<span id = "text">Car Make: Toyota<br>Car Model: Camry<br>Year: 2020</span>
+</div>
+</body>
+</html>

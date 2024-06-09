@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Значення null</h1>
+<p><span id = "key">null</span> - це значення, а не тип, тобто наприклад в цьому коді, змінна <b>a</b> має значення 5:</p>
+<div id = "bg">
+<span id = "key">int</span> a = <span id = "number">5</span>;
+</div>
+<p>Так само, які 5, <span id = "key">null</span> має значення. Також <span id = "key">null</span> використовується тільки до об'єктів, тобто до примітивів, як <span id = "key">int</span> і так далі, ми не зможемо використовувати значення <span id = "key">null</span>:</p>
+<div id = "bg">
+<span id = "key">char</span> a = <span id = "key">null</span>; <span id = "text">//помилка</span>
+</div>
+<p>Тобто це значення використовується таким способом:</p>
+<div id = "bg">
+String a = <span id = "key"> null</span>;			
+</div>
+<p>Також, як кожен примітив має значення за замовчуванням, наприклад у <span id = "key">int</span> - число 0, а у <span id = "key">boolean</span> - <span id = "key">false</span>, то значення за замовчуванням усіх об'єктів є <span id = "key">null</span>. Також, треба зазначити, що <span id = "key">null</span> це не є об'єктом та не є типом знову. Це просто спеціальне значення для об'єктів. Ми, навіть, можемо використати це значення до будь-якого типу, наприклад:</p>
+<div id = "bg">
+String a = <span id = "key">null</span>;<br>
+Integer b = <span id = "key">null</span>;<br>
+String a1 = (String)<span id = "key">null</span>;<br>
+Integer b1 = (Integer)<span id = "key">null</span>;<br>
+</div>
+<p>Як я казав, то <span id = "key">null</span> не може використовується до примітивних типів, бо значення <span id = "key">null</span> не може бути переведеним до того значення, яке ми вказали в типі, тобто:</p>
+<div id = "bg">
+<span id = "key">double</span> a = <span id = "key">null</span>; <span id = "text">//помилка</span>
+</div>
+<p>Але кожний примітив має клас оболонку. І якщо створити об'єкт на основі класу оболонки, а потім присвоїти до примітивного типу, ми отримаємо помилку компіляції <b>NullPointerException</b>:
+<div id = "bg">
+Integer a = <span id = "key">null</span>;<br>
+<span id = "key">int</span> b = (<span id = "key">int</span>)a;
+</div>
+<p>Це все із-за автоупаковки.</p>
+<h3>Автоупаковка, розпакування</h3>
+<span id = "key">Автоупаковка</span> - перетворення примітивних типів на еквівалентні об'єкти, реалізована автоматично.<br>
+<span id = "key">Розпакування</span> - зворотній процес автоупаковки.<br>
+<p>Тобто все це можна вказати як: процес перетворення об'єктів у відповідні їм примітивні типи. Приклад коду для автоупаковки та розпакування представлений нижче:</p>
+<div id = "bg">
+Integer integer = <span id = "number">9</span>; <span id = "text">// автоупаковка</span><br>
+<br>
+<span id = "key">int</span> in = <span id = "number">0</span>;<br>
+in = new Integer(<span id = "number">9</span>); <span id = "text">// розпаковка</span>
+</div>
+<h4>Коли використовується автоупаковка та розпакування? </h4>
+<p>
+
+Автоупаковка застосовується компілятором Java за таких умов:
+<ul>
+<li>
+Коли значення примітивного типу передається в метод як параметр методу, який очікує на об'єкт відповідного класу-оболонки.</li>
+<li>Коли значення примітивного типу надається змінної, відповідного класу оболонки.</li>
+</ul>
+</p>
+<p>Повернімося до оператору <span id = "key">instanceof</span>. Він буде виводити значення <span id = "key">false</span> в усіх випадках, якщо об'єктна змінна має значення <span id = "key">null</span>. Також ми можеемо порівнювати значення <span id = "key">null</span> використовуючи оператори <b>==</b> та <b>!=</b>, але не до арифметичних та логічних операторів.<br>
+Якщо порівнювати два значення <span id = "key">null</span> між собою, то отримаємо значення <span id = "key">true</span>.</>
+</body>
+</html>

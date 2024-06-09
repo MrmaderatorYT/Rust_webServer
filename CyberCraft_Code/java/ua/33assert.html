@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Assert</h1>
+<p><span id = "key">Assert</span> - це спеціальна конструкція, що дозволяє перевіряти припущення про значення довільних даних у довільному місці програми.<br>
+Ця конструкція може автоматично сигналізувати при виявлені некоректних даних, що зазвичай призводять до аварійного завершення програми. Але з першого вигляду - це дивна конструкція, яка спроможна "завалити" програму в невідповідний момент. І виходить питання "А навіщо вона нам?" Ця конструкція допоможе, якщо в якийсь момент часу деякі дані програми стали некоректними і ми не "завалили" програму відразу, а продовжили роботу, як ні в чому не бувало. Так як <span id = "key">assert</span> завершує програму відразу ж після виявлення некоректних даних, він дозволяє швидко локалізувати та виправити баги у програмі, що призвели до некоректних даних. Це його основне призначення.<br>
+<span id = "key">Assert</span> дозволяє відловлювати помилками у програмі на етапі компіляції або під час виконання. Синтаксиз конструкції простий:</p>
+<div id = "bg">
+<span id = "key">assert</span> умова;
+</div>
+<p>Умова - вираз, який при обчислені повинен дати булевий результат. І якщо результат дорівнює <span id = "key">true</span>, то твердження є істиним і ніяких дій не виконується.<br>
+Якщо ж умова дає <span id = "key">false</span>, це означає, що стався збій і створюється об'єкт виключення за замовчуванням: <b>AssertionError</b><br>
+Є ще інша форма написання <span id = "key">assert</span>:</p>
+<div id = "bg">
+<span id = "key">assert</span> умова : значення;
+</div>
+<p>Значення - те, що передається конструктору AssertionError. Це значення перетворюється на рядок і відображається, якщо умова хибна. Ось вам приклад використання <span id = "key">assert</span></p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">static int</span> val = <span id = "number">3</span>;</br>	
+<span id = "key">static int</span> getNum(){<br>
+<span id = "key">return</span> val--;<br>
+}<br>
+<span id = "key">public static void</span> main(String[] args){</br>
+<span id = "key">int</span> n;</br>
+<span id = "key">for</span>(<span id = "key">int</span> = <span id = "number">0</span>; i<<span id = "number">0</span>; i++){<br>
+n=getNum();<br>
+<span id = "key">assert</span> n><span id="number">0</span>; <span id = "text">//винекне збій, якщо n == 0</span>	<br>
+System.out.println(<span id = "text">"n дорівнює: "</span> + n);<br>
+}<br>
+}<br>
+}<br>
+---------------------------------------<br>
+n дорівнює: 3<br>
+n дорівнює: 2<br>
+n дорівнює: 1<br>
+Exception in thread "main"...
+</div>
+<p>Якщо ми запишемо іншим варіантом <span id = "key">assert</span>:
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">static int</span> val = <span id = "number">3</span>;</br>	
+<span id = "key">static int</span> getnum(){<br>
+<span id = "key">return</span> val--;<br>
+}<br>
+<span id = "key">public static void</span> main(String[] args){</br>
+<span id = "key">int</span> n;</br>
+<span id = "key">for</span>(<span id = "key">int</span> i = <span id = "number">0</span>; i<<span id = "number">0</span>; i++){<br>
+n=getnum();<br>
+<span id = "key">assert</span> n><span id="number">0</span> : <span id = "text">"n не підходить!"</span>; <span id = "text">//винекне збій, якщо n == 0</span>	<br>
+System.out.println(<span id = "text">"n дорівнює: "</span> + n);<br>
+}<br>
+}<br>
+}<br>
+---------------------------------------<br>
+n дорівнює: 3<br>
+n дорівнює: 2<br>
+n дорівнює: 1<br>
+Exception in thread "main"...
+</div>
+<p>До <span id = "key">assert</span> це все записувалось так:</p>
+<div id = "bg">
+<span id = "key">if</span>(n<<span id = "number">0</span>{<br>
+System.out.println(<span id = "text">n менше нуля"</span>);<br>
+<span id = "key">return</span>;<br>
+}
+</div>
+</body>
+</html>

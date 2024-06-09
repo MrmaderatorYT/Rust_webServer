@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Interfețe</h1>
+<p>
+<span id="name">Interfața</span> este o copie trunchiată a unei clase abstracte. Interfața conține declarația de metode și/sau constrângeri statice. Metodele sunt declarate doar în interfață. Procesul de implementare a unei interfețe într-o clasă seamănă cu moștenirea unei superclase abstracte într-o subclasă. In cazul interfetelor, clasa care implementeaza interfata trebuie sa contina o descriere a tuturor metodelor declarate in interfata. O circumstanță importantă este legată de faptul că aceeași clasă poate implementa mai multe interfețe în același timp. Implementarea interfețelor este descrisă în același mod ca o clasă normală, dar în loc de cuvântul cheie <span id="name">class</span>, trebuie să scriem <span id="name">interface</span> . <br>
+De ce interfețe?<br>
+Faptul este că moștenirea multiplă este interzisă în Java: o subclasă poate avea una și o singură superclasă. Aceasta este o limitare serioasă, deoarece, de exemplu, în limbajul C++, o clasă poate moșteni mai multe clase în același timp.<br>
+Un alt punct cheie: toate metodele declarate în interfață sunt publice. Adică, modificatorul de acces <span id="name">public</span> nu este necesar.
+</p>
+<div id="bg">
+	<span id="name">interface</span> <span id="name">MyInterface</span>{<br>
+<span id="name">int</span> number = <span id="number">100</span>;<br>
+}
+</div>
+<p>Să creăm un exemplu simplu de implementare a interfețelor:</p>
+<div id="bg">
+	<span id="name">interface</span> <span id="class">A</span>{<br>
+<span id="name">int</span> number = <span id="number">50</span>;<br>
+<span id="name">int</span> getNumber(<span id="name">double</span> x);<br>
+<span id="name">char</span> getSymbol(<span id="name">int</span> y);<br>
+}<br>
+<span id="name">class</span> <span id="class">MyClass</span> <span id="name">implements</span> <span id="class">A</span>{<br>
+<span id="name">public int</span> getNumber(<span id="name">double</span> x){<br>
+<span id="name">return</span> (<span id="name">int</span>) x;<br>
+}<br>
+<span id="name">public char</span> getSymbol (<span id="name">int</span> n){<br>
+<span id="name">return</span> (<span id="name">char</span>)(<span id="text">'A'</span> + n);<br>
+}<br>
+}<br>
+<span id="name">class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+MyClass obj = <span id="name">new</span> MyClass();<br>
+System.out.println(<span id="text">"Constanta statica: "</span> + MyClass.number);<br>
+System.out.println(<span id="text">"Întreg: "</span>+obj.getNumber(<span id="number">20.5</span>));<br>
+System.out.println(<span id="text">"Simbol: "</span>+obj.getSymbol(<span id="number">3</span>));<br>
+}<br>
+}<br>
+-----------<br>
+Constanta statica: 50<br>
+Număr întreg: 20<br>
+Simbol: D
+</div>
+<p><span id="name">return</span>(<span id="name">int</span>) x - tipuri de difuzare: variabilă <b>x</b> de tip <span id = "name">double</span> și l-am înlocuit cu <span id="name">int</span><br>
+<span id = "name">return</span> (<span id="name">car</span>)(<span id="text">'A'</span> + n); - am tradus numărul de serie al scrisorii în text.<br>
+</p>
+</body>
+</html>

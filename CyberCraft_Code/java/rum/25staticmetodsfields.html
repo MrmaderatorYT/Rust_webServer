@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Câmpuri și metode statice</h1>
+<p>Ideea de bază din spatele membrilor clasei statice este că un membru al clasei static este „comun” tuturor obiectelor acelei clase și există indiferent de prezența sau absența obiectelor clasei în program. Prin urmare, vă puteți referi la un membru static nu numai prin obiectul clasă, ci și direct prin clasă. Mai mult, ultima metodă este mult mai bună.<br>Pentru aceasta vom folosi cuvântul cheie <span id="name">static</span><br>Să creăm un exemplu fără un element static. Să creăm o clasă nouă într-un fișier nou numit Cat: </p>
+<div id="bg">
+	<span id="name">public class</span> <span id="class">Cat</span>{<br>
+<span id="name">int</span> type;<br>
+}
+</div>
+<p>Și acum în metoda principală <b>main</b> vom scrie codul:
+	<div id="bg"> <span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+Cat orangeCat = <span id="name">new</span> Cat();<br>
+orangeCat.type = <span id="number">1</span>;<br>
+Cat blackCat = <span id="name">new</span> Cat();<br>
+blackCat.type = <span id="number">3</span>;<br>
+System.out.println(<span id="text">"Orange: "</span> + orangeCat.type);<br>
+System.out.println(<span id="text">"Black: "</span> + blackCat.type);<br>
+}<br>
+}<br>
+-----------------<br>
+Orange: 1<br>
+Black: 3
+</div>
+<p>Și acum, vom declara variabila <b>tip</b> static:</p>
+	<div id="bg"> <span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+Cat orangeCat = <span id="name">new</span> Cat();<br>
+orangeCat.type = <span id="number">1</span>;<br>
+Cat blackCat = <span id="name">new</span> Cat();<br>
+blackCat.type = <span id="number">3</span>;<br>
+System.out.println(<span id="text">"Orange: "</span> + orangeCat.type);<br>
+System.out.println(<span id="text">"Black: "</span> + blackCat.type);<br>
+}<br>
+}<br>
+
+-----------------<br>
+Orange: 3<br>
+Black: 3
+</div>
+<p>Avem 3, nu 1, pentru că avem o variabilă pentru fiecare. Și de fiecare dată când îl înlocuim.</p>
+<h3>Clasuri statice</h3>
+<div id="bg"><span id="name">public class</span> <span id="class">One</span>{<br>
+<span id="name">public static class</span> <span id="class">Two</span>{<br>
+<span id="name">public int</span> type;<br>
+}<br>
+}
+</div>
+<p>Am creat clasa ca un fișier nou. Să mergem la clasa <span id="class">Main</span> și să declarăm o variabilă:</p>
+
+	<div id="bg"> <span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+One.Two two = <span id="name">new</span> One.Two();<br>
+two.type = <span id="number">50</span>;<br>
+System.out.println(<span id="text">"Text: "</span> + two.type);<br>
+}<br>
+}<br>
+-----------------<br>
+Text 50
+</div>
+<p>Pentru a folosi metode statice sau variabile sau clase, nu trebuie să creăm un obiect din această clasă. Există, de asemenea, câteva puncte cheie ale folosirii modificatorului <span id="name">static</span></p>
+<ul>
+	<li>Nu putem accesa membrii clasei nestatice în mijlocul unei metode sau bloc statice. Iată un exemplu care va duce la o eroare:</li>
+	<div id="bg">
+		<span id="name">public class</span> <span id="class">Counter</span>{<br>
+<span id="name">private int</span> count;<br>
+<span id="name">public static void</span> main(String[] args){<br>
+System.out.println(count); <span id="text">//помилка</span><br>	
+}<br>
+	}
+	</div>
+	<li>Nu putem suprascrie (Override) metodele statice.</li>
+</ul>
+</body>
+</html>

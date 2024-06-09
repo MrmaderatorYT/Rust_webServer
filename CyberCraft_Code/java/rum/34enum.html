@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<cap>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</cap>
+<corp>
+<h1>Enumerare</h1>
+<p><span id = "name">Enum</span> este un tip de date special care permite unei variabile să fie un set de constante predefinite. Variabila trebuie să fie egală cu una dintre valorile sale predefinite. Un exemplu tipic este direcția orizontului: sensul nord, sud, vest, est. Sunt constante, deci pot fi scrise, deși nu neapărat, cu majuscule. Iată un exemplu:</p>
+<div id="bg">
+<span id = "name">enum public</span> Compass{<br>
+NORTH, SOUTH, WEST, EAST;<br>
+}
+</div>
+<p>De asemenea, <span id = "name">enum</span> trebuie să aibă un modificator de acces. Dacă <span id = "name">enum</span> nu este imbricat într-o clasă, atunci trebuie să fie public. Dacă <span id = "name">enum</span> va fi creat ca fișier separat, modificatorul de acces <span id = "name">private</span> nu poate fi utilizat. Dar, dacă <span id = "name">enum</span> este imbricată într-o clasă, aceasta poate fi privată:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">enum private</span> <span id = "class">Data</span>{<br>
+NORTH, SOUTH, WEST, EAST;<br>
+<br>
+<br>
+</div>
+<p>Pentru a obține date de la <span id = "name">enum</span>, puteți folosi acest cod:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Test</span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+System.out.println(Compass.NORTH);<br>
+System.out.println(Compass.SOUTH);<br>
+System.out.println(Compass.WEST);<br>
+System.out.println(Compass.EAST);<br>
+<br>
+<br>
+-----------------------<br>
+NORD<br>
+SOUTH<br>
+WEST<br>
+EAST<br>
+</div>
+<p>De asemenea, puteți obține valorile folosind bucla <span id = "name">for-each</span> și metoda <b>.values()</b>:
+<div id="bg">
+<span id = "name">for</span>(Main s: Main.values()){<br>
+System.out.println(e).<br>
+}
+</div>
+De asemenea, este foarte convenabil să utilizați operatorul de selecție:
+<div id="bg">
+Main var = Main.EAST;<br>
+<span id = "name">comutați</span>(var){<br>
+<span id = "name">caz</span> NORTH:<br>
+System.out.println(<span id = "text">"Nord"</span>);<br>
+<span id = "name">break</span>;<br>
+<span id = "name">caz</span> SOUTH:<br>
+System.out.println(<span id = "text">"Sud"</span>);<br>
+<span id = "name">break</span>;<br>
+<span id = "name">caz</span> WEST:<br>
+System.out.println(<span id = "text">"Vest"</span>);<br>
+<span id = "name">break</span>;<br>
+<span id = "name">caz</span> EAST:<br>
+System.out.println(<span id = "text">"Est"</span>);<br>
+<span id = "name">break</span>;<br>
+<br>
+</div>
+<p>În cazul nostru, vom obține „Nord” în consolă, deoarece avem toate răspunsurile pentru schimbarea <b>var</b> sunt adevărate, dacă eliminăm cuvântul cheie <span id = "name">break< /span> , atunci vom obține toate opțiunile de răspuns. <br>
+Dar de ce am folosi <span id = "name">enum</span> când ne putem crea propriile variabile și totul? În primul rând, după cum s-a spus la început, enumerările - un set de constante <span id = "name">enum</span> sunt tratate ca tipuri de date și, din nou, datorită constantelor. Una dintre caracteristicile cheie trunchiate ale <span id = "name">enum</span> este incapacitatea de a moșteni.
+</p>
+</corp>
+</html>

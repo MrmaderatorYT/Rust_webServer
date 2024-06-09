@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Clasuri și metode generice</h1>
+<p>O Class generalizată este descrisă ca o Class normală, dar, desigur, există anumite particularități. În descrierea clasei, adăugăm un anumit parametru formal (sau parametri) și sunt declarați ca fiind cel care denotă tipul de date, iar în cazul creării unui obiect al clasei, identificatorul de tip este trecut ca parametru. . Parametrii care sunt identificați în descrierea clasei generalizate cu tipul (le voi numi parametri generalizați) sunt indicați între paranteze unghiulare în descrierea clasei după numele clasei:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Nume</span> <parameter(s)>{<br>
+<span id = "text">//descriere</span><br>
+}
+</div>
+<p>Clasele generalizate sunt folosite în astfel de cazuri, când o anumită „structură” sau „construcție” este implementată cu ajutorul unei clase, care are caracteristici universale și este slab dependentă de tipul de date de tratat. Parametrii de tip sunt pur și simplu enumerați cu virgule și acești parametri sunt utilizați în descrierea generică a clasei (ca identificatori de tip). Ca parametri de tip, în principiu, poate fi folosit orice identificator - principalul lucru este că nu este unul dintre cuvintele cheie înregistrate (cum ar fi <span id = "name">int</span> și altele</span>):
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "text">//descriere</span><br>
+}
+</div>
+<p>La crearea unui obiect bazat pe o Class generică, parantezele unghiulare din comanda de creare a variabilei obiect indică identificatorii de tip care ar trebui utilizați în locul parametrilor generici. De asemenea, identificatorii sunt specificați între paranteze unghiulare în instrucțiunile de creare a obiectului - între numele clasei și parantezele rotunde cu argumentele constructorului:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+Class &ltX, Q> obj = <span id = "name">new</span> Class &ltX, Q> (arguments);<br>
+}
+</div>
+<p>Există și o versiune simplificată:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+Class &ltX, Q> obj = <span id = "name">nou</span> Class &lt > (arguments);<br>
+}
+</div>
+<p>În acest caz, înlocuirea parametrilor generalizați în cazul creării obiectului este determinată pe baza identificatorilor specificați în primele paranteze unghiulare din primele paranteze unghiulare (în instrucțiunile de declarare a variabilei obiect).</p>
+<h4>Moștenirea claselor generalizate</h4>
+<p>Pentru a imita clasele universale, este necesar ca clasa principală și superclasa să aibă aceiași parametri:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "name">int</span> a;<br>
+<br>
+<span id = "name">clasa</span> <span id = "class">Main</span> &ltX, Q> <span id = "name">extends</span> <span id = "class" >Class</span> &ltX, Q>{<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>De asemenea, clasa principală poate adăuga și utiliza unii dintre parametrii proprii de tip:</p>
+<div id="bg">
+<span id = "name">clasa</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "name">int</span> a;<br>
+<br>
+<span id = "name">clasa</span> <span id = "class">Main</span> &ltX, Q, Z> <span id = "name">extends/span> <span id = " class">Class</span> &ltX, Q>{<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>Este posibil să existe și următoarea situație: când o Class poate să nu fie generalizată deloc:<p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "name">int</span> a;<br>
+<br>
+<span id = "name">class</span> <span id = "class">Main</span> <span id = "name">extends</span> <span id = "class">Clasa</span span> &ltInteger>{<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<h3>Metode generalizate</h3>
+<p>De obicei, metodele generice sunt statice. Sunt create în același mod ca și cele obișnuite, dar cu parametri.</p>
+<div id="bg">
+<span id = "span">static</span> <parameter> typeResult name (argumente){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>Iată cea mai simplă vizualizare pentru dvs.:</p>
+<div id="bg">
+<span id = "name">static</span> &ltX> <span id = "name">void</span> show(){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>Asta este</p>

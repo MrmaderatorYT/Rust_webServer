@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Інкапсуляція. Класи</h1>
+<p>Cтворімо клас <span id="class">Children:</span></p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">Children</span>{<br>
+<span id="key">int</span> age;<br>
+String name;<br>
+<span id="key">void</span> print_info(){<br>
+System.out.println(<span id="text">"Ім'я"</span> + name);<br>
+}<br>
+}
+</p>
+</div>
+<p>Тут ми створили метод, але метод не публічний, тобто його не можна використовувати в інших класах.<br><span id="name">Конструктори</span> - альтернатива звичайних методів. Це такі спеціальні методи. Вони викликаються при створенні нового об'єкта даного класу. Конструктори виконують ініціалізацію об'єкта та носять ім'я класу. У нас є клас <span id="class">Children</span> та видалимо метод та запишемо конструктор:</p>
+<div id="bg">
+	<p>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+		}<br>
+}<br>
+<span id="key">class</span> <span id="class">Children</span>{<br>
+<span id="key">int</span> age;<br>
+String name;<br>
+<span id="key">public</span> Children(String name, <span id="name">int</span> age){<br>
+<span id="key">this</span>.name = name;<br>
+<span id="key">this</span>.age = age;<br>
+}<br>
+}
+</p>
+</div>
+<p><span id="name">this</span> - ключове слово, яке вказує посилання на поточний екземпляр класу. Через це ключове слово ми можемо звертатися до змінних, мотодів об'єкта, а також викликати його конструктори. Після ключового слова ми ставимо крапку та звертаємося до змінної, яку створили і присвоїли до тією, яку ми створили в конструкторі. Перейдімо до головного класу <span id="class">Main</span>. Звернімося до класу <span id="class">Children</span>. Якщо чесно, то ми створюємо об'єкт на основі класу <span id="class">Children</span>, а отже запишемо:</p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Children children = <span id="name">new</span> Children(<span id="number">10</span>, <span id="text">"Ann"</span>);<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+<span id="name">int</span> age;<br>
+String name;<br>
+<span id="name">public</span> Children(String name, <span id="name">int</span> age){<br>
+<span id="name">this</span>.name = name;<br>
+<span id="name">this</span>.age = age;<br>
+}<br>
+}
+</p>
+</div>
+<p>Але в дужках потрібно записати дані, а саме вік, тобто age, та ім'я - name. Треба записувати в тому порядку, як ми записували в методі. Потім вивиедемо в консоль:
+	<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Children children = <span id="name">new</span> Children(<span id="number">10</span>, <span id="text">"Ann"</span>);<br>
+        	System.out.println(children.age);<br>
+        	System.out.println(children.name);<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+<span id="name">int</span> age;<br>
+String name;<br>
+<span id="name">public</span> Children(String name, <span id="name">int</span> age){<br>
+<span id="name">this</span>.name = name;<br>
+<span id="name">this</span>.age = age;<br>
+}<br>
+}
+</p>
+</div>
+</p>
+<p>Перейдімо до інкапсуляції.<br><span id="name">Інкапсуляція</span> - приховування даних у середині деякої області видимості. Для цього використовується методи доступу. Вони називаються Геттери та Сетери(<b>Getters and Setters</b>). Ми створили в класі <span id="class">Children</span> змінну <span id="name">int</span>. Якщо ми перед цією змінною напишемо модифікатор доступу <span id="name">private</span>, то ми не зможемо виводити змінну в класі <span id="class">Main</span>. Та й взагалі... Ми не зможемо використовувати її в інших класах. Для цього й існує Getter та Setter. Ми перезапишемо клас <span id="class">Children</span>: </p>
+<div id="bg">
+	<p>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Children children = <span id="name">new</span> Children(<span id="text">"Ann"</span>);<br>
+        	children.setAge(<span id="number">10</span>);<br>	
+        	System.out.println(children.getAge);<br>
+        	System.out.println(children.name);<br>
+		}<br>
+}<br>
+<span id="name">class</span> <span id="class">Children</span>{<br>
+    <span id="name">public int</span> getAge() {<br>
+        <span id="name">return</span> age;<br>
+    }<br>
+    <span id="name">public void</span> setAge(<span id="name">int</span> age) {<br>
+        <span id="name">this</span>.age = age;<br>
+    }<br>
+    <span id="name">public</span> String getName() {<br>
+        <span id="name">return</span> name;<br>
+    }<br>
+    <span id="name">public void</span> setName(String name) {<br>
+        <span id="name">this</span>.name = name;<br>
+    }<br>
+    <span id="name">private int</span> age;<br>
+    String name;<br>
+    <span id="name">public</span> <span id="class">Children</span>(String name){<br>
+        <span id="name">this</span>.name = name;<br>
+    }<br>
+
+}<br>
+--------------------<br>
+10<br>
+Ann<br>
+</p>
+</div>
+<p>Це ми створили геттер та сеттер в класі <span id="class">Children</span>. Ми створили для змінній <b>age</b> та <b>name</b>. Навіщо ми оголосили змінну <span id="name">private</span> до змінної та використовувати конструктори, якщо можна лише оголосити змінну <span id="name">public</span> до всіх? <br>Просто бува таке... Навіть дуже часто, що в процесі виконання програми змінній буде передано некоректне значення. Наприклад для значення віку буде передано від'ємне значення, що не повинне бути.
+</body>
+</html>

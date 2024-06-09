@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Імпортування бібліотек</h1>
+<p>Імпортування бібліотек дозволяють розширити стандартні методи, щоб не писати все з нуля</p>
+<p>Встановлення бібліотеки</p>
+<div id="bg">
+	install.packages(<span id = "text">"ggplot2"</span>)
+</div>
+<p>В даному випадку ми імпортуємо бібліотеку ggplot2, яка слугує для візуалізації даних.<br>Якщо бібліотека у вас встановлена, то кожного разу буде попередження про перевстановлення бібліотеки.<br>Отже, ми лише встановили бібліотеку, але не використовуємо її.</p>
+<div id = "bg">
+library(ggplot2)
+</div>
+В цьому випадку ми сказали прямо, що використовуємо бібліотеку. Що важливе - ми записуємо назву без лапок. Цей метод є найбільш поширеним і зазвичай використовується для імпортування бібліотек. Функція library() завантажує вказану бібліотеку і зробить всі її функції доступними в поточному сеансі.<br>
+Інший спосіб імпортування:
+<div id = "bg">
+require(ggplot2)
+</div>
+Функція <b>require</b> також завантажує вказану бібліотеку, але повертає <b>TRUE</b>, якщо бібліотека була успішно завантажена, і <b>FALSE</b>, якщо ні. Це може бути корисно для перевірки наявності бібліотеки перед її завантаженням.<br>
+Також, ми можемо імпортувати бібліотеку в будь-якому місці, наприклад:
+<div id = "bg">
+my_function &lt;- <span id = "key">function</span>() {<br>
+  library(ggplot2)<br>
+  <span id = "text"># код функції</span><br>
+}<br>
+</div>
+Створимо приклад, який створює графік з використанням бібліотеки <b>ggplot2</b>:
+<div id = "bg">
+library(ggplot2)<br>
+<span id = "text"># Створення даних</span><br>
+data &lt;- data.frame(<br>
+  x = c(<span id = "number">1</span>, <span id = "number">2</span>, <span id = "number">3</span>, <span id = "number">4</span>, <span id = "number">5</span>),<br>
+  y = c(<span id = "number">5</span>, <span id = "number">7</span>, <span id = "number">3</span>, <span id = "number">8</span>, <span id = "number">4</span>)<br>
+)<br>
+<br>
+<span id = "text"># Створення графіка</span><br>
+ggplot(data, aes(x = x, y = y)) +<br>
+  geom_line() +<br>
+  ggtitle(<span id = "text">"Простий графік лінії"</span>) +<br>
+  xlab(<span id = "text">"X-ось"</span>) +<br>
+  ylab(<span id = "text">"Y-ось"</span>)<br>
+</div>
+Запустивши код, отримаємо такий графік:
+<img src = "image/imageRlibs.jpeg">
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<cap>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</cap>
+<corp>
+<h1>synchronized fluxurilor</h1>
+<p>Există unele probleme cu firele de execuție care pot provoca confuzie, se utilizează sincronizarea. Metoda poate avea modificatorul <span id = "name">synchronized</span>. Când un fir de execuție se află într-o metodă sincronizată, toate celelalte fire care încearcă să-l apeleze în aceeași instanță trebuie să aștepte. Acest lucru evită confuzia atunci când mai multe fire de execuție încearcă să apeleze metoda.</p>
+<div id="bg">
+<span id = "name">synchronized void</span> method(String msg);<br>
+</div>
+<p>În aceasta, modificatorul este un modificator, dar poate fi un operator. Putem include apeluri de metodă ale oricărei clase în blocul <span id = "name">synchronized</span>:
+</p>
+<div id="bg">
+<span id = "name">synchronized</span> (obiect){<br>
+<span id = "text">//instrucțiuni de sincronizat.<br>
+}
+</div>
+<p>Să creăm un exemplu de exemplu:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+Obiect obiect = <span id = "name">new</span> Object();<br>
+<span id = "name">public void</span> doSomething(){<br>
+<span id = "text">// ceva logică</span><br>
+<span id = "name">synchronized</span> (obj){<br>
+<span id = "text">//logic care este disponibil simultan numai pentru primul fir</span><br>
+}<br>
+}<br>
+}
+</div>
+<p>Dacă un fir de execuție intră în mijlocul unui bloc de cod care este marcat cu cuvântul <span id = "name">synchronized</span>, acesta va fi instanțiat și toate celelalte fire vor încerca să intre în același bloc sau metoda trebuie să aștepte până când firul anterior se termină. Există, de asemenea, încă 2 opțiuni pentru sincronizarea codului - mai compacte și mai detaliate:</p>
+<div id="bg">
+<span id = "name">public void</span> a(){<br>
+<span id = "name">synchronized</span>(<span id = "name">this</span>){<br>
+<span id = "text">//logic</span><br>
+}<br>
+}
+</div>
+<p>Acest bloc de cod poate fi înlocuit după cum urmează:</p>
+<div id="bg">
+<span id = "name">public synchronized void method</span>(){<br>
+<span id = "text">//logic</span>
+}
+</div>
+<p>În primul caz, creăm un bloc synchronized imediat după introducerea metodei. Este sincronizat cu obiectul <span id = "name">this</span>, adică cu obiectul curent. În al doilea caz, creăm imediat o metodă sincronizată. Și aici nu este nevoie să specificați niciun obiect, deoarece întreaga metodă va fi sincronizată automat pentru toate obiectele clasei. De asemenea, dacă metoda conține informații extrem de importante și este statică, sincronizarea se va face pe clasă:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">MyClass</span>{<br>
+<span id = "name">private static</span> String name = <span id = "text">"Sam"</span>;<br>
+<span id = "name">private static</span> String name1 = <span id = "text">"Ann"</span>;<br>
+<span id = "name">public static void method</span>(){<br>
+<span id = "name">synchronized</span>(MyClass.<span id = "name">class</span>){<br>
+String s = name;<br>
+name = name1;<br>
+name1 = s;<br>
+}<br>
+}<br>
+}
+</div>
+<p>Dacă scrieți o versiune prescurtată, atunci nu este necesar să utilizați <b>MyClass.class</b>:</p>
+<div id="bg">
+ <span id = "name">public static synchronized void</span> method(){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+</body>
+</html>

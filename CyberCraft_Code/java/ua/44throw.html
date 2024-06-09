@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Оператор throw</h1>
+<p>Вийняток, доки воно не викинуто в систему, або коли воно вже перехоплене блоком <span id = "key">catch</span> - є об'єктом класу <b>Exception</b> (якщо точніше <b>Throwable</b>). Вся логіка роботи вийнятуів - особлива логіка поведінки JVM, як у її середовищі виконання викинуто вийняток. Ми можемо завжди вкинути помилку в JVM, яку щойно перехопили. І для цього існує ключове слово <span id = "key">throw</span>:</p>
+<div id = "bg">
+<span id = "key">throw</span> вийняток;
+</div>
+<p>вийняток - змінна, яка є в юлоці <span id = "key">catch</span>:</p>
+<div id = "bg">
+<span id = "key">try</span>{<br>
+<span id = "key">int</span> d = <span id = "number">210</span>;<br>
+}<br>
+<span id = "key">catch</span>(Exception except){<br>
+System.out.println(<span id = "text">"перехопили вийняток"</span>);<br>
+<span id = "key">throw</span> except;<br>
+}
+</div>
+<p>У цьому коді ми перехопили вийняток, вивели на екран напис про це і викинули його знову. Повторно викинути вийняток не може бути захоплений іншими блоками <span id = "key">catch</span> цього ж <span id = "key">try</span>-блоку. Також можна створити об'єкт виключення. Це просто об'єкт типу <b>Exception</b> або успадкованого від нього класу. І викинути його:</p>
+<div id = "bg">
+<span id = "key">try</span>{<br>
+<span id = "key">throw new </span>RuntimeException();<br>
+}<br>
+<span id = "key">catch</span>(Exception except){<br>
+System.out.println(<span id = "text">Перехопили вийняток"</span>);<br>
+<span id = "key">throw</span> except;<br>
+}
+</div>
+<p>У цьому прикладі ми створили новий об'єкт - виключення <b>RuntimeException</b> і відразу викинули його за допомогою оператора <span id = "key">throw</span>. Воно буде відразу захоплено блоком <span id = "key">catch</span>, так як тип <b>RuntimeException</b> успадкований від типу <b>Exception</b>. Блок <span id = "key">catch</span> захоплює об'єкти-виключення всіх класів, успадкованих від класу <b>Exception</b></p>

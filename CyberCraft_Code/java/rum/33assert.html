@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>assertți</h1>
+<p><span id = "name">Assert</span> este un construct special care vă permite să verificați ipotezele despre valoarea datelor arbitrare într-un loc arbitrar din program.<br>
+Acest design poate semnala automat când sunt detectate date incorecte, ceea ce duce de obicei la o întrerupere de urgență a programului. Dar, la prima vedere, acesta este un design ciudat, care poate „strânge” programul într-un moment inoportun. Și apare întrebarea „De ce avem nevoie de ea?” Acest design va ajuta if la un moment dat unele date ale programului au devenit incorecte și nu am „crash” programul imediat, ci am continuat lucrul ca și cum nimic nu s-ar fi întâmplat. Deoarece <span id = "name">assert</span> încheie programul imediat după detectarea datelor incorecte, vă permite să localizați și să remediați rapid erorile din program care au condus la date incorecte. Acesta este scopul său Main.<br>
+<span id = "name">Assert</span> vă permite să detectați erori în program în timpul compilării sau în timpul execuției. Sintaxa construcției este simplă:</p>
+<div id="bg">
+<span id = "name">assert</span> condiție;
+</div>
+<p>O condiție este o expresie care, atunci când este calculată, ar trebui să dea un rezultat boolean. Și if rezultatul este <span id = "name">adevărat</span>, atunci assertția este adevărată și nu se ia nicio măsură.<br>
+if condiția returnează <span id = "name">false</span>, înseamnă că a avut loc o eroare și că obiectul de excepție implicit este creat: <b>AssertionError</b><br>
+Există o altă formă de scriere a <span id = "name">assert</span>:</p>
+<div id="bg">
+<span id = "name">assert</span> condiție: valoare;
+</div>
+<p>Valoarea este ceea ce este transmis constructorului AssertionError. Această valoare este convertită într-un șir și afișată if condiția este falsă. Iată un exemplu de utilizare a <span id = "name">assert</span></p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">static int</span> val = <span id = "number">3</span>;</br>
+<span id = "name">static int</span> getNum(){<br>
+<span id = "name">return</span> val--;<br>
+<br>
+<span id = "name">public static void</span> main(String[] args){</br>
+<span id = "name">int</span> n;</br>
+<span id = "name">for</span>(<span id = "name">int</span> = <span id = "number">0</span>; i<<span id = "number">0</span>; i++){<br>
+n=getNum();<br>
+<span id = "name">assert</span> n><span id="number">0</span>; <span id = "text">//fail if n == 0</span> <br>
+System.out.println(<span id = "text">"n este egal cu: "</span> + n);<br>
+<br>
+<br>
+<br>
+--------------------------------------<br>
+n este egal cu: 3<br>
+n este egal cu: 2<br>
+n este egal cu: 1<br>
+Excepție în firul „Main”...
+</div>
+<p>if scriem altă opțiune <span id = "name">assert</span>:
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">static int</span> val = <span id = "number">3</span>;</br>
+<span id = "name">static int</span> getnum(){<br>
+<span id = "name">return</span> val--;<br>
+<br>
+<span id = "name">public static void</span> main(String[] args){</br>
+<span id = "name">int</span> n;</br>
+<span id = "name">for</span>(<span id = "name">int</span> i = <span id = "number">0</span>; i<<span id = " număr">0</span>; i++){<br>
+n=getnum();<br>
+<span id = "name">assert</span> n><span id="number">0</span> : <span id = "text">"n nu este potrivit!"</span>; <span id = "text">//fail if n == 0</span> <br>
+System.out.println(<span id = "text">"n este egal cu: "</span> + n);<br>
+<br>
+<br>
+<br>
+--------------------------------------<br>
+n este egal cu: 3<br>
+n este egal cu: 2<br>
+n este egal cu: 1<br>
+Excepție în firul „Main”...
+</div>
+<p>Înainte de <span id = "name">assert</span>, totul era scris astfel:</p>
+<div id="bg">
+<span id = "nume">if</span>(n<<span id = "număr">0</span>{<br>
+System.out.println(<span id = "text">"n este mai mic decât zero"</span>);<br>
+<span id = "name">return</span>;<br>
+}
+</div>
+</body>
+</html>

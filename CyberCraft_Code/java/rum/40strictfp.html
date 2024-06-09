@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Modificatorul strictfp</h1>
+<span id = "name">strictfp</span> - modificator care limitează precizia constrângerilor cu <span id = "name">float</span> și <span id = "name">duble</span> prin format IEEE (Institutul de Ingineri Electrici). Acest lucru este necesar pentru a asigura portabilitatea. Faptul este că JVM-ul folosește toată precizia posibilă a procesorului și este diferit pe sisteme diferite, astfel încât rezultatul poate fi diferit. Acest modificator poate fi aplicat claselor, interfețelor și metodelor. Folosind acest modificator, vom obține același comportament atunci când manipulăm numerele în virgulă mobilă pe toate platformele.
+<div id="bg">
+<span id = "name">clasa strictfp</span> <span id = "class">Main</span>{<br>
+<span id = "name">double</span> num1 = <span id = "number">10e+102</span>;<br>
+<span id = "name">double</span> num2 = <span id = "number">6e+08</span>;<br>
+<span id = "name">double</span> calc(){<br>
+<span id = "name">return</span> num1+num2;<br>
+}
+</div>
+<p>Într-o clasă, indică faptul că toate metodele de pe toate sistemele vor returnna numere cu aceeași precizie. Dacă numerele 0,112 și 0,113 sunt comparate cu cea mai apropiată sutime, acestea vor fi aceleași.
+</p>
+</body>
+</html>

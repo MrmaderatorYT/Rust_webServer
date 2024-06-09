@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Перевизначення методів</h1>
+<p>Буває таке, що в класі існує чимало методів з однаковою назвою, але різними аргументами. Уявімо у нас є один метод, який повинен виконувати різні речі, залежно від того, в якому класі він був виконаний:</p>
+<div id="bg">
+	<span id="key">public class</span> <span id="class">Car</span>{<br>
+<span id="key">public void</span> Car1(){<br>
+System.out.println(<span id="text">"Car"</span>);<br>
+}<br>
+}
+</div>
+<p>Це батьківський клас і створимо інші в окремих файлах: <span id="class">One</span>, <span id="class">Two</span></p>
+<div id="bg">
+	<span id="key">public class</span> <span id="class">One</span> <span id="key">extends</span> <span id="class">Car</span>{<br>
+<span id="question">@Override</span><br>
+<span id="key">public void</span> car1(){<br>
+System.out.println(<span id="text">"перша"</span>);<br>
+}<br>
+}
+</div>
+<p>Та клас <span id="class">Two</span>:</p>
+<div id="bg">
+	<span id="key">public class</span> <span id="class">Two</span> <span id="key">extends</span> <span id="class">Car</span>{<br>
+<span id="question">@Override</span><br>
+<span id="key">public void</span> car1(){<br>
+System.out.println(<span id="text">"друга"</span>);<br>
+}<br>
+}
+</div>
+<p>І тепер в головному методі, класу <span id="class">Main</span> ми викличемо класи, створивши об'єкт:</p>
+<div id="bg">
+	<span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+Car car1 = <span id="key">new</span> One();<br>
+Car car2 = <span id="key">new</span> Two();<br>
+car1.car1();<br>
+car2.car1();<br>
+}<br>
+}<br>
+<span id = "text">перша<br>
+друга</span>
+</div>
+<p>Перейдімо до нюансів:</p>
+<ul>
+	<li>Тип до перевизначеного методу не може відрізнятися від оригінального</li>
+<li>Модифікатор доступу також має бути однаковим</li>
+<li>У перевизначеного метода мають бути такі самі аргументи, як і в головного метода</li>
+</ul>
+</body>
+</html>

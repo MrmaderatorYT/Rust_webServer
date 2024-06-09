@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Matrice unidimensională</h1>
+<p><span id="name">Masiv</span> - este o secvență de elemente de același tip unite printr-un nume comun.<br>Declararea unei matrice este ca o variabilă normală, dar după identificatorul de tip, adică <span id="name">int</span>, < span id="name">char </span>, <span id="name">byte</span> și altele. Acest lucru permite determinarea tipului de elemente ale matricei, apoi sunt specificate paranteze pătrate goale, adică forma standard a unei matrice unidimensionale este următoarea:</p>
+<div id="bg">
+	<p>tastați[ ] numele variabilei;</p>
+</div>
+<p>Este posibil să nu fie specificate paranteze pătrate goale după identificatorul de tip, adică:</p>
+<div id="bg">
+<p>introduceți numele variabilei[ ];</p>
+</div>
+<p>Aici nu este deloc diferență. Prima opțiune, adică, de exemplu:</p>
+<div id="bg">
+	<p><span id="name">int</span>[ ] a;</p>
+</div>
+<p>Nu diferă de a doua opțiune, adică, de exemplu:</p>
+<div id="bg">
+	<p><span id="name">int</span> a [ ];</p>
+</div>
+<p>În majoritatea cazurilor, vom folosi prima opțiune, deoarece a fost creată special pentru Java. Adică să aibă un stil de scriere, ca în Java. Iar al doilea este pentru programatorii care au trecut de la limbajul de programare <b>C</b> la Java. Și pentru a face mai convenabil pentru hackeri să scrie cod, au făcut această opțiune.<br>Pentru a crea o matrice, utilizați operatorul <span id="name">new</span><br><span id=" name">new</ span> - alocă memorie pentru un obiect, în cazul nostru pentru o matrice.<br><span id="name">Dimensiunea matricei</span> - numărul de elemente din matrice. <br>Mărimea matricei este indicată între paranteze drepte după identificatorul de tip al elementelor matricei, deci avem:</p><div id="bg">
+	<p><span id="name">new</span> a;</p>
+</div>
+<p>Această linie creează o matrice. O referință la o matrice este creată după cum urmează:</p>
+<div id="bg">
+<p>tip[ ] variabilă;</br>
+variabilă = <span id="name">new</span> tip [ mărime ];
+</div>
+<p>În prima linie am creat o matrice și i-am dat un nume și un tip, pe a doua linie am alocat memorie pentru această matrice. Aceste două linii pot fi combinate într-una singură:</p>
+<div id="bg">
+<p>type[ ] variabilă a = <span id="name">new</span> tip [size];</p></div>
+<p>Să creăm un exemplu:</p>
+<div id="bg">
+	<p><span id="name">int</span>[ ] arr;</br>
+		arr = <span id="name">new</span> int [<span id="number">10</span>];
+</div>
+<p>În această linie, am alocat memorie pentru 10 elemente de tip <span id="name">int</span>. Aceste două linii pot fi din nou combinate într-una singură:</p>
+<div id="bg">
+	<p><span id="name">int</span>[ ] arr = <span id="name">new int</span> [<span id="number">10</span>];
+</div>
+<h4>Acum să trecem la punctul cheie:</h4>
+<p>Primul element al matricei are valoarea 0.</p>
+<p>Acum, dacă trebuie să avem o valoare când creăm o matrice. Poate fi creat după cum urmează:</p>
+<div id="bg">
+<p>type[ ] variabilă a = {date}</p>
+</div>
+<p>Iată unul dintre exemple:</p>
+<div id="bg">
+	<p>String [ ] cats = {<span id="text">"cat1"</span>, <span id="text">"cat2"</span>, <span id="text">"cat3"</span>, <span id="text">"cat4"</span>};</p>
+</div>
+<p>Am creat o matrice de <b>pisici</b> și am specificat valorile între acolade, între ghilimele și virgule. Am creat o matrice de tip String și astfel putem crea o matrice de tip <span id="name">int</span></p>
+<div id="bg">
+	<p><span id="name">int</span> [ ] cats = {<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>};</p>
+</div>
+<p>Pentru a obține un element de matrice, trebuie să vă referiți la numărul de index. Mai întâi, să creăm o matrice și apoi să scoatem textul:</p>
+<div id="bg">
+	<p>String [ ] cars = {<span id="text">"BMV"</span>, <span id="text">"Ford"</span>, <span id="text">"Mazda"</span>};<br>
+		System.out.println(cars[<span id="number">0</span>]);<br>
+		-------------------------<br>
+		BMV
+</div>
+<p>Acum, să trecem la modificarea elementelor de date:</p>
+<div id="bg">
+	<p><span id="name">int</span> [ ] nums = {<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>, <span id="number">40</span>};<br>
+		cars[<span id="number">0</span>] = <span id="number">20</span>;<br>
+		System.out.println(nums[<span id="number">0</span>]);<br>
+		-------------------------<br>
+		BMV
+</div>
+<p>Am înlocuit primul element al matricei, adică numărul 10 cu numărul 20. Dar a fost scris că există un cuvânt cheie <span id="name">new</span>, adică astfel:</p><div id="bg">
+	<p>String [ ] cars = <span id="name">new</span> {<span id="text">"BMV"</span>, <span id="text">"Ford"</span>, <span id="text">"Mazda"</span>};<br>
+		System.out.println(cars[<span id="number">0</span>]);<br>
+		-------------------------<br>
+		BMV
+</div>
+<p>Nu va exista nicio diferență între ele, dar în cazul fără <span id="name">new</span> nu putem scrie așa:</p>
+<div id="bg">
+	<p><span id="name">int</span>[ ] arr;<br>
+		arr = {<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>};
+</div>
+<p>Tipul de matrice trebuie să fie întotdeauna indicat, adică ca în a doua opțiune:</p>
+<div id="bg">
+	<p>
+		arr = <span id="name">new int</span>{<span id="number">10</span>, <span id="number">20</span>, <span id="number">30</span>};
+	</p>
+</div>
+</body>
+</html>

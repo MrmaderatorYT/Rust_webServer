@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Metode de suprascrie</h1>
+<p>Se întâmplă că într-o clasă există multe metode cu același nume, dar cu argumente diferite. Să ne imaginăm că avem o metodă care ar trebui să facă lucruri diferite în funcție de clasa în care a fost executată:</p>
+<div id="bg">
+	<span id="name">public class</span> <span id="class">Car</span>{<br>
+<span id="name">public void</span> Car1(){<br>
+System.out.println(<span id="text">"Car"</span>);<br>
+}<br>
+}
+</div>
+<p>Aceasta este clasa părinte și vom crea altele în fișiere separate: <span id="class">One</span>, <span id="class">Two</span></p>
+<div id="bg">
+	<span id="name">public class</span> <span id="class">One</span> <span id="name">extends</span> <span id="class">Car</span>{<br>
+<span id="question">@Override</span><br>
+<span id="name">public void</span> car1(){<br>
+System.out.println(<span id="text">"primul"</span>);<br>
+}<br>
+}
+</div>
+<p>Da clasa <span id="class">Two</span>:</p>
+<div id="bg">
+	<span id="name">public class</span> <span id="class">Two</span> <span id="name">extends</span> <span id="class">Car</span>{<br>
+<span id="question">@Override</span><br>
+<span id="name">public void</span> car1(){<br>
+System.out.println(<span id="text">"prieten"</span>);<br>
+}<br>
+}
+</div>
+<p>Și acum, în metoda principală, clasa <span id="class">Main</span>, vom apela clase prin crearea unui obiect:</p>
+<div id="bg">
+	<span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+Car car1 = <span id="name">new</span> One();<br>
+Car car2 = <span id="name">new</span> Two();<br>
+car1.car1();<br>
+car2.car1();<br>
+}<br>
+}<br>
+--------------------<br>
+primul<br>
+prieten
+</div>
+<p>Să trecem la nuanțe:</p>
+<ul>
+	<li>Tipul metodei suprascrise nu poate fi diferit de cel original</li>
+<li>Modificatorul de acces trebuie să fie, de asemenea, același</li>
+<li>Metoda suprascrisă trebuie să aibă aceleași argumente ca metoda principală</li>
+</ul>
+</body>
+</html>

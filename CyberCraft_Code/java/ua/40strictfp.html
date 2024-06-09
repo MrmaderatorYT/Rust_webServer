@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Модифікатор strictfp</h1>
+<span id = "key">strictfp</span> - модифікатор, що обмежує точність обмежень з <span id = "key">float</span> та <span id = "key">double</span> за форматом IEEE (інститут інженерів з електротехніки). Це потрібно, щоб забезпечити перенесення. Справа в тому, що JVM використовує всю можливу точність процесора, а вона на різних системах різна, тому і результат може вийти різний. Цей модифікатор може застосовуватись до класів, інтерфейсів та методів. При використанні цього модифікатора ми отримаємо однакову поведінку в ході маніпуляцій з числами з плаваючою крапкою на всіх платформах.
+<div id = "bg">
+<span id = "key">strictfp class</span> <span id = "class">Main</span>{<br>
+<span id = "key">double</span> num1 = <span id = "number">10e+102</span>;<br>
+<span id = "key">double</span> num2 = <span id = "number">6e+08</span>;<br>
+<span id = "key">double</span> calc(){<br>
+<span id = "key">return</span> num1+num2;<br>
+}
+</div>
+<p>У класі він позначає, що всі методи на всії системах повертатимуть числа з однаковою точністю. Якщо числа 0.112 та 0.113 порівнювати з точністю до сотих, то вони будуть однаковими.
+</p>
+</body>
+</html>

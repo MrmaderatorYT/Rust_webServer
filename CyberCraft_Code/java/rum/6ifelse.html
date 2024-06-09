@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operator condiționat</h1>
+<h3 id="question">Operator condiționat sau structură if-else</h3>
+</body>
+<p><span id="name">Operatorul condiționat</span> vă permite să executați diferite blocuri de comenzi în funcție de o anumită condiție, adevărată sau falsă.</p>
+<p>Pentru a declara un operator condiționat, trebuie să scrieți cuvântul cheie <span id="name">if</span> Iată vizualizarea standard a operatorului condiționat:</p>
+<div id="bg">
+<p><span id="name">if </span>(condiție){<br>
+cod<br>
+}
+</p>
+ </div>
+ <p>Сhai sa facem un exemplu:</p>
+ <div id="bg">
+<p>
+ 	<span id="name">import</span> java.util.Scanner;<br>
+        	<span id="name"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="name">public static void</span> main(String[] args){<br>
+        	Scanner scanner = <span id="name">new</span> Scanner(System.in);<br>
+        	<span id="name">int</span> a = scanner.nextInt();<br>
+        	<span id="name">if</span> (a><span id="number">100</span>){<br>
+        	System.out.println(<span id="text">"Число більше 100"</span>);<br>
+        	}<br>
+        	}<br>
+        }</p>
+    </div>
+ <p>Aceasta este o formă simplificată a declarației condiționate. Daca introducem un numar mai mare de 100, intram in consola: Numar mai mare de 100, dar daca introducem un numar mai mic sau egal cu 100, nu mai obtinem nimic datorita structurii simplificate.<br>
+  O clauză completă are un cuvânt cheie <span id="name">else</span><br>Structura completă a declarației condiționale arată astfel:</p><br>
+<div id="bg">
+<p><span id="name">if </span>(condiție){<br>
+cod<br>
+}<br>
+<span id="name">else</span> {<br>
+cod<br>
+}
+</p>
+ </div>
+ <p>Deci, logica de execuție a instrucțiunii condiționate este următoarea: dacă condiția este în bloc <span id="name">if</span> adevărat, codul din bloc este executat <span id="name">if</span>, dacă condiția din paranteze nu este adevărată, adică falsă, blocul este executat <span id="name">else</span> in acest bloc nu punem conditii, deoarece se va executa cand blocul nu este executat <span id="name">if</span>.<br>Să creăm un exemplu:<br></p>
+ <div id="bg">
+<p> <span id="name">int</span> a=<span id="number">5</span>;<br>
+<span id="name">if </span>(a<<span id="number">4</span>){<br>
+System.out.println(<span id="text">"no"</span>)<br>
+}<br>
+<span id="name">else</span> {<br>
+System.out.println(<span id="text">"yes"</span>)<br>
+}
+</p>
+ </div>
+ <p>Aici, am creat o variabilă numerică a și i-am atribuit numărul 5. Pe rândul următor, am creat o verificare: dacă variabila a este mai mică de 4. Dacă da, atunci vom primi textul nu în consolă, dacă nu (mai mare sau egal cu 4), vom primi da.</p>< br>
+  <p>Să trecem la un alt tip de operatori - cei imbricați. Un tip imbricat are un cuvânt cheie suplimentar <span id="name">else if</span></p>
+ <div id="bg">
+<p><span id="name">if </span>(condiție){<br>
+cod<br>
+}<br>
+<span id="name">else if</span>(condiție){<br>
+cod<br>
+}<br>
+<span id="name">else</span> {<br>
+cod<br>
+}
+</p>
+ </div>
+ <p><span id="name">else if</span> este scris după blocul <span id="name">if</span>. Pot exista multe blocuri <span>else if</span>, chiar și 100. Logica de execuție este următoarea: dacă condiția din blocul <span id="name">if</span> este falsă, <span id="name">else if</span>, dacă în acest bloc este executată o condiție falsă, se execută un alt bloc și așa mai departe, dacă există un <span id="name">else</span > blocați, apoi după toate condițiile false <span id="name ">else if</span> codul din blocul <span id="name">else</span> este executat, dacă nu există <span id ="name">else</span> bloc, nu vom primi nimic.</p>
+ <div id="bg">
+<p>
+<span id="name">int</span> a = <span id="number">11</span>;<br>
+<span id="name">if </span>(a<<span id="number">11</span>){<br>
+System.out.println(<span id="text">"first"</span>);<br>
+}<br>
+<span id="name">else if</span>(a==<span id="number">10</span>){<br>
+System.out.println(<span id="text">"second"</span>);<br>
+}<br>
+<span id="name">else if</span>(a==<span id="number">12</span>) {<br>
+System.out.println(<span id="text">"third"</span>);<br>
+}
+</p>
+ </div>
+ <p>Aici am creat o variabilă și am atribuit numărul 11. Apoi am creat prima verificare dacă variabila este mai mică de 11, atunci vom primi mai întâi textul în consolă dacă obținem o valoare falsă, adică dacă variabila <b >a</b> este mai mare sau egal cu 11. Următorul bloc este dacă variabila este 10, iar al treilea dacă este 12. În acest cod, nu <b>obține nimic</b>, deoarece verificarea a trei blocurile nu se află în intervalul numărului 11, ci al blocului <span id="name" >else</span> niciunul</p>
+ <div id="bg">
+<p>
+<span id="name">int</span> a = <span id="number">0</span>;<br>
+<span id="name">if </span>(a==<span id="number">0</span>){<br>
+System.out.println(<span id="text">"first"</span>);<br>
+}<br>
+<span id="name">else if</span>(a>=<span id="number">0</span>){<br>
+System.out.println(<span id="text">"second"</span>);<br>
+}<br>
+<span id="name">else</span>{<br>
+System.out.println(<span id="text">"third"</span>);<br>
+}
+</p>
+ </div>
+ <p>După cum puteți vedea, avem două verificări. Vom primi primul și totul în consolă, adică numai acesta, nu primul și al doilea, deoarece variabila noastră este inclusă și în a doua verificare. Nu vom primi o valoare, deoarece după primirea valorii <span id="name">true</span> adică adevărul, verificarea este finalizată</p>.
+  <p>Există un alt exemplu:<br></p>
+ <div id="bg">
+<p>
+<span id="name">int</span> a = <span id="number">0</span>;<br>
+<span id="name">if </span>(a==<span id="number">0</span>){<br>
+System.out.println(<span id="text">"first"</span>);<br>
+}<br>
+<span id="name">if</span>(a>=<span id="number">0</span>){<br>
+System.out.println(<span id="text">"second"</span>);<br>
+}<br>
+<span id="name">else</span>{<br>
+System.out.println(<span id="text">"third"</span>);<br>
+}
+</p>
+ </div>
+ <p>Aici vom primi două valori în consolă, și anume prima și a doua, deoarece există două blocuri <span id="name">if</span>. Primul bloc este vizualizarea simplificată, iar al doilea bloc <span id="name">if</span> este cel complet, adică <span id="name">else</span> este atașat ultimului <span id="name"block>if</span>.</p>
+  <p>Și dacă trebuie să verificăm textul?<br> Să creăm o variabilă de tipul <span id="name">String</span> și să setăm un text:</p>
+      <div id="bg">
+<p>
+String a = <span id="text">"text"</span>;
+</p>
+</div>
+<p>Pentru a verifica textul, metoda ne va ajuta
+<span id="name">equals()</span>. Această metodă este aceeași cu <b>==</b>, adică dacă textul este exact ca în cec:</p>
+<div id="bg">
+<p>
+String a = <span id="text">"text"</span>;<br>
+<span id="name">if</span>(a.equals(<span id="text">"text1"</span>)){<br>
+System.out.println(<span id="text">"text1"</span>);<br>
+}<br>
+<span id="name">else if</span> (a.equals(<span id="text">"text"</span>)){<br>
+System.out.println(text);<br>
+}<br>
+-------------------------<br>
+text
+</p>
+</div>
+<p>Dacă variabila <b>a</b> are același text ca cel verificat în metodă, și anume <b>text</b>, vom obține text</p> în consolă.
+</body>
+</html>

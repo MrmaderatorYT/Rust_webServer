@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Модифікатор transient</h1>
+<p>Цей модифікатор використовується в процесі серіалізації та десеріалізації об'єктів. Припустімо в нас є об'єкт, який має змінні, а ці змінні - значення. Усе це назвивається станом об'єктом.<br>
+<span id = "key">Серіалізація</span> - конвертація стану об'єкта в послідовність байтів. Ці байти зберігаються зазвичай у якомусь файлі.<br>
+<span id = "key">Десеріалізація</span> - зворотній процес серіалізації.<br>
+<span id = "key">transient</span> корисне в кількох сценаріях:<br>
+1. При використанні його для похідних змінних.<br>
+2. Це корисно для змінних, які не представляють стан об'єкта<br>
+3. Для будь-яких несеріалізованих посилань.<br>
+Щоб здійснити серіалізацію потрібно реалізувати інтерфейс <b>Serializable</b>:
+</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> <span id = "key">implements</span> Serializable{<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>Призначення цього модифікатора є в тому, коли виникає необхідність зберегти об'єкт класу. Модифікатор <span id = "key">transient</span> встановлюється перед оголошенням внутрішньої змінної класу, значення якої не повинно зберігатись у випадку збереження об'єкту. Завдяки цьому модифікатору можна вказати дані, які не потрібно зберігати при серіалізації об'єкту:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Book</span>{<br>
+String name;<br>
+String author;<br>
+<span id = "key">int</span> year;<br>
+<span id = "key">transient</span> String id;<br>
+}
+</div>
+<p>В цьому випадку змінна <b>id</b> не зберігається для запису в файл</p>
+</body>
+</html>

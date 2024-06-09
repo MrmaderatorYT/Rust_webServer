@@ -1,0 +1,39 @@
+<!DOCTYPE html><
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Коментарі</h1>
+<p><span id = "name">Коментарі</span> - частина коду, який не сприймає компілятор, ігноруючи його. Коментарі використовують зазвичай для опису коду, позначок від розробників.</p><br>
+Існує 2 види коментарів
+<ul>
+<li>Олнорядковий</li>
+<li>Багаторядковий</li>
+</ul>
+<div id="bg">
+	<span id = "text">#Однорядковий коментар</span><br>
+	AGE = <span id = "number">45</span><br>
+	<span id = "key">echo</span> <span id = "text">"Age: $AGE" #вивід тексту</span>
+</div>
+<p>Тут ми використали одинарний коментар. Одинарний коментар позначається символом решіткою (хештегом): <b>#</b>. Після цього символу ми можемо писати текст, який компілятор ьуде ігнорувати. Також слід звернути увагу на те, що якщо перед символом <b>#</b> є якийсь текст - цей текст не буде вважатися коментарем. Тобто в нашому випадку у нас виведеться в консолі текст: <b>Age: 45</b></p>
+<div id = "bg">
+<span id = "text">
+: '<br>
+multiline comments example1<br>
+multiline comments example2<br>
+multiline comments example3<br>
+'<br></span>
+<span id = "key">echo</span> <span id = "text">"testing multi-line comments"</span>
+</div>
+Цей синтаксис включає:
+<ul>
+<li>Коментарі починаються з двокрапки <b>:</b>, а потім <b>'</b></li>
+<li>Після цього було кілька рядків коментарів</li>
+<li>Коментарі закінчуються <b>'</b></li>
+</ul>
+<p>Це корисно для включення більшої кількості тексту, що охоплює кілька рядків, а також для документації.</p>
+</body>
+</html>

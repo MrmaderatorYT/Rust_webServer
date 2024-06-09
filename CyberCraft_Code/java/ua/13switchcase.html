@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Оператор вибору (switch-case)</h1>
+<p>Оператор вибору, відомий як <span id="name">switch-case</span> дозволяє виконувати різні блоки команд від значення деякого виразу. Оператор вибору розпочинається з ключового слова <span id="name">switch</span>. Після цього ставляться дужки в яких ставиться вираз, який буде мати різні значення. Створімо простий приклад:</p>
+<div id="bg">
+	<p><span id="key">int</span> x=<span id="number">2</span>;<br>
+		<span id="key">switch</span>(x){<br>
+</div>
+<p>Ми написали тут вираз для перевірки значень в змінній <b>x</b>. Як бачимо ми тут відкрили дужки для перевірки значень. Щоб перевіряти значення, нам потрібне ключове слово <span id="name">case</span>. Після ключового слова ми вказуємо значення, яке може набути. Ми порівнюємо зі значенням виразу в змінній <b>x</b>. Отже напишемо:</p>
+<div id="bg">
+	<p><span id="key">int</span> x=<span id="number">2</span>;<br>
+		<span id="key">switch</span>(x){<br>
+		<span id="key">case</span> <span id="number">1</span>:
+</div>
+<p>Після значення, яке буде порівнюватися, ставиться двокрапка. Це так звані дужки, в яких буде виконуватися код. Давайте виведемо якесь значення в консoль:</p>
+<div id="bg">
+	<p><span id="key">int</span> x=<span id="number">2</span>;<br>
+		<span id="key">switch</span>(x){<br>
+		<span id="key">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Число 1"</span>);
+</div>
+<p>Після звершення опису коду контейнера для певного значення зазвичай ставиться ключове слово <span id="name">break</span><br>
+<span id="name">break</span> зупиняє виконання команди, якщо отримаємо збіг перевірки. Створимо для інших значень:</p>
+<div id="bg">
+	<p><span id="key">int</span> x=<span id="number">2</span>;<br>
+		<span id="key">switch</span>(x){<br>
+		<span id="key">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Число 1"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id="key">case</span> <span id="number">2</span>:<br>
+		System.out.println(<span id="text">"Число 2"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id="key">case</span> <span id="number">3</span>:<br>
+		System.out.println(<span id="text">"Число 3"</span>);<br>
+		<span id="key">break;</span>
+		<span id = "text">//Число 2</span>
+</div>
+<p>Але якщо нам потрібно вивести одне й те саме значення для різних даних, наприклад вивести в консоль: "Число 2" для значень 2 та 1. Ми можемо записати звичайним кодом, як ми робили, замінивши просто виконання коду, але для економії місця та часу можна зробити наступним чином:</p>
+<div id="bg">
+	<p><span id="key">int</span> x=<span id="number">3</span>;<br>
+		<span id="key">switch</span>(x){<br>
+		<span id="key">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Число 1"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id="key">case</span> <span id="number">2</span>:<br>
+		<span id="key">case</span> <span id="number">3</span>:<br>
+		<span id="key">case</span> <span id="number">4</span>:<br>
+		System.out.println(<span id="text">"Число 2"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id = "text">Число 2</span>
+</div>
+<p>Але якщо в змінна набуде такого значення, якого не існує в блоці <span id="name">switch-case</span>?<br>Для цього нам допоможе ключове слово <span id="name">default</span></p>
+<span id="name">default</span> (з англ. за замовчуванням) - буде виконувати код в тому випадку, якщо значення змінної немає в контейнерах. Це ключове слово ставиться в самому кінці:
+<div id="bg">
+	<p><span id="key">int</span> x=<span id="number">100</span>;<br>
+		<span id="key">switch</span>(x){<br>
+		<span id="key">case</span> <span id="number">1</span>:<br>
+		System.out.println(<span id="text">"Число 1"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id="key">case</span> <span id="number">2</span>:<br>
+		System.out.println(<span id="text">"Число 2"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id="key">case</span> <span id="number">3</span>:<br>
+		System.out.println(<span id="text">"Число 3"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id="key">default</span>:<br>
+		System.out.println(<span id="text">"Число N"</span>);<br>
+		<span id="key">break;</span><br>
+		<span id = "text">Число N</span>
+</div>
+<p>Ще є певні варіанти написання цих блоків, але для пізніших версій, але це стандартна умова.</p>
+</body>
+</html>

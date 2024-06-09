@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Узагальнені класи та методи</h1>
+<p>Узагальнений клас описується так просто, як і звичайний, але зрозуміло існують певні особливості. В описанні класу ми додаємо певний формальний параметр (або параметри) і вони декларуються як такий, що позначає тип даних, а у випадку створення об'єкта класу ідентифікатор типу передається, як параметр. Параметри, котрі ототожнюються в описанні узагальненого класу з типом (буду називати їх узагальненими параметрами), вказуються в кутових дужках в описанні класу після імен класу:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Ім'я</span> <параметр(и) типу>{<br>
+<span id = "text">//описання</span><br>
+}
+</div>
+<p>Узагальнені класи використовують у таких випадках, коли за допомогою класу реалізується певна "структура" або "конструкція", яка має універсальні характеристики і слабо залежить від типу даних з якими доводиться мати справу. Параметри типу просто перераховуються через кому і ці параметри використовують в описанні узагальненого класу (як ідентифікатори типу). Як параметри типу можуть використовувати в принципі будь-який ідентифікатор - головне, щоб це було не одне з зареєстрованих ключових слів (як <span id = "key">int</span> та інші</span>):
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "text">//описання</span><br>
+}
+</div>	
+<p>У випадку створення об'єкта на основі узагальненого класу в кутових дужках у команді створення об'єктної змінної вказують ідентифікатори типу, які слід використовувати замість узагальнених параметрів. Також ідентифікатори вказуються в кутових дужках в інструкції створення об'єкта - між назвою класу і круглими дужками з аргументами конструктора:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+Class &ltX, Q> obj = <span id = "key">new</span> Class &ltX, Q> (аргументи);<br>
+}
+</div>
+<p>Також є спрощений варіант:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+Class &ltX, Q> obj = <span id = "key">new</span> Class &lt > (аргументи);<br>
+}
+</div>
+<p>В данному випадку підстановка для узагальнених параметрів у випадку створення об'єкту визначається на основі ідентифікаторів указаних у перших кутових у перших кутових дужках (в інструкції оголошення об'єктної змінної).</p>
+<h4>Наслідування узагальнених класів</h4>
+<p>Щоб наслідувати універсальні класи треба так, щоб основний клас і супер клас мав однакові параметри:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "key">int</span> a;<br>
+}<br>
+<span id = "key">class</span> <span id = "class">Main</span> &ltX, Q> <span id = "key">extends</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>Також головний клас може додавати та використовувати якісь свої параметри типів:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "key">int</span> a;<br>
+}<br>
+<span id = "key">class</span> <span id = "class">Main</span> &ltX, Q, Z> <span id = "key">extends</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>Також можна мати таку ситуацію: коли клас взагалі може не бути узагальненим:<p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Class</span> &ltX, Q>{<br>
+<span id = "key">int</span> a;<br>
+}<br>
+<span id = "key">class</span> <span id = "class">Main</span> <span id = "key">extends</span> <span id = "class">Class</span> &ltInteger>{<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<h3>Узагальнені методи</h3>
+<p>Зазвичай узагальнені методи є статичними. Вони створюються так само, як звичайні, але мають параметри.</p>
+<div id = "bg">
+<span id = "span">static</span> <параметр> типРезультату ім'я (аргументи){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>Ось вам найпростіший вигляд:</p>
+<div id = "bg">
+<span id = "key">static</span> &ltX> <span id = "key">void</span> show(){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>На цьому все</p>

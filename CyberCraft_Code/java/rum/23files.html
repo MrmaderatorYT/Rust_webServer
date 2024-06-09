@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Lucrul cu fișiere</h1>
+<p>Pentru a lucra cu fișiere, avem nevoie de o bibliotecă:</p>
+<div id="name">
+	<span id="name">import</span> java.io.File;
+</div>
+<p><span id="name">io</span> - I/O - Imput/Output, adică intrare și ieșire.<br>Să creăm un obiect bazat pe clasa File</p>
+<div id="bg">File file = <span id="name">new</span> File(<span id="text">"file.txt"</span>);</div>
+<p>În paranteze, am creat un fișier nou numit <b>file</b> și format <b>txt</b>. Pentru a lucra cu fișiere, este mai bine să utilizați blocuri <span id="name">try-catch</span>:</p>
+<div id="bg"><span id="name">import</span> java.io.File;<br>
+<span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+<span id="name">try</span>{<br>
+File file = <span id="name">new</span> File(<span id="text">"file.txt"</span>);<br>
+file.createNewFile();<br>
+}<br>
+<span id="name">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+<p>Am folosit <span id="name">IOException</span> pentru a ne ajuta să gestionăm erorile atunci când lucrăm cu fișiere. <b>.createNewFile</b> - metodă care creează un fișier. Adică, am creat o verificare, dacă fișierul nu este creat, atunci vom primi o eroare. Dar de ce trebuie să creăm un fișier de fiecare dată când pornește programul? Și pentru aceasta, înainte de a crea fișierul, să creăm o verificare a existenței fișierului:</p>
+<div id="bg"><span id="name">import</span> java.io.File;<br>
+<span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+<span id="name">try</span>{<br>
+File file = <span id="name">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="name">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+}<br>
+<span id="name">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+<p>În condiție, am creat o verificare: dacă fișierul există, atunci... Dar înainte de asta, am adăugat un semn de exclamare, care înseamnă <b>nu</b>, deci dacă fișierul nu există, creăm fișierul.</p> p>
+<h3 id="question">Scrierea de informații într-un fișier</h3>
+<p>Pentru a scrie informații într-un fișier, trebuie să importăm clasa <span id="name">FileWriter</span>:<br><span id="name">java.io.PrintWriter;</span > <br> Să creăm un obiect bazat pe această clasă în blocul <span id="name">try</span> și să scriem informațiile acolo:</p>
+<div id="bg"><span id="name">import</span> java.io.File;<br>
+<span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+<span id="name">try</span>{<br>
+File file = <span id="name">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="name">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+PrintWriter pw = <span id="name">new</span> PrintWriter(file);<br>
+pw.println(<span id="text">"CCS Code"</span>);<br>
+pw.close();<br>
+}<br>
+<span id="name">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+<p>În paranteze am scris variabila nume de fișier pe care am creat-o pe baza clasei File. Pentru a înregistra informații, am folosit metoda <span id="name">println</span>. Apoi, am folosit metoda <span id="name">close</span> pentru a închide fișierul. Închidem dosarul, pentru că este ca și cum ai ieși din apartament fără a închide apa.</p>
+<h3 id="question">Citirea datelor</h3>
+<p>Pentru a citi informații dintr-un fișier, trebuie să importam biblioteci, și anume <span id="name">BufferedWriter</span>:<br>
+<span id="name">import</span> java.io.BufferedReader;<br>
+Mai întâi, să creăm o variabilă bazată pe BufferedReader:
+<div id="bg">BufferedReader br = <span id="name">null</span>;</div>
+Am atribuit valoarea <span id="name">null</span>, ceea ce va clarifica faptul că această variabilă va însemna „nimic”. Vom scrie această variabilă înainte de <span id="name">try</span> span> bloc. După linia care închide fișierul, vom aloca memorie pentru variabila br și vom atribui o valoare și vom folosi o buclă <span id="name">while</span> pentru a scoate valorile către consolă și o variabilă care pur și simplu va scoate valorile în consolă::
+<div id="bg"><span id="name">import</span> java.io.File;<br>
+	<span id="name">import</span> java.io.BufferedReader;<br>
+<span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+BufferedReader br = <span id="name">null</span>;<br>
+<span id="name">try</span>{<br>
+File file = <span id="name">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="name">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+PrintWriter pw = <span id="name">new</span> PrintWriter(file);<br>
+pw.println(<span id="text">"CCS Code"</span>);<br>
+pw.close();<br>
+br = <span id="name">new</span> BufferedReader(<span id="name">new</span> FileReader(<span id="text">"file.txt"</span>));<br>
+String line;<br>
+<span id="name">while</span> ((line = br.readLine())!=<span id="name">null</span>){<br>
+System.out.println(line);<br>
+}<br>	
+}<br>
+<span id="name">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+}
+</div>
+Dacă linia este goală (valoare <span id="name">null</span>), atunci ciclul se termină. Să adăugăm un bloc <span id="name">finally</span>
+<span id="name">finally</span> - bloc care se aplică blocurilor <span id="name">try-catch</span>. Acest bloc va fi executat după ce blocul de instrucțiuni este finalizat. Se execută indiferent dacă se aruncă sau nu o excepție. Adică, acest bloc va fi executat 100% dacă ceva nu merge bine. Avem nevoie de el pentru a închide BufferedReader, deoarece, de asemenea, trebuie să fie închis:
+<div id="bg"><span id="name">import</span> java.io.File;<br>
+	<span id="name">import</span> java.io.BufferedReader;<br>
+<span id="name">public class</span> <span id="class">Main</span>{<br>
+<span id="name">public static void</span> main(String[] args){<br>
+BufferedReader br = <span id="name">null</span>;<br>
+<span id="name">try</span>{<br>
+File file = <span id="name">new</span> File(<span id="text">"file.txt"</span>);<br>
+<span id="name">if</span>(!file.exists()){<br>
+file.createNewFile();<br>
+}<br>
+PrintWriter pw = <span id="name">new</span> PrintWriter(file);<br>
+pw.println(<span id="text">"CCS Code"</span>);<br>
+pw.close();<br>
+br = <span id="name">new</span> BufferedReader(<span id="name">new</span> FileReader(<span id="text">"file.txt"</span>));<br>
+String line;<br>
+<span id="name">while</span> ((line = br.readLine())!=<span id="name">null</span>){<br>
+System.out.println(line);<br>
+}<br>	
+}<br>
+<span id="name">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span> + e);<br>
+}<br>
+<span id="name">finally</span>{<br>
+<span id="name">try</span>{<br>
+br.close();<br>
+}<br>
+<span id="name">catch</span>(IOException e){<br>
+System.out.println(<span id="text">"Error: "</span>+e);<br>
+}<br>
+}<br>
+}<br>
+}
+
+</div>
+</p>
+</body>
+</html>

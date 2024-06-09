@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Коментарі</h1>
+<p><span id="name">Коментар</span> - це скажімо нотатки в коді. Як ми знаємо, компілятор читає весь код, а коментар це проміжок в коді, який компілятор ігнорує. Всього існує три види коментарів.</p>
+<ul>
+	<li>
+		<span id="name">//</span> - коментар, який робить нечитабельним компілятору весь рядок, де цей коментар стоїть.
+		<div id="bg">
+			<p>
+				<span id="key">int</span> a;<br>
+				<span id="text">//sfdfdsfdsfdsf</span>
+			</p>
+		</div>
+	</li>
+	<li>
+		<span id="name">/* */</span> - діапазонний коментар. Цей тип коментаря робить код нечитабельним компілятору в такому розмірі, в якому захоче користувач:
+			<div id="bg">
+				<p>
+					<span id="key">int</span> a;<br>
+					<span id="text">/* sfdfdsfdsfdsf</span><br>
+					<span id="text">2324dsdsf */</span>
+				</p>
+			</div>
+	</li>
+	<li>
+		<span id="name">/** */</span> - коментар для документацій. Коли ви захочете читати документації, можете зустріти деякі елементи:
+		<ul>
+			<li>
+				<span id="name">@param</span> - використовується, щоб показати, які параметри передають в метод і яке значення вони повиннімати.
+			</li>
+			<li>
+				<span id="name">@return</span> - використовується для вказівки результату, який дасть метод
+			</li>
+			<li>
+				<span id="name">@throw</span> - використовується, щоб вказати, що метод викидає вийняток або помилку у випадку певного введення.
+			</li>
+			<li>
+				<span id="name">@since</span> - використовується для позначення найранішої версії Java у якій був доступний цей клас або метод.
+			</li>
+			<li>
+				<span id="name">@author</span> - використовується для ідентифікації автора.
+			</li>
+			<li>
+				<span id="name">@exception</span> - це те саме, що й <span id="name">@throw</span>, але <span id="name">@exception</span> працює на більш ранішої версії.
+			</li>
+			<li>
+				<span id="name">{@code</span> код <span id="name">}</span> - відображає інформації як є, без html - обробки
+			</li>
+			<li>
+				<span id="name">@deprecated</span> - описує застарілий клас або його член.
+			</li>
+		</ul>
+
+
+	</li>
+</ul>
+</body>
+</html>

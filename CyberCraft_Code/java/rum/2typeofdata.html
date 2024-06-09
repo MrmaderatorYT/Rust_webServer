@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Tipuri de date
+</h1>
+<p><span id = "name">Tipuri de date</span> - capacitatea de a accepta valorile specificate pentru variabilă. În Java, există două tipuri de date - primitive și pointer.</p>
+<h4 id="question">Există un total de 8 tipuri de date</h4>
+<ol>
+    <li><span id="name">byte</span> - tip care acceptă numai numere întregi. Intervalul de numere este de la -128 la 127 (numărul 0 este și aici) consumă opt biți de memorie.</li>
+    <div id="bg">
+        <p><span id = "name">byte</span> a = 120;</p>
+    </div>
+    <li><span id="name">short</span>- poate accepta, de asemenea, numai numere întregi, dar intervalul este mult mai mare: de la -32768 la 32767, dar deoarece intervalul este mai mare, utilizarea memoriei va fi și ea mai mare, și anume 16 biți</li>
+    <div id="bg">
+        <p><span id = "name">short</span> b = 20;</p>
+    </div>
+    <li><span id="name">int</span> - acceptă numai numere întregi în intervalul de la -2 147 483 648 la 2 147 483 647 și ocupă 32 de biți de memorie</li>
+    <div id="bg">
+        <p><span id = "name">int</span> a = 203452;</p>
+    </div>
+    <li><span id="name">long</span>- care sunt cele anteriore, acceptă numere întregi și ocupă 64 de biți de memorie. Acceptă intervalul de la -9223372036854775808 la 9223372036854775807<br>
+    <span id="name">!</span> Dacă introduceți valori mai mari decât intervalul <span id="name">int</span>, adică, aproximativ, peste 3 milioane vor fi o eroare. Eroarea este că compilatorul percepe valoarea <span id="name">long</span> de <span id="name">int</span>.Pentru a remedia eroarea, trebuie doar să adăugați o literă majusculă <b>L</b><br>
+    <b>L</b> - abrevierea lui <span id="name">long</span>. Pentru a remedia eroarea, trebuie doar să adăugați o literă majusculă <span id="name">int</span> are o clasă wrapper de Integer.</li>
+    <div id="bg">
+        <p><span id = "name">long</span> a = -15023125;</p>
+    </div>
+    <li><span id="name">float</span> - acceptă numai numere din intervalul de la 3,4*10^-38 la 3,4*10^38 acest tip poate accepta atât numere întregi, cât și numere fracționale. Ocupă 32 de biți de memorie.<br> Care <span id="name">long</span>, <span id="name">float</span>trebuie să adăugați o clasă wrapper. ÎN<span id="name">float</span> - este... Același flotor, dar cu majusculă, adică <b>F</b></li>
+    <div id="bg">
+        <p><span id = "name">float</span> a = -1.5;</p>
+    </div>
+    <li><span id="name">double</span> - acceptă numai numere din intervalul 1,7*10^308 modulo și ocupă 64 de biți de memorie. Diferență între <span id="name">double</span> și <span id="name">float</span> nu este doar în gamă, ci și în precizie. Exemplu,  <span id="name">float</span> poate obține valoarea: 1,6893, <span id="name">double</span>1.6894, pentru că am rotunjit până la zece miimi și așa cum <span id="name">double</span>acceptă mai multe valori după virgulă decât <span id="name">float</span>, atunci datele vor fi mai precise.</li>
+    <div id="bg">
+        <p><span id = "name">double</span> a = -15023125.225484;</p>
+    </div>
+    <li><span id="name">char</span> - tip de caracter. Poate percepe litere. Dimensiunea memoriei este de 16 biți.<br><span id="name">char</span> este indicat între ghilimele, dar ghilimelele sunt simple, adică aici: <span id = "name">' '</span>poti pune mai mult de un caracter in aceste ghilimele, este ca un spatiu obisnuit, numar, litera. Pe scurt, orice caracter din tabelul Unicode, cunoscut și sub numele de utf-8.</li>
+    <div id="bg">
+        <p><span id = "name">char</span> a = <span id="text">'q'</span>;</p>
+    </div>
+    <li><span id="name">String</span> Imediat spun că acest tip este scris cu majuscule, în al doilea rând, textul este scris între ghilimele <span id = "name">" "</span>. De asemenea, multe caractere pot fi scrise în acest tip, adică, spre deosebire de <span id="name">char</span>, putem scrie cel puțin „Eneida” lui Kotlyarevsky aici.</li>
+    <div id="bg">
+        <p>String a = <span id="text">"Glory to Ukraine"</span>;</p>
+    </div>
+    
+        <p>Majoritatea compilatoarelor nu colorează <span id="name">String</span> deoarece, așa cum am spus, nu este un tip de date. În cod, nici nu voi colora <span id="name">String</span></p>
+     <li><span id="name">boolean</span> - tip logic. Acceptă doar două valori, și anume <span id="name">true</span> și <span id="name">false</span></li>
+<div id="bg">
+        <p><span id="name">boolean</span> a = <span id="name">true</span>;</p>
+    </div>
+    
+    </ol>
+    <p>Am spus că sunt 8 tipuri de date în total, dar aici sunt 9... Gluma este că <span id="name">String</span> nu este un tip de date primitiv. Acesta este un tip de indicator, adică un obiect. Primitivele ies în evidență într-o altă culoare decât alb-negru obișnuit. Să mergem la <span id="name">tipuri de difuzare</span></p><br>
+<h4 id="question">Type casting</h4><br>
+<p>Aici vom folosi <span id = "name">operandul</span><br>
+<span id="name"><b>Operand</b></span> - argumentul operației. Castingul de tip este împărțit în două tipuri: explicit și implicit (sau automat). Conversia de tip explicit și implicit se realizează automat după o anumită logică: dacă expresia numerică conține un operand de tipul <span id="name">double</span>, atunci toți ceilalți operanzi, rezultatul expresiei este automat extins la tipul <span id="name" >double</span></p>
+<div id="bg">
+<p><span id="name">double</span> a2 = 0.02;<br>a=(<span id="name">int</span>)a</p>    </div>
+    Aici este tiparul. Vom obține 0 în consolă, deoarece schimbă tipul în <span id = "name">int</span>:
+    
+</body>
+</html>

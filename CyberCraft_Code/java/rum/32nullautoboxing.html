@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Valoare null</h1>
+<p><span id = "name">null</span> este o valoare, nu un tip, deci, de exemplu, în acest cod, variabila <b>a</b> are valoarea 5:</p>
+<div id="bg">
+<span id = "name">int</span> a = <span id = "number">5</span>;
+</div>
+<p>La fel ca și 5, <span id = "name">null</span> are valoare. De asemenea, <span id = "name">null</span> este folosit doar pentru obiecte, adică primitive precum <span id = "name">int</span> și așa mai departe, nu vom putea folosi <span id = "nume">null</span>:</p>
+<div id="bg">
+<span id = "name">char</span> a = <span id = "name">null</span>; <span id = "text">//eroare</span>
+</div>
+<p>Adică, această valoare este utilizată în felul următor:</p>
+<div id="bg">
+String a = <span id = "name"> null</span>;
+</div>
+<p>De asemenea, fiecare primitivă are o valoare implicită, de exemplu <span id = "name">int</span> are numărul 0 și <span id = "name">boolean</span> are <span id = „name”>false</span>, atunci valoarea implicită a tuturor obiectelor este <span id = "name">null</span>. De asemenea, trebuie remarcat faptul că <span id = "name">null</span> nu este un obiect și nu este din nou un tip. Este doar o valoare specială pentru obiecte. Putem folosi chiar această valoare pentru orice tip, de exemplu:</p>
+<div id="bg">
+String a = <span id = "name">null</span>;<br>
+Integer b = <span id = "name">null</span>;<br>
+String a1 = (String)<span id = "name">null</span>;<br>
+Integer b1 = (Integer)<span id = "name">null</span>;<br>
+</div>
+<p>Așa cum am spus, <span id = "name">null</span> nu poate fi folosit pentru tipurile primitive, deoarece valoarea <span id = "name">null</span> nu poate fi turnată la acea valoare , pe care le-am specificat în tip, adică:</p>
+<div id="bg">
+<span id = "name">double</span> a = <span id = "name">null</span>; <span id = "text">//eroare</span>
+</div>
+<p>Dar fiecare primitiv are o clasă wrapper. Și dacă creăm un obiect bazat pe o clasă shell și apoi atribuim unui tip primitiv, obținem o eroare de compilare <b>NullPointerException</b>:
+<div id="bg">
+Integer a = <span id = "name">null</span>;<br>
+<span id = "name">int</span> b = (<span id = "name">int</span>)a;
+</div>
+<p>Totul se datorează ambalării automate.</p>
+<h3>Ambalare automată, despachetare</h3>
+<span id = "name">Autopacking</span> - conversia tipurilor primitive în obiecte echivalente, implementată automat.<br>
+<span id = "name">Despachetarea</span> este procesul invers al împachetarii automate.<br>
+<p>Adică toate acestea pot fi specificate ca: procesul de transformare a obiectelor în tipurile lor primitive corespunzătoare. Un exemplu de cod pentru împachetare și despachetare automată este prezentat mai jos:</p>
+<div id="bg">
+Integer integer = <span id = "number">9</span>; <span id = "text">// autopack</span><br>
+<br>
+<span id = "name">int</span> in = <span id = "number">0</span>;<br>
+in = new Integer(<span id = "number">9</span>); <span id = "text">// despachetați</span>
+</div>
+<h4>Când se utilizează împachetarea și despachetarea automată? </h4>
+<p>
+
+Autopacking este aplicat de compilatorul Java în următoarele condiții:
+<ul>
+<li>
+Când o valoare de tip primitiv este transmisă unei metode ca parametru de metodă care așteaptă un obiect din clasa wrapper corespunzătoare.</li>
+<li>Când o valoare de tip primitiv este atribuită unei variabile din clasa shell corespunzătoare.</li>
+</ul>
+</p>
+<p>Să revenim la operatorul <span id = "name">instanceof</span>. Va returna <span id = "name">false</span> în toate cazurile dacă variabila obiect este <span id = "name">null</span>. De asemenea, putem compara valorile <span id = "name">null</span> folosind operatorii <b>==</b> și <b>!=</b>, dar nu cu operatorii aritmetici și logici. <br>
+Dacă comparăm două valori <span id = "name">null</span> între ele, vom obține valoarea <span id = "name">true</span>.</>
+</body>
+</html>

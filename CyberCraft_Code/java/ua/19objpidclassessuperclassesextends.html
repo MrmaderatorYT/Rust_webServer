@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Об'єкти підкласу та зміна суперкласу. Спадкування.</h1>
+<p>Розпочну зі спадкування. Спадкування - скажімо так, найпотужніший механізм програмування. Логіка спадкування дуже проста: під час створення або опису класу за основу береться внший, раніше створений або знову ж таки, описаний клас. Це дозволяє економити час, об'єм програмного коду й сумісність програмних кодів. Для наслідування використовується ключове слово <span id="name">extends</span>:</p>
+<div id="bg">
+<p><span id="name">class</span> <span id="class">підклас</span> <span id="name">extends</span> <span id="class">Суперклас</span>{<br/>
+	код і так далі<br/>
+}
+</p>
+</div>
+<p>Давайте створимо суперклас <span id="class">SuperClass</span> і просто залишемо його пустим. І у нас є підклас <span id="class">Main</span> і тепер можна успадкувати суперклас <span id="class">SuperClass</span>:</p>
+<div id="bg">
+<p><span id="name">class</span> <span id="class">Main</span> <span id="name">extends</span> <span id="class">SuperClass</span>{<br/>
+	код і так далі<br/>
+}<br/>
+<span id="name">class</span> <span id="class">SuperClass</span>{<br/>
+}
+</p>
+</div>
+<p>Перейдімо до суперкласу.  Та запишемо якусь змінну, яка буде дорівнювати 1 з методом, який буде виводити значення:</p>
+<div id="bg">
+<p><span id="name">class</span> <span id="class">Main</span> <span id="name">extends</span> <span id="class">SuperClass</span>{<br/>
+	код і так далі<br/>
+}<br/>
+<span id="name">class</span> <span id="class">SuperClass</span>{<br/>
+<span id="name">int</span> number = <span id="number">1</span>;<br/>
+<span id="name">void</span> show(){<br/>
+System.out.println(<span id="text">"Число: "</span>+number);<br/>
+}<br/>
+}
+</p>
+</div>
+<p>Повернімося до підкласу <span id="class">Main</span> і створимо змінну <b>s</b> типу <span id="name">char</span></p>
+<div id="bg">
+<p><span id="name">class</span> <span id="class">Main</span> <span id="name">extends</span> <span id="class">SuperClass</span>{<br/>
+<span id="name">char</span> s;<br/>
+}<br/>
+<span id="name">class</span> <span id="class">SuperClass</span>{<br/>
+<span id="name">int</span> number = <span id="number">1</span>;<br/>
+<span id="name">void</span> show(){<br/>
+System.out.println(<span id="text">"Число: "</span>+number);<br/>
+}<br/>
+}
+</p>
+</div>
+<p>Ми в підкласі <span id="class">Main</span> спадкували суперклас
+<span id="class">SuperClass</span> і завдяки цьому, в підкласі <span id="class">Main</span> описано метод <b>show</b> та змінна <b>number</b>.<br/>
+Поняття суперкласу є відносним: деякий клас може бути суперкласом для одного класу, і в той же час сам бути підкласом іншого класу. Цей тип спадкування називається багаторівневим спадкуванням.<br/>На минулій темі було використано ключове слово <span id="name">this</span>. Сьогодні до нас приєднується "антонім" до цього ключового слова, а саме - <span id="name">super</span><br/>
+<span id="name">this</span> - представляє поточний екземпляр класу.<br/>
+<span id="name">super</span> - представляє суперклас.<br/>Створимо приклад:
+</p>
+<div id="bg">
+<p>
+<span id="name">class</span> <span id="class">A</span>{<br/>
+	А(){<br/>
+System.out.println(<span id="text">"Конструктор без аргуметів класу А"</span>);<br/>
+	}<br/>
+A(String args){<br/>
+System.out.println(<span id="text">"Конструктор з одним аргументом класу А"</span>);<br/>
+}<br/>
+	}<br/>
+<span id="name">class</span> <span id="class">B</span> <span id="name">extends</span> <span id="class">A</span>{<br/>
+	B(){<br/>
+<span id="name">this</span>(<span id="text">""</span>); <span id="text">// виклик конструктора з одним аргументом класу B</span><br/>
+System.out.println(<span id="text">"Конструктор без аргументів класу В"</span>);<br/>
+}<br/>
+B(String args){<br/>
+<span id="name">super</span>(<span id="text">""</span>); <span id="text">//виклик аргументом класу А</span><br/> 
+System.out.println(<span id="text">"Конструктор з одним аргументом класу В"</span>);
+}<br/>
+	}<br/>
+<span id="key">public class</span> <span id = "class">Main</span>{<br/>
+<span id="key">public static void</span> main(String args[]){<br/>
+B b = <span id="key">new</span> B();<br/>
+}<br/>
+}
+	</p>
+</div>
+</body>
+</html>

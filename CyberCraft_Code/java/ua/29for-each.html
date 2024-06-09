@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>for-each цикл</h1>
+<p><span id = "key">For-each цикл</span> - різновидність цикла <span id = "key">for</span>, котра використовується, коли потрібно опрацювати всі елементи масиву, або чогось іншого. Навіть переклад цього циклу (for each) означає з англійської - для кожного. Але слово <b>each</b> не використовується. Ось вам найпростіший варіант написання <b>for-each</b>:</p>
+<div id = "bg">
+<span id = "key">for</span>(type variable : list){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p><span id = "key">type</span> - тип змінної, яким повинен мати однаковий з типом елементів масиву.</br>
+<p><span id = "key">variable</span> - ім'я змінної.</br>
+<p><span id = "key">list</span> - список даних, які потрібно опрацювати.</br>
+Це був приклад при якому створюється нова змінна зі своїм типом. Ось варіант зі наявною змінною, яка була створена перед циклом:
+</p>
+<div id = "bg">
+<span id = "key">int</span> variable;<br>
+<span id = "key">for</span>(variable : list){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>Цей код можна записати звичайним циклом <span id = "key">for</span>:
+<div id = "bg">
+<span id = "key">int</span> variable;<br>
+<span id = "key">for</span>(variable < list.length; variable++){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>Але використовуючи цикл <span id="name">for-each</span>, будьте обережні з деякими обмеженнями, бо цей цикл менш універсальний за звичайний <span id = "key">for</span></p>
+<ul>
+<li>Якщо ви хочеите пройтись по списку з кінця, то використовуюяи цикл <span id = "key">for</span> можна так:
+<div id = "bg">
+<span id = "key">for</span>(<span id = "key">int</span> i = list.length-<span id = "number">1</span>; i>=<span id = "number">0</span>;i--){<br>
+System.out.println(list[i]);<br>
+}
+</div>
+Але використовуючи <b>for-each</b> цього зробити неможливо.
+</li>
+<br>
+<li>
+<b>for-each</b> цикл не підходить, якщо потрібно внести зміни в масив, наприклад додати елемент, або змінити розмір масиву\
+</body>
+</html>

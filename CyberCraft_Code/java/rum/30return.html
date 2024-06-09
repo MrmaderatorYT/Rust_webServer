@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>return</h1>
+<p><span id = "name">return</span> este un cuvânt cheie care ajută la returnarea unei valori. Să ne luăm timpul și să creăm un șablon de proiect standard:</p>
+<div id="bg">
+<span id = "name">public class</span>Main <span id = "class">Principal</span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+System.out.println(<span id = "text">"Bună lume"</span>);<br>
+<br>
+}
+</div>
+<p>După cum știm, metoda <b>Main</b> este punctul de pornire al programului. Această metodă nu poate returna o valoare, așa că haideți să creăm o nouă metodă:
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+System.out.println(masaj());<br>
+<br>
+<span id = "name">public static</span> String massage(){<br>
+<span id = "name">revenire </span><span id = "text">"Bună ziua, lume"</span>;<br>
+}
+</div>
+<p>După cum putem vedea, am creat metoda <b>massage</b> și am schimbat metoda <b>Main</b> - în timpul ieșirii numim metoda. Și în consolă vom primi Hello world. Cu cuvântul cheie <span id = "name">return</span>, specificăm valoarea pe care dorim să o returnăm. Am specificat că metoda este de tip String și, prin urmare, va returna o valoare String. Acest lucru va ajuta compilatorul să verifice dacă comportamentul metodei este de acord cu modul în care este declarată. Și dacă returnăm o valoare diferită în această metodă, de exemplu, de tipul <span id = "name">int</span>, sau ceva diferit de tipul pe care l-am specificat în metodă, vom primi o eroare că acestea sunt tipuri necompatibile.</ p>
+<div id="bg">
+<span id = "name">public static</span> String massage(){<br>
+<span id = "name">return</span> <span id = "number">5</span>; <span id = "text">//eroare</span><br>
+}
+</div>
+<p>De asemenea, acest tip se referă la instrucțiunile de control de cod. Cred că toată lumea știe că codul este executat de sus în jos, dar acest operator are capacitatea de a întrerupe execuția codului:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+<span id="name">if</span id = "name">(args.lenght == <span id = "number">0</span>){<br>
+<span id = "name">return</span>;<br>
+<br>
+<span id = "name">for</span>(String arg : args){<br>
+System.out.println(arg);<br>
+<br>
+<br>
+<br>
+</div>
+<p>După cum vedem că metoda <b>main</b> nu are parametri înainte de verificare și prin urmare avem zero elemente și după aceea se efectuează o verificare, care oprește execuția acestei metode (în cazul nostru < b>principal</b> )<br>
+<b>args</b> este o variabilă pe care am creat-o în parametrii metodei <b>main</b> ca matrice, astfel încât să putem folosi metoda <b>lungime</b> folosită pentru tablouri în verificarea.
+</body>
+</html>

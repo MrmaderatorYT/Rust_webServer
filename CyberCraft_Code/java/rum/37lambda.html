@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Expresii lambda</h1>
+<p><span id = "name">Expresii Lambda</span> - un anumit bloc de cod care definește o acțiune. De asemenea, puteți considera expresiile lambda drept definiția unei metode anonime (lecția următoare), adică o metodă care nu are un nume. De asemenea, nu au niciun tip de rezultat. În general, expresiile lambda sunt un bun contor pentru o clasă anonimă, așa că este mai bine să folosiți expresii lambda. Un bloc de comenzi dintr-o expresie lambda se numește corpul unei expresii lambda. În consecință, expresia lambda constă din argumente corporale. Această expresie este construită în același mod ca o expresie regulată, dar fără numele și identificatorul tipului de rezultat. Comenzile din corpul unei expresii lambda sunt descrise de comenzi (da, logica #1). Argumentelor li se dă un tip (deși în unele cazuri nu). Comenzile sunt scrise între paranteze și o „săgeată” este indicată între argumente și blocul de comandă: <b>-></b>. Și pe baza acestui lucru, putem obține următoarele:</p>
+<div id="bg">
+(argumente) -> {<br>
+echipe<br>
+}
+</div>
+Și acum să trecem la vizualizarea standard, să spunem asta:
+<div id="bg">
+(<span id = "name">int</span> x, <span id = "name">int</span> y) -> {<br>
+<span id = "name">int</span> z = x+y;<br>
+System.out.println(z);<br>
+}
+</div>
+<p>Există câteva reguli care vă permit să simplificați sintaxa descrierii expresiilor lambda:
+<ul>
+<li>Tipul de argument poate fi omis dacă poate fi identificat înaintea expresiei lambda
+</li>
+<li>
+Dacă expresia lambda are un argument, al cărui tip nu este specificat, atunci parantezele nu pot fi folosite
+</li>
+<li>Dacă expresia lambda nu are argumente, se folosesc paranteze goale.
+</li>
+<li>Dacă există o singură comandă în corpul expresiei lambda, atunci bretele pot fi omise. În acest caz, corpul expresiei lambda constă dintr-o instrucțiune <span id = "name">return</span>, dar acest cuvânt cheie poate fi omis
+</li>
+</ul>
+</p>
+<h3>Interfețe funcționale</h3>
+<p><span id = "name">Interfețele funcționale</span> sunt interfețe cu o singură metodă abstractă. Adică nu există nimic special. Trebuie îndeplinită o singură condiție: o metodă abstractă este declarată în interfață. Particularitatea interfeței funcționale în ceea ce privește utilizarea expresiilor lambda se datorează faptului că expresiei lambda i se poate atribui o valoare unei variabile de tipul interfeței - dar cu condiția ca interfața să fie funcțională și semnătura metodei abstracte. în interfața funcțională corespunde parametrilor expresiei lambda - este creat de un obiect bazat pe o clasă anonimă care implementează această interfață, iar codul expresiei lambda este folosit ca cod pentru a defini o metodă abstractă
+</p>
+</body>
+</html>

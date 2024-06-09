@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Тернарний оператор</h1>
+<p><span id="name">Тернарний оператор</span> - заміна <span id="name">if-else</span> блоку. Тобто цей оператор виконує роботу блоку <span id="name">if</span> та блоку <span id="name">else</span>, тобто блок <span id="name">else if</span>, тернарний оператор не сприймає</p>
+<p>Ось вам стандартний вигляд умовного тернарного оператора:</p>
+<div id="bg">
+	<p>вираз_№1 <span id="name">?</span> вираз_№2 <span id="name">:</span> вираз_№3;</p>
+</div>
+	<h4 id="question">Тепер розберімося</h4>
+	<p><span id="name">Вираз №1</span> - позначає будь-який вираз, обчислення якого дає логічне значення (тип <span id="name">boolean</span>), але для початку створімо змінну <b>a</b>, а в виразі ми створимо іншу змінну:</p>
+
+<div id="bg">
+
+	<p><span id="key">int</span> a = <span id="number">10</span>;<br>
+		<span id="key">int</span> b = <span id="name">?</span> вираз_№2 <span id="name">:</span> вираз_№3;</p>
+</div>
+<p>Ми створили змінну <b>b</b> типу <span id="name">int</span>. Після дорівнює ми створюємо перевірку на вираз, це те саме, що умова в дужках. Зазвичай позначається умова в дужках, але не обов'язкого:</p>
+<div id="bg">
+	<p><span id="key">int</span> a = <span id="number">10</span>;<br>
+		<span id="key">int</span> b = (a><span id = "number">5</span>) <span id="name">?</span> вираз_№2 <span id="name">:</span> вираз_№3;</p>
+</div>
+<p>В виразі <span id="name">вираз №2</span> та <span id="name">вираз №3</span> - виконує код.<br>
+<span id="name">Вираз №2</span> - це той код, який виконується при істиній істиній умові, тобто код, який знаходиться в блоці <span id="name">if</span>.<br>
+<span id="name">Вираз №3</span> - це той код, який знаходиться в блоці <span id="name">else</span>, тобто код який виконається в тому випадку, якщо вираз №2 отримає хибність.</p>
+<p>Отже ось повний код з використанням тернарного оператором:</p>
+<div id="bg">
+	<p><span id="key">int</span> a = <span id="number">10</span>;<br>
+		<span id="key">int</span> b = (a><span id = "number">5</span>) <span id="name">?</span> ++a <span id="name">:</span> --a;</p>
+</div>
+<p>Тут ми ставимо крапку з комою в кінці виразу. <br>Є один нюанс при використанні тернарного оператора: цей оператор працює тільки з присвоєнням нової змінної того ж типу чи тієї ж змінної:</p>
+<div id="bg">
+	<p><span id="key">int</span> a = <span id="number">10</span>;<br>
+		a = a><span id = "number">5</span> <span id="name">?</span> ++a <span id="name">:</span> --a;</p>
+</div>
+<p>Та між:</p>
+<div id="bg">
+	<p><span id="key">int</span> a = <span id="number">10</span>;<br>
+		<span id="key">int</span> b = (a><span id = "number">) <span id="name">?</span> ++a <span id="name">:</span> --a;</p>
+</div>
+<p>Різниці не буде.<br>Також є ще можливе питання: що працює швидше? Тернарний оператор чи звичайний умовний оператор.... Швидкість виконання однакова.</p>
+</body>
+</html>

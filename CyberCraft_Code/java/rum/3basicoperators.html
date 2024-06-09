@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operatori de bază</h1>
+	<h4 id="question">Există 7 tipuri de operatori matematici în total</h4>
+<p>Sper că toată lumea cunoaște operatorii elementari de bază, și anume +,-,*,/, așa că asta e tot 😁</p><br>
+<p>Bine... Glumesc... 😅. Să începem cu <span id="name">%</span></p><br>
+<p><span id="name">%</span> - restul din diviziune. Când împărțim 4 la 2, obținem un rest de 0, deoarece 4 este exact divizibil cu 2, dar când împărțim 4 la 3, valoarea este 1, iar restul este 1.</p>
+<p><span id="name">++</span> - operator de increment. Crește valoarea cu 1. Incrementul se aplică variabilei:</p>
+<div id="bg">
+        <p>a++;</p>
+    </div>
+    <p>Dar incrementul are două forme de scriere: postfix și prefix. Ați văzut partea de postfix și iată prefixul:</p>
+    <div id="bg">
+        <p>++a;</p>
+    </div>
+    <p>Nu va exista nicio diferență în răspuns, ci doar progresul. Să creăm o variabilă x, care va fi egală cu 1:</p>
+     <div id="bg">
+         <p><span id="name">int</span> x = <span id="number">1</span>;</p>
+     </div>
+     <p>Și apoi creșterea formei postfix, adică vom avea o imagine:</p>
+     <div id="bg">
+         <p><span id="name">int</span> x = <span id="number">1</span>;<br>
+         ++a;</p>
+     </div>
+     <p>Vom obține numărul 2 în consolă, dar partea de prefix va adăuga mai întâi unul și apoi va folosi valoarea. Dacă utilizați partea postfix, adică după cum urmează:</p>
+     <div id="bg">
+         <p><span id="name">int</span> x = <span id="number">1</span>;<br>
+         a++;</p>
+     </div>
+    <p>Mai întâi va corecta valoarea, apoi va adăuga numărul 1.</p>
+     <p><span id="name">--</span> - operator de decrementare. La fel ca și incrementul, are două moduri de scriere: postfix și prefix. Spre deosebire de increment, acest operator scade valoarea unei variabile cu 1. Iată un exemplu: </p>
+     <div id="bg">
+         <p>--a<br>
+         a--;</p>
+     </div>
+    <p>Dacă adăugați <span id="name">cрar</span> și <span id="name">byte</span>, tipurile <span id="name">short</span>, atunci acestea vor fi convertite la tipul <span id="name">int</span>. <span id="name">char</span> transformă, de asemenea, într-un tip numeric. Compilatorul preia caracterul din tabelul Unicode, apoi îl reformatează în sistemul numeric zecimal. Din moment ce adăugăm, simbolul din sistem este adăugat singur</p>
+</body>
+</html>

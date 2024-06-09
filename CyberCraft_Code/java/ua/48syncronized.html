@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Синхронізація потоків</h1>
+<p>Ісуюють певні проблеми з потоками, які можуть внести плутанину, використовується синхронізація. Метод може мати модифікатор <span id = "key">synchronized</span>. Коли потік знаходиться в синхронізованого методу, всі інші потоки, які намагаються викликати його в тому самому екземплярі, повині очікувати. Це дозволяє виключити плутанини, коли кількість потоків намагаються викликати метод.</p>
+<div id = "bg">
+<span id = "key">synchronized void</span> method(String msg);<br>
+</div>
+<p>В цьому модифікатор є модифікатором, але він може бути оператором. Ми можемо укласти в блок <span id = "key">synchronized</span> виклики методів будь-якого класу:
+</p>
+<div id = "bg">
+<span id = "key">synchronized</span> (object){<br>
+<span id = "text">//оператори, які потрібно синхронізувати.<br>
+}
+</div>
+<p>Створимо приклад приклад:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+Object object = <span id = "key">new</span> Object();<br>
+<span id = "key">public void</span> doSomething(){<br>
+<span id = "text">//якась логіка</span><br>
+<span id = "key">synchronized</span> (obj){<br>
+<span id = "text">//логіка, яка одночасно доступна тільки першому потоку</span><br>
+}<br>
+}<br>
+}
+</div>
+<p>Якщо один потік потрапив у середину блока коду, який помічений словом <span id = "key">synchronized</span>, він моментально буде створюватися, а всі інші потоки, які намагаються увійти в цей же блок чи метод - повинні чекатики, поки попередній потік не завершиться. Також існує ще 2 варіанти синхронізації коду - більш компактніший і більш розписаніший:</p>
+<div id = "bg">
+<span id = "key">public void</span> a(){<br>
+<span id = "key">synchronized</span>(<span id = "key">this</span>){<br>
+<span id = "text">//логіка</span><br>
+}<br>
+}
+</div>
+<p>Цей блок коду можна замінити таким чином:</p>
+<div id = "bg">
+<span id = "key">public synchronized void</span> method(){<br>
+<span id = "text">//logic</span>
+}
+</div>
+<p>В першому випадку ми створюємо чинхронізований блок відразу при вході в метод. Він синхронізується з об'єктом <span id = "key">this</span>, тобто по теперешніму об'єкту. В другому випадку ми відразу створюємо синхронізований метод. І тут уже немає потреби вказувати якийсь об'єкт, бо весь метод буде автоматично синхронізованим для всіх об'єктів класу. Також якщо метод містить надзвичайно важливу інформацію та статичний, синхронізація буде виконуватися по класу:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">MyClass</span>{<br>
+<span id = "key">private static</span> String name = <span id = "text">"Sam"</span>;<br>
+<span id = "key">private static</span> String name1 = <span id = "text">"Ann"</span>;<br>
+<span id = "key">public static void</span> method(){<br>
+<span id = "key">synchronized</span>(MyClass.<span id = "key">class</span>){<br>
+String s = name;<br>
+name = name1;<br>
+name1 = s;<br>
+}<br>
+}<br>
+}
+</div>
+<p>Якщо ж записати скорочений варіанти, то <b>MyClass.class</b> не потрібно використовувати:</p>
+<div id = "bg">
+<span id = "key">public static synchronized void</span> method(){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+</body>
+</html>

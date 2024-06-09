@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>volatil</h1>
+<p>Modificatorul <span id = "name">volatile</span> impune unele condiții suplimentare pentru citirea sau scrierea unei variabile. Există câteva reguli pentru acest modificator:
+<ul>
+<li>Operațiile de citire sau scriere a variabilelor <span id = "name">volatile</span> sunt atomice</li>
+<span id = "name">Operațiune atomică</span> - o operație care este efectuată complet, sau nu este efectuată deloc, adică operația nu poate fi efectuată parțial sau parțial neefectuat. Un bun exemplu al proverbului „Totul sau nimic”
+<li>Rezultatul operațiunii de scriere a valorilor în variabila <span id = "name">volatile</span> citită de un fir este vizibil pentru toate firele de execuție ale programului. Arată astfel:</li>
+</ul>
+</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Main</span>{<br>
+<span id = "name">private volatile int</span> i;<br>
+}
+</div>
+<p>În termeni simpli, acest modificator spune firului de execuție că modificarea este supusă modificării și informează firul de execuție să facă referire la cea mai recentă versiune, nu la copia codificată, și să propage modificările în timp util.</p>
+</body>
+</html>

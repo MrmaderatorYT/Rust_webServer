@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Clase abstracte, metode</h1>
+<h3>Metode abstracte</h3>
+<p><span id="name">Metode abstracte</span> - metode în care este posibil să te limitezi la declararea metodei, și anume să indice semnătura acesteia, dar nu să descrii corpul metodei. Fiecare metodă abstractă este descrisă de cuvântul cheie <span id="name">abstract</span>. Metodele abstracte nu pot fi descrise deloc, ci doar declarate:</p>
+<div id="bg"><span id="name">public abstract void</span> one();</div>
+<h3>Абстрактні класи</h3>
+<p><span id="name">Clasă abstractă</span> - o clasă care conține cel puțin o metodă abstractă. Chiar dacă clasa este declarată cu cuvântul cheie <span id="name">abstract</span>, va fi și abstractă. Pe baza claselor abstracte, este imposibil să se creeze un obiect, ceea ce ridică întrebarea logică: de ce sunt deloc? Clasele abstracte sunt de obicei folosite pentru moștenire. Cu cuvinte simple, pe baza unei clase abstracte, se creează subclase prin moștenire, în care metodele abstracte din superclasă sunt descrise cu cod de program. De asemenea, dacă unele metode abstracte sunt lăsate nedescrise într-o subclasă care este creată pe baza unei superclase abstracte, atunci o astfel de clasă este considerată abstractă:</p>
+<div id="bg"><span id="name">public abstract class</span> <span id="class">Main</span>{<br>
+<span id="name">abstract void</span> a();<br>
+}
+</div>
+<p>Să revenim și la crearea obiectelor. Deși nu puteți crea o variabilă obiect bazată pe o clasă abstractă, puteți crea o variabilă obiect a unei clase abstracte. O astfel de variabilă se poate referi la un obiect al unei subclase create pe baza acestei clase abstracte. Să creăm o clasă abstractă:</p>
+<div id="bg"><span id="name">public abstract class</span> <span id="class">Main</span>{<br>
+<span id="name">private int</span> age;<br>
+<span id="name">public int</span> getAge(){<br>
+<span id="name">return</span> age;<br>
+}<br>
+}
+</div>
+<p>Aici am creat o clasă abstractă, am înregistrat variabila vârstă. De asemenea, am creat funcționalitatea de bază a clasei. Datorită acestui lucru, putem urma această clasă abstractă pentru a descrie funcționalitatea. După cum am menționat mai sus, nu putem folosi constructorul unei clase abstracte pentru a crea un obiect bazat pe acesta, adică:</p>
+<div id="bg">Main main = <span id="name">new</span> Main(); <span id="text"> // gresit</span></div>
+<p>Iată un exemplu de clase și metode abstracte:</p>
+<div id="bg">
+	<span id="text">//clasa de forme abstracte</span><br>
+	<span id="name">abstract class</span> <span id="class">Figure</span>{<br>
+	<span id="name">float</span> x;<br>
+	<span id="name">float</span> y;<br>
+	Figure(<span id="name">float</span> x, <span id="name">float</span> y){<br>
+<span id="name">this</span>.x = x;<br>
+<span id="name">this</span>.y = y;<br>
+}<br>
+<span id="text">//metoda abstracta pentru a obtine perimetrul</span><br>
+<span id="name">public abstract float</span> getPerimeter();<br>
+<span id="text">//metoda abstracta pentru a obtine zona</span><br>
+<span id="name">public abstract float</span>  getArea();<br>
+}
+<span id="text">//clasă derivată de dreptunghi</span><br>
+<span id="name">class</span> <span id="class">Rectangle</span> <span id="name">extends</span> <span id="class">Figure</span>{<br>
+<span id="name">private float</span> width;<br>
+<span id="name">private float</span> height;<br>
+<span id="text">//constructor care apelează constructorul clasei Figure</span><br>
+Rectangle(<span id="name">float</span> x, <span id="name">float</span> y, <span id="name">float</span> width, <span id="name">float</span> height){<br>
+<span id="name">super</span> (x,y);<br>
+<span id="name">this</span>.width = width;<br>
+<span id="name">this</span>.height = height;<br>
+}<br>
+<span id="name">public float</span> getPerimeter(){<br>
+<span id="name">return</span> width * <span id="number">2</span> + height * <span id="number">2</span>;<br>
+}<br>
+<span id="name">public float</span> getArea(){<br>
+<span id="name">return</span> width*height;
+}<br>
+}
+</div>
+</body>
+</html>

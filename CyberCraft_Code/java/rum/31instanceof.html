@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operator instanceof</h1>
+<p><span id = "name">instanceof</span> - operatorul care este necesar pentru a verifica dacă obiectul la care face referire variabila <b><u>x</u></b> a fost creat pe baza oricărei clase <b><u>Y</u></b>. Pe baza acestui lucru, putem înțelege că acest operator este boolean și returnează <span id = "name">true</span> și <span id = "name">false</span>. Să creăm un exemplu simplu:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+Integer x = <span id = "name">new</span> Integer(<span id = "number">1</span>);<br>
+System.out.println(x <span id = "name">instanceof</span> Integer);<br>
+<br>
+<br>
+------------<br>
+true
+</div>
+<p>Am creat un obiect bazat pe class Integer și am scris o valoare acolo și apoi am creat o verificare: variabila <b>x</b> aparține clasei <b>Integer</b>? Și așa cum ar trebui să fie, am primit valoarea <span id = "name">true</span>.
+Dacă am creat o verificare pentru o altă clasă, am primit o eroare chiar înainte de compilare:
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+Integer x = <span id = "name">new</span> Integer(<span id = "number">1</span>);<br>
+System.out.println(x <span id = "name">instanceof</span> String);<br>
+<br>
+<br>
+------------<br>
+Eroare
+</div>
+<p>De asemenea, vreau să remarc că operatorul <span id = "name">instanceof</span> verifică originea obiectului. Spuneam cuvântul <b>variabil</b>, dar pe viitor voi spune obiect (probabil). Să creăm un exemplu mai dificil:
+<div id="bg">
+<span id = "name">class </span><span id = "class">Animal</span>{<br>
+<br>
+<span id = "name">public class</span> <span id = "class">Main</span> <span id = "name">extends</span> <span id="class">Animal< /span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+Main Main = <span id = "name">new</span> Main();<br>
+System.out.println(main <span id = "name">instanceof</span> Animal);<br>
+<br>
+<br>
+------------<br>
+true
+</div>
+<p>Vom obține valoarea <span id = "name">true</span> deoarece obiectul <b>dog</b> are toate aceleași elemente ca și class <b>Animal</b>. Și atunci poate apărea întrebarea: cum obținem valoarea <span id = "name">false</span> dacă primim o eroare chiar înainte de compilare. Să creăm un exemplu:
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span> <span id = "name">extends</span> <span id="class">Animal< /span>{<br>
+<span id = "name">public static void</span> main(String[] args){<br>
+Main Main = <span id = "name">null</span>;<br>
+System.out.println(main <span id = "name">instanceof</span> Main);<br>
+<br>
+<br>
+------------<br>
+false
+</div>
+<p>Vom obține valoarea <span id = "name">false</span> deoarece aplicăm operatorul unei variabile cu o valoare nulă. Mai devreme, am explicat cât mai multe despre valoarea <span id = "name">null</span>. Acum vor mai fi puține informații.
+<br>
+<span id = "name">null</span> - este folosit doar pentru obiecte și, prin urmare, va fi declarat pur și simplu și atât. Nu îi este alocată memorie (memoria este alocată datorită cuvântului cheie <span id = "name">new</span>.</p>
+</body>
+</html>

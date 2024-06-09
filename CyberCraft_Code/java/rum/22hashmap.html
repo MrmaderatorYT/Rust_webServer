@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>HashMap</h1>
+<p>Luați în considerare o problemă în care trebuie să procesăm o mulțime de date... Milioane de informații. Și pentru asta este <span id="name">HashMap</span><br>
+<span id="name">HashMap</span> - este un tablou asociativ. Dar este posibil să avem dificultăți în a găsi o persoană prin pașaport sau a introduce două persoane cu aceleași date de pașaport, ceea ce este imposibil. Și din nou, HashMap ne va ajuta aici.<br>
+Structura creării acestui tip de matrice este foarte asemănătoare cu scrierea unui ArrayList, unde cheia (Integer) vine pe primul loc, urmată de valoarea (String):
+<div id="bg">
+	<p>
+		HashMap &lt;Integer, String> hashmap = <span id="name">new</span> HashMap&lt;>();
+
+	</p>
+</div>
+Să adăugăm valori la HashMap datorită metodei <span id="name">put</span>:
+<div id="bg">
+	<p>
+		<span id="name">import</span> java.util.HashMap;<br>
+		<span id="name">public class</span> Main{<br>
+		<span id="name">public static void</span> main(String[] args){<br>
+		HashMap &lt;Integer, String> hashmap = <span id="name">new</span> HashMap&lt;>();<br>
+		hashmap.put(<span id="number">1</span>, <span id="text">"Nume"</span>);<br>
+		hashmap.put(<span id="number">2</span>, <span id="text">"Nume1"</span>);<br>
+		System.out.println(hashmap);<br>
+		----------------------------<br>
+		{1=Nume, 2=Nume1}
+
+	</p>
+</div>
+Iată și alte metode:
+<ul>
+<li>
+<span id="name">put()</span> - adaugă un element la sfârșitul structurii
+</li>
+<li>
+<span id="name">get()</span> - returnează valoarea elementului specificat
+</li>
+<li>
+<span id="name">size()</span> - returnează numărul de elemente de structură
+</li>
+<li>
+<span id="name">remove()</span> - elimină elementul specificat din structură
+</li>
+<li>
+<span id="name">containsKey()</span> - verifică prezența cheii specificate
+</li>
+<li>
+<span id="name">containsValue()</span> - verifică prezența elementului specificat
+</li>
+<li>
+<span id="name">clear()</span> - elimină toate elementele din structură
+</li>
+<li>
+<span id="name">isEmpty()</span> - returnează prezența a cel puțin un element
+</li>
+<li> <span id="name">putAll()</span> - combină două hărți într-una singură
+</li>
+</ul>
+<h3>Nuanțe</h3>
+<p>Dacă dorim să creăm un nou element al structurii, dar nu specificăm o nouă cheie, ci doar o nouă valoare cu cheia creată - elementul va fi pur și simplu suprascris sub cheia corespunzătoare:</p>
+<div id="bg">
+	<p>
+		<span id="name">import</span> java.util.HashMap;<br>
+		<span id="name">public class</span> Main{<br>
+		<span id="name">public static void</span> main(String[] args){<br>
+		HashMap &lt;Integer, String> hashmap = <span id="name">new</span> HashMap&lt;>();<br>
+		hashmap.put(<span id="number">1</span>, <span id="text">"Nume"</span>);<br>
+		hashmap.put(<span id="number">2</span>, <span id="text">"Nume1"</span>);<br>
+		System.out.println(hashmap);<br>
+		hashmap.put(<span id="number">1</span>, <span id="text">"Nume1"</span>);<br>
+		System.out.println(hashmap);<br>
+		----------------------------<br>
+		{1=Ім'я, 2=Nume1}<br>
+		{1=Nume1, 2=Nume1}<br>
+
+	</p>
+</div>
+</p>
+</body>
+</html>

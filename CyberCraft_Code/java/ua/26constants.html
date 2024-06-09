@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Константи</h1>
+<p>Для збереження даних, можна використовувати константи. Константним змінним можна присвоїти значення один раз. Для цього є ключове слово <span id="name">final</span>. Зазвичай назви константної змінної пишуться з великого реєстра, тобто так:</p>
+<div id="bg">
+	<span id="key">final int</span> NUMBER = <span id="key">50</span>
+</div>
+<p>Але можна й записувати з нижнього реєстра:</p>
+<div id="bg"><span id="key">final int</span> number = <span id="number">50</span>;</div>
+<p>Зазвичай константи - статичні, тобто:</p>
+<div id="bg"><span id="key">static final int</span> a;</div>
+<p>Але їх в загалом використовують при оголошенні в інтерфейсах, бо їх завжди потрібно проініціалізувати безпосередньо в інтерфейсі.</p>
+<h3>Константні класи</h3>
+<p>Якщо клас - константний, то він не зможе мати підкласи, тобто заборонено спадкування:</p>
+<div id="bg"><span id="key">public final class</span> <span id="class">String</span>{<br>
+}<br>
+<span id="key">class</span> <span id="class">String1</span> <span id="key">extends</span> <span id="class">String</span>{<br>}
+</div>
+<p>В такому випадку буде помилка. Також є нюанс з абстрактними класами, боо це взаємновиключні поняття.<br>Використовуючи статичні масиви ми не зможемо змінювати посилання на об'єкт, але можемо змінювати дані:</p>
+<div id="bg">
+	<span id="key">final int</span> [ ] array = {<span id="number">1</span>, <span id="number">2</span>, <span id="number">3</span>, <span id="number">4</span>, <span id="number">5</span>};<br>
+	array[<span id="number">0</span>] = <span id="number">0</span>;<br>
+	array = <span id="key">new int</span> [<span id="number">5</span>];<span id="text"> // помилка</span>
+</div>
+</body>
+</html>

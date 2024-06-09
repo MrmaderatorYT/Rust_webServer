@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>for-each cucle</h1>
+<p><span id = "name">For-each cucle</span> - o variație a buclei <span id = "name">for</span>, care este utilizată atunci când trebuie să procesați toate elementele o matrice sau altceva. Chiar și traducerea acestui ciclu (pentru fiecare) înseamnă din engleză - pentru fiecare. Dar cuvântul <b>fiecare</b> nu este folosit. Iată cel mai simplu mod de a scrie <b>pentru fiecare</b>:</p>
+<div id="bg">
+<span id = "nume">for</span>(variabilă de tip: listă){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p><span id = "name">type</span> - tipul variabilei, care trebuie să aibă același tip ca și elementele matricei.</br>
+<p><span id = "name">variabilă</span> - numele variabilei.</br>
+<p><span id = "name">list</span> - o listă de date care trebuie procesate.</br>
+Acesta a fost un exemplu de creare a unei noi variabile cu propriul tip. Iată o variație cu o variabilă existentă care a fost creată înainte de buclă:
+</p>
+<div id="bg">
+<span id = "name">int</span> var;<br>
+<span id = "name">cucle</span>(var: list){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>Acest cod poate fi scris cu o cucle obișnuită <span id = "name">for</span>:
+<div id="bg">
+<span id = "name">int</span> var;<br>
+<span id = "name">for</span>(var i < list.length; var++){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>Dar atunci când utilizați cucle <span id="name">for-each</span>, aveți grijă la unele limitări, deoarece această buclă este mai puțin versatilă decât bucla obișnuită <span id = "name">for</ span></ p>
+<ul>
+<li>Dacă doriți să parcurgeți lista de la sfârșit, puteți utiliza cucle <span id = "name">for</span> astfel:
+<div id="bg">
+<span id = "name">for</span>(<span id = "name">int</span> i = list.length-<span id = "number">1</span>; i>= <span id = "number">0</span>;i--){<br>
+System.out.println(lista[i]);<br>
+}
+</div>
+Dar folosind <b>pentru-fiecare</b> este imposibil să faci asta.
+</li>
+<br>
+<li>
+cucle <b>for-each</b> nu este potrivită dacă trebuie să faceți modificări la matrice, cum ar fi adăugarea unui element sau modificarea dimensiunii matricei
+</body>
+</html>

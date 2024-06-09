@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Bucla while</h1>
+<p>Iată codul standard de execuție a buclei <span id="name">while</span>:
+	</p>
+<div id="bg">
+	<p><span id="name">while</span> (condiție){<br>
+		echipe<br>
+	}<br></p>
+</div>
+<p><span id="name">While </span> din engleză înseamnă <u>până</u>. Această buclă verifică starea din paranteze. Și dacă verificarea condiției devine <span id="name">true</span>, comenzile sunt executate și apoi această buclă va începe din nou și comenzile vor fi executate din nou și așa mai departe. Pentru a ieși din buclă, trebuie să ieși din buclă, trebuie ca condiția să fie <span id="name">false</span></p>
+<p>Iată un cod simplu care folosește o buclă:</p>
+<div id="bg">
+	<p>
+		<span id="name">int</span> a = <span id="number">0</span>;<br>
+		<span id="name">while</span> (a<<span id="number">5</span>){<br>
+			System.out.println(a);<br>
+		++a;<br>
+	}<br></p>
+</div>
+<p>Vom primi cinci valori în consolă: 0,1,2,3,4. Am primit numărul 0, pentru că este începutul numărătorii inverse și se bifează și zero. Dacă codul este înlocuit cu locuri, adică.</p>
+<div id="bg">
+	<p>
+		<span id="name">int</span> a = <span id="number">0</span>;<br>
+		<span id="name">while</span> (a<<span id="number">5</span>){<br>
+			++a;<br>
+		System.out.println(a);<br>
+	}<br></p>
+</div>
+<p>Vom obține cinci valori, dar răspunsul va fi diferit: 1,2,3,4,5. Mai întâi am adăugat valoarea și apoi o scoatem. Adică, primul număr este 0 și l-am adăugat și s-a dovedit a fi 1 și scoatem această unitate. La ultima verificare, am avut numărul 4, apoi adunat, apoi scăzut, iar în acest caz am obținut valoarea 5, deși condiția este strictă.</p>
+</body>
+</html>

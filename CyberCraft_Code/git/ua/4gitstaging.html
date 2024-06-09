@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Git staging</h1>
+<p>Однією з основних функцій Git є концепції проміжного середовища та коміту.<br>
+<br>
+    Під час роботи ви можете додавати, редагувати та видаляти файли. Але щоразу, коли ви досягаєте певної віхи або завершуєте частину роботи, ви повинні додати файли до проміжного середовища.<br>
+<br>
+    Поетапні файли — це файли, готові до розміщення в репозиторії, над яким ви працюєте.
+<div id = "bg">
+    git add data.txt
+</div>
+Наразі ми закінчили працювати з data.txt.  Таким чином, ми можемо додати його до середовища Staging. Файл має бути <b>Staged</b> . Перевіримо статус:<br>
+<div id = "bg">
+    git status<br>
+    On branch master<br><br>
+
+    No commits yet<br><br>
+
+    Changes to be committed:<br>
+    (use "git rm --cached ..." to unstage)<br>
+    new file: data.txt
+</div>
+Тепер файл додано до проміжного середовища.
+<h4>
+    Додавання більше файлів (не один, а більше)
+</h4>
+Ви також можете створити кілька файлів одночасно. Давайте додамо ще 2 файли в нашу робочу папку. Знову скористайтеся текстовим редактором.<br>
+Файл <b>README.md</b>, що описує репозиторій (рекомендовано для всіх репозиторіїв (відкритих)). Умовно у нас є такий README.md<br>
+<div id = "bg">
+    #data.txt<br>
+    this file is used for ML
+</div>
+І тепер умовно у нас є файл <b>data.dat</b>. Ці файли в одній теці. Тепер робимо це:
+<div id = "bg">
+    git add --all
+</div>
+<span id = "name">-all</span> Замість окремих імен файлів буде використано <b>stage</b> всі зміни (нові, змінені та видалені) файли.
+<div id = "bg">
+    git status<br>
+    On branch master<br><br>
+
+    No commits yet<br><br>
+
+    Changes to be committed:<br>
+    (use "git rm --cached ..." to unstage)<br>
+    new file:   README.md<br>
+    new file:   data.dat<br>
+    new file:   data.txt<br>
+</div>
+Тепер усі 3 файли додано до проміжного середовища, і ми готові створити наш перший файл <b>commit</b>.
+І цей во:
+<b>git add --all</b> можна записати по іншому: <b>git add -A</b>
+</p>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>Логічні оператори. Оператори порівняння</h1>
+	<h3 id="question">Почнемо з операторів порівняння. Всього їх 6</h3>
+    <p>Створімо стандартний код для цього уроку:</p>
+     <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a b);
+
+    </div>
+    <p>Я залишу пустоту між змінними <span id="variable">a</span> та <b>b</b> та між ними я буду ставити логічні оператори</p>
+	<p><b"><</b> - це оператор менше. Якщо змінна а буде менша за змінну <b>b</b>, в консоль виведеться <b>true</b>. Якщо змінна <b>a</b> буде більша за <b>b</b>, то при використанні цього оператора - буде виведено <b>false</b>. Ось приклад:</p>
+    <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a>b);<br>
+            <span id = "text">true</span>
+    </div>
+    <p><span id="name"><=</span> - оператор менше або дорівнює. Якщо змінна <b>a</b> менше або дорівнює <span id="variable">b</span>, то отримаємо значення <span id="name">true</span>. Давайте для прикладу замінемо значення <span id="variable">a</span> на <span id="number">6</span>Ми отримали і впершому випадку значення <span id="name">true</span> так і в цьому. В інших випадках - <span id="name">false</span>.</p>
+        <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a<=b);<br>
+            <span id = "key">true</span>
+    </div>
+        <p><span id="name">></span> - оператор більше. Якщо змінна <span id="variable">a</span> буде більша за <span id="variable">b</span>, то отримаємо значення <span id="name">true</span>, але якщо в нас <span id="variable">a</span> менше за <span id="variable">b</span>, отримаємо значення <span id="name">false</span></p>
+        <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a>b);<br>
+<span id = "text">            false</span>
+    </div>
+    <p><span id="name">>=</span> - оператор більше або дорівнює. Виводиметься в консоль значення <span id="name">true</span>, якщо хоча б одна умова виконуєтьється: чи те, що змінна <span id="variable">a</span> більше за <span id="variable">b</span>, чи те, що змінні мають однакові значення.</p>
+    <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a>=b);<br>
+            <span id = "text">false</span>
+    </div>
+    <p><span id="name">==</span> - оператор дорівнює. Ми отримаємо значення <span id="name">true</span>, тільки в тому випадку, якщо значення <span id="variable">a</span> та <span id="variable">b</span> однакові</p>
+     <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a==b);<br>
+<span id = "text">            false</span>
+    </div>
+    <p><span id="name">!=</span> - оператор не дорівнює. На відміну від попереднього оператора, ми отримаємо значення <span id="name">true</span> в усіх випадках, коли <span id="variable">a</span> та <span id="variable">b</span>не однакові</p>
+    <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a!=b);<br>
+<span id = "text">            true</span>
+    </div>
+    <ul>
+<li>
+    <p>Якщо ми будемо порівювати різні числові типи змінних, ось для прикладу:</p>
+    <div id="bg">
+        <p><span id="key">int</span> a = <span id="number">5</span>;<br>
+            <span id="key">double</span> b = <span id="number">5</span>;<br>
+            System.out.println(a==b);<br>
+<span id = "text">            true</span>
+        </p>
+    </div>
+    <p>Також, якщо додати в змінній <span id="variable">b</span> нулі після п'ятірки, то  компілятор прибере всі нулі, окрім першої, тобто:</p>
+    <div id="bg">
+        <p><span id="key">double</span> a = <span id="number">5.00000</span>;<br>System.out.println(a);<br>
+<span id = "text">            5.0</span>
+    </div>
+    <p>І так як 5.0 це 5, при перевірці з <span id="key">int</span> ми отримаємо <b>true</b>, що було раніше.</p>
+</li>
+<li>
+    Порівняння числових типів з тексторвими неможливе!  
+</li>
+</ul>
+<h4 id="name">Перейдімо до логічних типів.</h4>
+<p><span id="name">&</span> - бінарний оператор "логічне і". Цей оператор виведе <span id="name">true</span>, якщо значення змінних <span id="variable">a</span> та <span id="variable">b</span> дорівняють <span>true</span>, якщо хоча б одна змінна має значення <span id="name">false</span>, то й в консолі отримаємо значення <span id="name">false</span></p>
+<div id="bg">
+        <p><span id="key">boolean</span> a = <span id="key">true</span>;<br>
+       <span id="key">boolean</span> b = <span id="key">false</span>;<br>
+        System.out.println(a&b);<br>
+<span id = "text">            false</span>
+        </p>
+    </div>
+<p><span id="name">&&</span> - бінарний оператор "логічне і", який користується спрощеною схемою. Різниці з відповідю попереднього оператора нема, але цей оператор перевіряє першу змінну і якщо вона буде дорівнювати <span id="name">false</span>, то перевірка наступних змінних не буде, а відразу буде виведено в консолі <span id="name">false</span></p>
+<p><span id="name">|</span> - бінарний оператор "логічне або". Ми отримаємо значення <span id="name">true</span>, якщо значення хоча б одного зі змінних дорівнює <span id="name">true</span>. Якщо значення усіх операндів дорівнює <span id="name">false</span>, то в консолі отримаємо значення <span id="name">false</span></p>
+<div id="bg">
+        <p><span id="key">boolean</span> a = <span id="key">true</span>;<br>
+       <span id="key">boolean</span> b = <span id="key">false</span>;<br>
+        System.out.println(a | b);<br>
+<span id = "text">            true</span>
+        </p>
+    </div>
+    <p><span id="name">| |</span> - бінарний оператор "логічне або". Який користується спрощеною схемою, Результатом виразу з попереднім оператором не відрізняється. Але якщо хоча б одне значення дорівнює <span id="name">true</span>, то в консоль відразу виводиться значення <span id="name">true</span>. Якщо значення усіх операндів дорівнює <span id="name">false</span>, то в консолі отримаємо значення <span id="name">false</span></p>
+<p><span id="name">^</span> - унарний оператор "логічне включення або". Результатом буде <span id="name">true</span>, якщо одна змінна має значення <span id="name">true</span>, а інша <span id="name">false</span></p>
+<div id="bg">
+        <p><span id="key">boolean</span> a = <span id="key">true</span>;<br>
+       <span id="key">boolean</span> b = <span id="key">false</span>;<br>
+        System.out.println(a^b);<br>
+            <span id = "text">true</span>
+        </p>
+    </div>
+    <p><span id="name">!</span> - унарний оператор "логічного заперечення". Результатом виразу розгляду !а є значення <span id="name">true</span>, якщо значення змінної <span id="variable">a</span> дорівнює <span id="name">false</span></p>
+    <div id="bg">
+        <p><span id="key">boolean</span> a = <span id="key">true</span>;<br>
+        System.out.println(!a);<br>
+<span id = "text">           false</span>
+        </p>
+    </div>
+</body>
+</html>

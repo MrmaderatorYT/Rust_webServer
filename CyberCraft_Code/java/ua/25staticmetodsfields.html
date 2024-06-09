@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Статичні поля та методи</h1>
+<p>Основна ідея статичних членів класу полягає в тому, що статичний член класу є "загальним" для всіх об'єктів цього класу та існує незалежно від наявності або відсутності в програмі об'єктів класу. Тому звертатися до статичного члена можна не тільки через об'єкт класу але і безпосередньо через клас. Причому останній спосіб є значно кращим.<br>Для цього ми використовуватимемо ключове слово <span id="name">static</span><br>Створимо приклад без статичного елемента. Створимо новий клас в новому файлі  назвою Cat: </p>
+<div id="bg">
+	<span id="key">public class</span> <span id="class">Cat</span>{<br>
+<span id="key">int</span> type;<br>
+}
+</div>
+<p>І тепер в головному методі <b>main</b> ми запишемо код:
+	<div id="bg"> <span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+Cat orangeCat = <span id="key">new</span> Cat();<br>
+orangeCat.type = <span id="number">1</span>;<br>
+Cat blackCat = <span id="key">new</span> Cat();<br>
+blackCat.type = <span id="number">3</span>;<br>
+System.out.println(<span id="text">"Orange: "</span> + orangeCat.type);<br>
+System.out.println(<span id="text">"Black: "</span> + blackCat.type);<br>
+}<br>
+}<br>
+<span id = "text">
+/*Orange: 1<br>
+Black: 3*/</span>
+</div>
+<p>А тепер, ми змінну <b>type</b> оголосимо статичною:</p>
+	<div id="bg"> <span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+Cat orangeCat = <span id="key">new</span> Cat();<br>
+orangeCat.type = <span id="number">1</span>;<br>
+Cat blackCat = <span id="key">new</span> Cat();<br>
+blackCat.type = <span id="number">3</span>;<br>
+System.out.println(<span id="text">"Orange: "</span> + orangeCat.type);<br>
+System.out.println(<span id="text">"Black: "</span> + blackCat.type);<br>
+}<br>
+}<br>
+<span id = "text">
+/* Orange: 3<br>
+Black: 3 */</span>
+</div>
+<p>Ми отримали 3, а не 1, бо змінна в нас одна на всіх. І кожного разу ми замінюємо її.</p>
+<h3>Статичні класи</h3>
+<div id="bg"><span id="key">public class</span> <span id="class">One</span>{<br>
+<span id="key">public static class</span> <span id="class">Two</span>{<br>
+<span id="key">public int</span> type;<br>
+}<br>
+}
+</div>
+Це ми створили клас, як новий файл. Перйдімо в клас <span id="class">Main</span> та оголосимо змінну:
+
+	<div id="bg"> <span id="key">public class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+One.Two two = <span id="key">new</span> One.Two();<br>
+two.type = <span id="number">50</span>;<br>
+System.out.println(<span id="text">"Text: "</span> + two.type);<br>
+}<br>
+}<br>
+<span id = "text">
+Text 50</span>
+</div>
+<p>Для використання статичних методів чи змінних, чи класів, нам не потрібно створювати об'єкт даного класу. Також існують даякі головні моменти використання модифікатора <span id="name">static</span></p>
+<ul>
+	<li>Ми не можемо отримати доступ до не статичним членам класу, в середині статичного метода чи блока. Ось приклад, який призведе до помилки:</li>
+	<div id="bg">
+		<span id="key">public class</span> <span id="class">Counter</span>{<br>
+<span id="key">private int</span> count;<br>
+<span id="key">public static void</span> main(String[] args){<br>
+System.out.println(count); <span id="text">//помилка</span><br>	
+}<br>
+	}
+	</div>
+	<li>Ми не можемо перевизначити (Override) статичні методи.</li>
+</ul>
+</body>
+</html>

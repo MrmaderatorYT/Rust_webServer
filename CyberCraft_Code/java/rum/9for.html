@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Bucla for</h1>
+<p>Bucla <span id="name">for</span> nu este aceeași cu bucla <span id="name">while</span>, dar este mai convenabil de utilizat. Diferența dintre bucla <span id="name">while</span> este că bucla <span id="name">for</span> trebuie să fie executată de un anumit număr de ori când se cunoaște numărul de interacțiuni .
+<span id="name"><b>Interacțiunea</b></span> este aplicarea repetată a unei operații matematice. Șablonul standard al acestui ciclu este următorul:
+</p>
+<div id="bg">
+	<p><span id="name">for</span> (initializare; condiție; expresie matematică){<br>
+		echipe<br>
+	}<br></p>
+</div>
+<p><span id="name">În blocul de inițializare</span> creăm o variabilă nouă sau scriem una existentă.<br>
+<span id="name">În blocul de condiții</span> verificăm condiția pe care o implementăm în acest bloc. Aici vom avea sintaxa pentru scrierea blocului <span id="name">if</span>, unde vom scrie condiția care este verificată.<br>
+<span id="name">În blocul expresii matematice</span> scriem... o expresie matematică. Aceasta este de obicei o creștere sau descreștere.<br> Iată o vedere simplă a unei bucle <span id="name">for</span>.<br></p>
+<div id="bg">
+	<p>
+		<span id="name">for</span>(<span id="name">int</span> k = <span id="number">1</span>; k < <span id="number">5</span>){<br>
+			System.out.println(k);<br>
+	}<br></p>
+</div>
+<p>Vom obține patru valori în consolă: 1,2,3,4. După cum putem vedea, primul bloc este executat primul, adică declarația variabilei k. Al doilea bloc verifică condiția dacă obținem valoarea <span id="name">true</span>, adică în cazul nostru vom obține valoarea <span id="name">true</span> ca atâta timp cât variabila k este mai mică de 5, atunci se execută comanda și anume codul cuprins între paranteze. După aceea, se execută al treilea bloc, adică o expresie matematică, în cazul nostru <b>k++</b>. Dacă obținem valoarea <span id="name">false</span> în al doilea bloc, atunci bucla se termină. Iată un alt exemplu:</p>
+<div id="bg">
+	<p>
+		<span id="name">int</span> a;<br>
+		<span id="name">for</span>(i=<span id="number">1</span>; i<<span id="number">5</span>;i++){<br>
+		System.out.println(i);<br>
+	}<br></p>
+</div>
+<p>Nu există practic nicio diferență cu bucla anterioară, dar în acest caz, putem folosi variabila în întreaga clasă, iar în prima opțiune, putem folosi variabila k doar în corpul buclei. Să trecem la al treilea exemplu:</p>
+<div id="bg">
+	<p>
+		<span id="name">int</span> n, s;<br>
+		<span id="name">for</span>(n=<span id="number">1</span>, s = <span id="number">0</span>; i>=s;s++, n++){<br>
+		System.out.println(n, s);<br>
+	}<br></p>
+</div>
+<p>Aici vedem declarația variabilelor n, s. Valorile au fost atribuite acestor variabile în buclă. În al doilea bloc, verificăm datele, adică am creat o condiție, iar în al treilea bloc executăm comenzi, dacă la verificarea în al doilea bloc obținem true (<span id="name">true</ span>). Este timpul de exemplu 4:</p>
+	<div id="bg">
+	<p>
+		<span id="name">int</span> s = <span id="number">0</span>, k = <span id="number">1</span>, n = <span id="number">10</span>;<br>
+		<span id="name">for</span>(; k<=n ;){<br>
+		s+=k*k;<br>
+		k++;<br>
+		System.out.println(s, k, n);<br>
+	}<br></p>
+</div>
+<p>Aici nu am declarat o variabilă, deoarece a fost deja creată și atribuită unui număr. În al doilea bloc am creat verificarea, iar în al treilea bloc nu am scris expresia matematică pentru că am scris-o în blocul de execuție a codului. Dacă al doilea bloc returnează adevărat, acesta este <span id="name">true</span>. Să trecem la ultimul exemplu, când bucla este complet goală:</p>
+<div id="bg">
+	<p>
+		<span id="name">int</span> s = <span id="number">0</span>, k = <span id="number">1</span>, n = <span id="number">10</span>;<br>
+		<span id="name">for</span>(; ;){<br>
+		s++;<br>
+		k++;<br>
+		n++;<br>
+		System.out.println(s, k, n);<br>
+	}<br></p>
+</div>
+<p>Aceasta este o buclă infinită, ceea ce înseamnă că condiția va exista întotdeauna <span>true</span>.</p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Інтерфейси</h1>
+<p>
+<span id="name">Інтерфейс</span> - урізана копія абстрактного класу. Інтерфейс містить оголошення методів або/і статичних констрант. В інтерфейсі методи тільки оголошуються. Процес реалізації інтерфейсу в класі нагадує успадковування абстрактного суперкласу в підкласі. У випадку з інтерфейсами, клас, який реалізує інтерфейс, має містити описання всіх методів, оголошених в інтерфейсі. Важлива обставина пов'язана з тим, що один і той же клас може реалізувати одночасно декілька інтерфейсів. Реалізація інтерфейсів описується так само, як і звичайний клас, але замість ключового слова <span id="name">class</span>, ми повинні записати <span id="name">interface</span>. <br>
+Навіщо взагалі інтерфейси?<br>
+Справа в тому, що в Java заборонено багатократне спадкування: у підкласу може бути один і тільки один суперклас. Це серйозне обмеження, бо, наприклад в мові С++, клас може успадковувати одночасно декілька класів.<br>
+Ще один ключовий момент: всі методи, які оголошені в інтерфейсі є публічними. Тобто модифікатор доступу <span id="name">public</span> не потрібен.
+</p>
+<div id="bg">
+	<span id="key">interface</span> <span id="class">MyInterface</span>{<br>
+<span id="key">int</span> number = <span id="number">100</span>;<br>
+}
+</div>
+<p>Створимо простий приклад реалізації інтерфейсів:</p>
+<div id="bg">
+	<span id="key">interface</span> <span id="class">A</span>{<br>
+<span id="key">int</span> number = <span id="number">50</span>;<br>
+<span id="key">int</span> getNumber(<span id="key">double</span> x);<br>
+<span id="key">char</span> getSymbol(<span id="key">int</span> y);<br>
+}<br>
+<span id="key">class</span> <span id="class">MyClass</span> <span id="key">implements</span> <span id="class">A</span>{<br>
+<span id="key">public int</span> getNumber(<span id="key">double</span> x){<br>
+<span id="key">return</span> (<span id="key">int</span>) x;<br>
+}<br>
+<span id="key">public char</span> getSymbol (<span id="key">int</span> n){<br>
+<span id="key">return</span> (<span id="key">char</span>)(<span id="text">'A'</span> + n);<br>
+}<br>
+}<br>
+<span id="key">class</span> <span id="class">Main</span>{<br>
+<span id="key">public static void</span> main(String[] args){<br>
+MyClass obj = <span id="key">new</span> MyClass();<br>
+System.out.println(<span id="text">"Статична константа: "</span> + MyClass.number);<br>
+System.out.println(<span id="text">"Ціле число: "</span>+obj.getNumber(<span id="number">20.5</span>));<br>
+System.out.println(<span id="text">"Символ: "</span>+obj.getSymbol(<span id="number">3</span>));<br>
+}<br>
+}<br>
+<span id = "text">Статична константа: 50<br>
+Ціле число: 20<br>
+Символ: D</span>
+</div>
+<p><span id="name">return</span>(<span id="name">int</span>) x - приведення типів: змінна <b>x</b> типу <span id="name">double</span>, а ми замінили на <span id="name">int</span><br>
+<span id = "key">return</span> (<span id="name">char</span>)(<span id="text">'A'</span> + n); - ми перевели порядковий номер букви в текст.<br>
+</p>
+</body>
+</html>

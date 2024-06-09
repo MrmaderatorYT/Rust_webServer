@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>return</h1>
+<p><span id = "key">return</span> - ключове слово, яке допомагає повертати значення. Давайте не поспішати і створимо стандартний шаблон проєкту:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+System.out.println(<span id = "text">Hello world"</span>);<br>
+}<br>
+}
+</div>
+<p>Як нам відомо, шо метод <b>main</b> є точкою старту програми. Цей метод неможе повертати значення, тому створимо новий метод:
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+System.out.println(massage());<br>
+}<br>
+<span id = "key">public static</span> String massage(){<br>
+<span id = "key">return </span><span id = "text">"Hello world"</span>;<br>
+}
+</div>
+<p>Як ми бачимо, ми створили метод <b>massage</b> та змінили метод <b>main</b> - під час виведення ми викликаємо метод. І в консолі ми отримаємо Hello world. Завдяки ключовому слову <span id = "key">return</span> ми вказали значення, яке повинні повернути. Ми вказали, що метод має тип String і тому він поверне значення String. Це допомоєе компілятору перевірити,  що дії методу погоджується таким образом, як він оголошеним. І якщо ми будемо повертати інше значення в цьому методі, наприклад типу <span id = "key">int</span>, або інший навідміну з тим типом який ми вказали в методі, отримаємо помилку, що це не сумісні типи.</p>
+<div id = "bg">
+<span id = "key">public static</span> String massage(){<br>
+<span id = "key">return</span> <span id = "number">5</span>; <span id = "text">//помилка</span><br>
+}
+</div>
+<p>Також, цей тип відноситься до операторів керування коду. Думаю всі знають, що код виконується зверху вниз, але цей оператор має можливість порушити виконання коду:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+<span id="name">if</span id = "name">(args.lenght == <span id = "number">0</span>){<br>
+<span id = "key">return</span>;<br>
+}<br>
+<span id = "key">for</span>(String arg : args){<br>
+System.out.println(arg);<br>
+}<br>
+}<br>
+}<br>
+</div>
+<p>Як бачимо, що в методі <b>main</b> немає параметрів перед перевірку і тому елементів у нас нуль і після цього виконується перевірка, котра зупиняє виконання цього методу (в нашому випадку <b>main</b>)<br>
+<b>args</b> - змінна, яку ми створили в параметрах методу <b>main</b> як масив і тому ми можемо в перевірці використати метод <b>lenght</b>, який використовується для масивів.

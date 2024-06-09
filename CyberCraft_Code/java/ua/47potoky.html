@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Потоки</h1>
+<p>В мові програмування Java є вбудована підтримка багатопотокового програмування. Це означає, що декілька блоків програмного коду виконуються одночасно. Такі блоки називаються потоками. Цоб працювати з потоками, ми повинні реалізувати інтерфейс <b>Runnable</b>. Також, для роботи, ми повинні використати клас <b>Thread</b>. Саме цей клас перекладається як потік. Взагалі його можна перекласти, як плакати, але в нашому випадку - потік. Також існують безліч інших потоків, як от під терміном <b>Stream</b>. Навіщо взагалі потоки? Приведу простий приклад: запуск мобільної програми - початок виконування головного потоку (main). Від нього стартуються інші - дочірні потоки. Зазвичай головний потік є останнім, тобто він завершується в останню чергу. Також незважаючи на те, що головний потік створюється автоматично, ним можна керувати завдяки класу <b>Thread</b> та методу <span id = "key">.currentThread()</span>. Після чого можна керувати потоками. Клас <b>Thread</b> має декілька методів для керуваня потоками:</p>
+<ul>
+<li>
+<span id = "key">.getName()</span> - отримати ім'я потоку.
+</li>
+<li>
+<span id = "key">.getPriority()</span> - отримати преорітет потоку.
+</li>
+<li>
+<span id = "key">.isAlive()</span> - визначити, чи виконується потік.
+</li>
+<li>
+<span id = "key">.join()</span> - очікування завершення потоку.
+</li>
+<li>
+<span id = "key">.run()</span> - запуск потоку, де буде записаний код для програми, який буде виконуватися під час потоку.
+</li>
+<li>
+<span id = "key">.sleep()</span> - зупинити потік на певний час.
+</li>
+<li>
+<span id = "key">.start()</span> - запустити потік.
+</li>
+<li>
+<span id = "key">.inerrupt()</span> - вказати назву потоку.
+</li>
+<li>
+<span id = "key">.inerrupted()</span> - перевірити, яи потік був перерваний.
+</li>
+<li>
+<span id = "key">.activeCount()</span> - перевіряє кількість активованих потоків у групі.
+</li>
+<li>
+<span id = "key">.enumerate()</span> - метод призначений для копіювання в масив посилань на всі активні потоки в даній групі потоків (і її підгрупах).
+</li>
+<li>
+<span id = "key">.setDaemon()</span> - метод дозволяє визначити як демон-потік. Він є особливим, бо він автоматично завершується, якщо завершується головний потік.
+</li>
+<li>
+<span id = "key">.wait()</span> - переведення потоку в режим очікування (для отримання доступу до ресурсу).
+</li>
+<li>
+<span id = "key">.yield()</span> - методам посилається сигнал диспетчеру потоків про те, що даний потік готовий поступитися використанням процесора на користь іншіх потоків.
+</li>
+<li>
+<span id = "key">.isInterrupted()</span> - метод використовується для перевірки того, чи був потік перерваним. Причому статус потоку стосовно переривання не змінюються.
+</li>
+<li>
+<span id = "key">.notify()</span> - під час виклику методу один із потоків, який перебуває в режимі очікування (для отримання доступу до ресурсу), переводиться в режим виконання.
+</li>
+<li>
+<span id = "key">.notifyAll()</span> - під час виклику методу всі потоки, які перебувають в режимі очікування для отримання доступу до ресурсу, переводяться в режим виконання.
+</li>
+</ul>
+<p>Існують й інші методи, але поки що достатнього.</p>
+<div id = "bg">
+Thread mainThread = Thread.currentThread();<br>
+System.out.println(mainThread.getName());
+</div>
+<p>Ми отримаємо в консолі <b>main</b> - назва потока, який є головний. Замінімо назву <b>main</b> на іншу.</p>
+<div id = "bg">
+mainThread.setName(<span id = "text">"Not main"</span>);<br>
+System.out.println(mainThread.getName());
+</div>
+<p>І в консолі ми отримаємо <b>Not main</b>. Тепер давайте ми діазнаємося інфоримацію про назву потоку без вказівки методу:
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[ ] args){<br>
+Thread mainThread = Thread.currentThread();<br>
+System.out.println(mainThread);<br>
+}<br>
+}
+</div>
+<p>В цьому випадку випадку ми отримаємо в консолі: <b>Thread [main, 5, main]</b> в квадратних дужках перший елемент <b>main</b> - є ім'я потоку. Число 5 - його приорітет і 3 елемент - його група. Також ми можемо створити власний потік. І для цього ми починаємо спадкування класу Thread для внутрішнього класу:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[ ] args){<br>
+MyThread a = <span id = "key">new</span> MyThread();<br>
+a.start();<br>
+<span id = "key">public class</span> <span id = "class">MyThread</span> <span id = "key">extends</span> Thread{<br>
+<span id = "key">public void</span> run(){<br>
+System.out.println(<span id = "text">"Старт потоку"</span>);<br>
+}<br>
+}
+</div>
+<p>Також існує складніший варіант створення потоку: через реалізування інтерфейсу <b>Runnable</b>. Потім ми можемо створити потік з будь-якого об'єкта, що реалізує <b>Runnable</b> інтерфейс і оголосити метод <b>run</b>. Потім в цьому методі ми реалізуємо код нового потоку. Цей потік завершиться, коли метод поверне керування. Після оголошення інтерфейса, ми повинні використовувати конструктор:</p>
+<div id = "bg">
+Thread (Runnable obj, String name)
+</div>
+<p>У першому параметрі ми вказуємо екземпляр класу, що реалізує інтерфейс. Він визначає, де розпочинається виконання потоку. У другому параметрі передається ім'я потоку. Після цього, його потрібно запустити за допомогою методу <b>start</b>, який по суті виконує виклик методу <b>run()</b>:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[ ] args){<br>
+<span id = "key">new</span> Runnable;<br>
+<span id = "text">//створення нового потоку</span><br>
+<span id = "key">try</span>{<br>
+<span id = "key">for</span>(i = <span id = "number">5</span>; i > <span id = "number">0</span>; i++){<br>
+System.out.println(<span id = "text">"Головний потік: "</span>+i);<br>
+Thread.sleep(<span id = "number">1000</span>);<br>
+}<br>
+}<br>
+<span id = "key">catch</span>(InterruptedException e){<br>
+System.out.println(<span id = "text">"Головний потік перервано"</span>);<br>
+}<br>
+}<br>
+<span id = "key">class</span> <span id = "class">Run</span> <span id = "key">implements</span> Runnable{<br>
+Thread thread;<br>
+<span id = "text">//конструктор</span><br>
+Run(){<br>
+<span id = "text">//створюємо новий другий потік</span><br>
+thread = <span id = "key">new</span> Thread(<span id = "key">this</span>, <span id = "text">"Потік для прикладу"</span>);<br>
+System.out.println(<span id = "text">"Створений другий потік"</span> + thread);<br>
+thread.start();<br>
+}<br>
+<span id = "text">//створюємо обов'язковий метод для інтерфейсу Runnable</span><br>
+<span id = "key">public void</span> run(){<br>
+<span id = "key">try</span>{<br>
+<span id = "key">for</span>(<span id = "key">int</span> i > <span id = "number">0</span>; i--){<br>
+System.out.println(<span id = "text">"Другий потік: "</span>+i);
+Thread.sleep(<span id = "number">500</span>);<br>
+}<br>
+}<br>
+<span id = "key">catch</span>(InterruptedException e){<br>
+System.out.println(<span id = "text">"Другий потік перервано"</span>);<br>
+}<br>
+}<br>
+}<br>
+</div>
+<p>Всередині конструктора <b>Runnable</b> ми створюємо об'єкт класу <b>Thread</b></p>
+<div id = "bg">
+thread = <span id = "key">new</span> Thread (<span id = "key">this</span>, <span id = "text">"Потік"</span>);<br>
+</div>
+<p>У першому параметрі використовується об'єкт <span id = "key">this</span>, що означає бажання викликати метод <b>run()</span> цього об'єкта. Далі викликається метод <b>start()</b>, у результаті записується виконання потоку, починаючи з методу <b>run()</b>. У свою чергу, метод запускає цикл для нашого потоку. Після методу <b>start()</b> конструктор <b>Run</b> повертає керування кодом. Коли головний потік продовжує свою роботу, він входить до свого циклу. Після цього обидва потоки виконуються паралельно.</p>
+</body>
+</html>

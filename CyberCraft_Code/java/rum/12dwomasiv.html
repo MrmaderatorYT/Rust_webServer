@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Matrice bidimensională</h1>
+<p>Crearea unei matrice bidimensionale este foarte asemănătoare cu scrierea unei matrice unidimensionale:</p>
+<div id="bg">
+	<p>tip [ ] [ ] nume = <span id="name">new</span> tastați [dimensiune] [dimensiune];</p>
+</div>
+<p>După cum puteți vedea, am scris patru paranteze drepte după tip. Noi suntem cei care am creat expunerea la matricea bidimensională. O matrice bidimensională este un tabel.<br><span id="name">Primele paranteze pătrate</span> sunt lungimea matricei, dar lungimea șirului</p><span id="name">Al doilea paranteze drepte</span> sunt coloane.</p>
+<p>Să creăm un exemplu:</p><div id="bg">
+	<p><span id="name">int</span> [ ] [ ] numbers = <span id="name">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Această comandă poate fi scrisă în două rânduri:</p>
+<div id="bg">
+	<p><span id="name">int</span> [ ] [ ] numbers;<br>
+	 numbers = <span id="name">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Deci, comanda <span id="name">int</span> și patru paranteze împreună cu variabila numere declară variabila numere a unui tablou bidimensional. Ca rezultat al executării comenzii</p>
+<div id="bg">
+	 numbers = <span id="name">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Este creată o matrice bidimensională de numere întregi: trei rânduri și cinci coloane, astfel încât această matrice poate conține 15 elemente. Pentru a obține un element dintr-o matrice de acest tip, trebuie să scrieți următorul cod:</p>
+<div id="bg">
+	<p>System.out.println(numbers[<span id="number">1</span>] [<span id="number">2</span>]);</p>
+</div>
+<p>Vom obține numărul din al doilea element al rândului și care se află în a treia coloană. Și acum să trecem la inițializarea matricei bidimensionale:</p>
+<div id="bg">
+	<p><span id="name">char</span> [ ] [ ] s = {{<span id="text">'A'</span>, <span id="text">'B'</span>, <span id="text">'C'</span>},{<span id="text">'D'</span>, <span id="text">'E'</span>, <span id="text">'F'</span>}};<br>
+	 numbers = <span id="name">new int</span> [<span id="number">3</span>] [<span id="number">5</span>];</p>
+</div>
+<p>Aici am declarat o matrice de tipul <span id="name">char</span> și am scris valorile acolo. Există, de asemenea, anumite acțiuni cu matrice:<br><span id="name">.lenght</span> - lungimea matricei. Avem în vedere un șir, adică pentru o matrice 3*3 lungimea este 3, iar pentru o matrice 3*4 lungimea este 3.<br>
+<span id="name">.clone</span> - această comandă alocă un nou spațiu de memorie și îi atribuie matricea copiată. Acestea sunt anumite echipe, dar nu toate. Este suficient pentru moment.</p>
+</body>
+</html>

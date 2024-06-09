@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operatori logici. Operatori de comparație</h1>
+	<h3 id="question">Să începem cu operatorii de comparație. Sunt 6 în total
+     <p>Să creăm cod standard pentru această lecție:</p>
+     <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a b);<br>
+            ------------------------
+
+    </div>
+   <p>Voi lăsa un spațiu între variabilele <span id="variable">a</span> și <span id="variable">b</span> și între ele voi pune operatori logici</p>
+	<p><span id="name"><</span> este operatorul mai puțin decât. Dacă variabila a este mai mică decât variabila <span id="variable">b</span>, <span id="name">true</span> va fi transmisă în consolă. Dacă variabila <span id="variable">a</span> este mai mare decât <span id="variable">b</span>, atunci când utilizați acest operator - <span id="name">false< / span>. Iată un exemplu:</p>
+    <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a>b);<br>
+            ------------------------<br>
+            true
+    </div>
+    <p><span id="name"><=</span> - operator mai mic sau egal cu. Dacă variabila <span id="variable">a</span> este mai mică sau egală cu <span id="variable">b</span>, atunci vom obține valoarea <span id="name"> adevărat</span>. De exemplu, să înlocuim valoarea <span id="variable">a</span> cu <span id="number">6</span>. Am primit valoarea <span id="name">true</span si in primul caz > deci si in acesta. În alte cazuri - <span id="name">false</span>.</p>
+        <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a<=b);<br>
+            -------------------------<br>
+            true
+    </div>
+        <p><span id="name">></span> - cu atât mai mult operator. Dacă variabila <span id="variable">a</span> este mai mare decât <span id="variable">b</span>, atunci vom obține valoarea <span id="name">true</span> span>, dar dacă <span id="variable">a</span> nostru este mai mic decât <span id="variable">b</span>, vom obține valoarea <span id="name">false </span></p>
+        <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a>b);<br>
+            ------------------------<br>
+            false
+    </div>
+    <p><span id="name">>=</span> - operator mai mare sau egal. Valoarea <span id="name">true</span> va fi trimisă în consolă dacă cel puțin o condiție este îndeplinită: dacă variabila <span id="variable">a</span> este mai mare decât <span id=" variabilă">b</span>, sau că variabilele au aceleași valori.</p>
+    <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a>=b);<br>
+            -------------------------<br>
+            false
+    </div>
+    <p><span id="name">==</span> - operatorul este egal. Vom obține valoarea <span id="name">true</span> numai dacă valorile <span id="variable">a</span> și <span id="variable">b</span > sunt la fel</p>
+     <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a==b);<br>
+            -------------------------<br>
+            false
+    </div>
+   <p><span id="name">!=</span> - operatorul nu este egal. Spre deosebire de declarația anterioară, vom obține valoarea <span id="name">true</span> în toate cazurile în care <span id="variable">a</span> și <span id="variable">b </span>nu la fel</p>
+     <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">int</span> b = <span id="number">6</span>;<br>
+            System.out.println(a!=b);<br>
+            -------------------------<br>
+            true
+    </div>
+    <ul>
+<li>
+    <p>Dacă comparăm diferite tipuri numerice de variabile, iată un exemplu:</p>
+    <div id="bg">
+        <p><span id="name">int</span> a = <span id="number">5</span>;<br>
+            <span id="name">double</span> b = <span id="number">5</span>;<br>
+            System.out.println(a==b);<br>
+            -------------------------<br>
+            true
+        </p>
+    </div>
+    <p>De asemenea, dacă adăugați zerouri după cele cinci din variabila <span id="variable">b</span>, compilatorul va elimina toate zerourile, cu excepția primei, adică:</p>
+    <div id="bg">
+        <p><span id="name">double</span> a = <span id="number">5.00000</span>;<br>System.out.println(a);<br>
+            ---------------------<br>
+            5.0
+    </div>
+    <p>Și, deoarece 5.0 este 5, verificarea cu <span id="name">int</span> va returna true, ceea ce era înainte.</p>
+</li>
+<li>
+Compararea tipurilor numerice cu tipurile de text este imposibilă!
+</li>
+</ul>
+<h4 id="name">Să trecem la tipurile logice.</h4>
+<p><span id="name">&</span> - operator binar „logic și”. Această declarație va returna <span id="name">true</span> dacă valorile variabilelor <span id="variable">a</span> și <span id="variable">b</span> span> sunt egale cu <span >true</span>, dacă cel puțin o variabilă are valoarea <span id="name">false</span>, atunci vom obține și valoarea <span id="name" >false</span></p>
+<div id="bg">
+        <p><span id="name">boolean</span> a = <span id="name">true</span>;<br>
+       <span id="name">boolean</span> b = <span id="name">false</span>;<br>
+        System.out.println(a&b);<br>
+        ---------------------<br>
+            false
+        </p>
+    </div>
+<p><span id="name">&&</span> este un operator binar „logic și” care utilizează o schemă simplificată. Nu există nicio diferență cu răspunsul afirmației anterioare, dar această instrucțiune verifică prima variabilă și dacă este egală cu <span id="name">false</span>, atunci următoarele variabile nu vor fi verificate, ci vor să fie afișat imediat în consolă <span id=" name">false</span></p>
+<p><span id="name">|</span> - logic binar sau operator. Vom obține valoarea <span id="name">true</span> dacă valoarea a cel puțin uneia dintre variabile este <span id="name">true</span>. Dacă valoarea tuturor operanzilor este egală cu <span id="name">false</span>, atunci în consolă vom primi valoarea <span id="name">false</span></p>
+<div id="bg">
+        <p><span id="name">boolean</span> a = <span id="name">true</span>;<br>
+       <span id="name">boolean</span> b = <span id="name">false</span>;<br>
+        System.out.println(a | b);<br>
+        ---------------------<br>
+            true
+        </p>
+    </div>
+    <p><span id="name">| |</span> este un operator binar „logic sau”. Care folosește o schemă simplificată, rezultatul expresiei cu operatorul anterior nu diferă. Dar dacă cel puțin o valoare este egală cu <span id="name">true</span>, atunci valoarea <span id="name">true</span> este trimisă imediat în consolă. Dacă valoarea tuturor operanzilor este egală cu <span id="name">false</span>, atunci în consolă vom primi valoarea <span id="name">false</span></p>
+<p><span id="name">^</span> - operator unar „includere logică sau”. Rezultatul va fi <span id="name">adevărat</span> dacă o variabilă este <span id="name">true</span>, iar cealaltă este <span id="name">false</span >> </p>
+<div id="bg">
+        <p><span id="name">boolean</span> a = <span id="name">true</span>;<br>
+       <span id="name">boolean</span> b = <span id="name">false</span>;<br>
+        System.out.println(a^b);<br>
+        ---------------------<br>
+            true
+        </p>
+    </div>
+    <p><span id="name">!</span> - operator unar de „negație logică”. Rezultatul expresiei de evaluare !a este valoarea <span id="name">true</span> dacă valoarea variabilei <span id="variable">a</span> este <span id="name">false</span ></p>
+     <div id="bg">
+        <p><span id="name">boolean</span> a = <span id="name">true</span>;<br>
+        System.out.println(!a);<br>
+        ---------------------<br>
+           false
+        </p>
+    </div>
+</body>
+</html>

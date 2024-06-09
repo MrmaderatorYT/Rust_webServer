@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Перерахування (enum)</h1>
+<p><span id = "key">Enum</span> - це спеціальний тип даних, який дозволяє змінній бути набором попередньо визначених констант. Змінна має дорівнювати одному із попередньо визначених для неї значень. Типовим прикладом є напрямки горизонту: значення північ, південь, захід, схід. Воне є константами, тож можна, хоч і не обов'язково записати з великої літери. Ось приклад:</p>
+<div id = "bg">
+<span id = "key">public enum</span> Compass{<br>
+NORTH, SOUTH, WEST, EAST;<br>
+}
+</div>
+<p>Також <span id = "key">enum</span> повинен мати модифікатор доступу. Якщо <span id = "key">enum</span> не є вкладеним в клас, то він має бути відкритим. Якщо <span id = "key">enum</span> буде створений як в окремому файлі, то модифікатор доступу <span id = "key">private</span> не можна використовувати. Але, якщо <span id = "key">enum</span> є вкладеним у клас, він може бути приватним:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">private enum</span> <span id = "class">Data</span>{<br>
+NORTH, SOUTH, WEST, EAST;<br>
+}<br>
+}<br>
+</div>
+<p>Щоб отримати дані з <span id = "key">enum</span>, можна використовувати цей код:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Test</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+System.out.println(Compass.NORTH);<br>
+System.out.println(Compass.SOUTH);<br>
+System.out.println(Compass.WEST);<br>
+System.out.println(Compass.EAST);<br>
+}<br>
+}<br>
+-----------------------<br>
+NORTH<br>
+SOUTH<br>
+WEST<br>
+EAST<br>
+</div>
+<p>Також, можна отримати значення використовуючи <span id = "key">for-each</span> цикл та методу <b>.values()</b>:
+<div id = "bg">
+<span id = "key">for</span>(Main s : Main.values()){<br>
+System.out.println(s);<br>
+}
+</div>
+Також дуже зручно використовувати оператор вибору:
+<div id = "bg">
+Main var = Main.EAST;<br>
+<span id = "key">switch</span>(var){<br>
+<span id = "key">case</span> NORTH:<br>
+System.out.println(<span id = "text">"Північ"</span>);<br>
+<span id = "key">break</span>;<br>
+<span id = "key">case</span> SOUTH:<br>
+System.out.println(<span id = "text">"Південь"</span>);<br>
+<span id = "key">break</span>;<br>
+<span id = "key">case</span> WEST:<br>
+System.out.println(<span id = "text">"Захід"</span>);<br>
+<span id = "key">break</span>;<br>
+<span id = "key">case</span> EAST:<br>
+System.out.println(<span id = "text">"Схід"</span>);<br>
+<span id = "key">break</span>;<br>
+}<br>
+</div>
+<p>В нашому випадку, ми отримаємо в консолі "Північ", бо в нас всі відповіді для зміної <b>var</b> є істині, якщо прибрати ключове слово <span id = "key">break</span>, то ми отримаємо всі варіанти відповіді. <br>
+Але навіщо нам використовувати <span id = "key">enum</span>, якщо можна створити свої змінні та все? Перш за все, як на початку було сказано, перерахування - набір констант <span id = "key">enum</span> розглядаються, як типи даних, і знову ж таки, завдяки константам. Одне із ключових урізаних можлвостей <span id = "key">enum</span> - неможливість успадковувати.
+</p>
+</body>
+</html>

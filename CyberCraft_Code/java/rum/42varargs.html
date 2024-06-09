@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Varargs</h1>
+<span id = "name">Varargs</span> - argumente de lungime variabilă. Ele ne permit să creăm metode cu un număr arbitrar de argumente. Să creăm un exemplu. Să presupunem că trebuie să scriem o metodă care va primi un număr arbitrar de argumente multiple și să le adunăm împreună. Avem 2 opțiuni:<br>
+1. Supraîncărcare:
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Calc</span>{<br>
+<span id = "name">int</span> sum (<span id = "name">int</span> a, <span id = "name">int</span> b){<span id = „text”>/*code*/</span>}<br>
+<span id = "name">int</span> sum (<span id = "name">int</span> a, <span id = "name">int</span> b, <span id = " name">int</span> c){<span id = "text">/*code*/</span>}<br>
+<span id = "name">int</span> sum (<span id = "name">int</span> a, <span id = "name">int</span> b, <span id = " name">int</span> c, <span id = "name">int</span> d){<span id = "text">/*code*/</span>}<br>
+}
+</div>
+<p><b>Supraîncărcare</b> - metode care au același nume, dar de tipuri diferite și/sau cu un număr diferit de parametri. Dar folosind supraîncărcare, avem 2 probleme. În primul rând - uneori nu este clar când să se oprească, iar în al doilea rând - mult.</p>
+2. Matrice<br>
+<div id="bg">
+<span id = "name">class </span><span id = "class">Calc</span>{<br>
+<span id = "name">int</span> sum(<span id = "name">int</span>[ ] numbers){<span id = "text">/*code*/</span> }
+</div>
+<p>Arată mai bine cu matrice, dar există întotdeauna o nuanță atunci când numim metoda:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Calc</span>{<br>
+<span id = "name">public static void</span> main(String... s){<br>
+Calculator Calc = <span id = "name">new</span> Calc(){<br>
+<span id = "name">int</span>[] arguments = <span id = "name">new int</span> [<span id = "number">4</span>];<br>
+argumente[<span id = "number">0</span>]=<span id = "number">1</span>;<br>
+argumente[<span id = "number">1</span>]=<span id = "number">10</span>;<br>
+argumente[<span id = "number">2</span>]=<span id = "number">123</span>;<br>
+argumente[<span id = "number">3</span>]=<span id = "number">234</span>;<br>
+<span id = "name">int</span> sum = calculator.sum(arguments);<br>
+<br>
+<br>
+}
+</div>
+<p>Toate acestea pot fi, de asemenea, combinate într-o versiune mai scurtă:</p>
+<div id="bg">
+<span id = "name"> class</span> <span id = "class">Calc</span>{<br>
+<span id = "name">public static void</span> main(String... s){<br>
+Calculator Calc = <span id = "name">new</span> Calc(){<br>
+<span id = "name">int</span>[ ] arguments = {<span id = "number">1</span>, <span id = "number">10</span>, <span id = „number”>123</span>, <span id = "number">234</span>};<br>
+<span id = "name">int</span> sum = calculator.sum(arguments);<br>
+<br>
+<br>
+<br>
+</div>
+<p>Dar totuși, nu vom scăpa de codul suplimentar. Și acum să revenim la subiectul nostru - <b>Varargs</b>. Datorită acestui lucru, codul anterior poate fi scris astfel:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Calculator</span>{<br>
+<span id = "name">public static void</span> main(String... args){<br>
+Calculator calc = <span id = "name">new</span> Calculator();
+<span id = "name">int</span> sum = calc.sum(<span id = "number">1</span>, <span id = "number">10</span>, <span id = "number">123</span>, <span id = "number">234</span>);<br>
+<br>
+<span id = "name">int</span> sum(<span id = "name">int</span>... numbers){<br>
+<span id = "name">return</span> Arrays.stream(numbers).sum();<br>
+<br>
+<br>
+</div>
+<span id = "name">Arrays</span> este o clasă care vă permite să lucrați cu matrice.<br>
+<span id = "name">.stream</span> - o metodă care funcționează cu fluxuri, pe care o vom învăța la un nivel mai dificil.
+<p>Există mai multe reguli pentru utilizarea <b>varargs</b>:<br>
+1. Varargs pot fi specificate numai pentru o anumită metodă:</p>
+<div id="bg">
+<span id = "name">void</span> a(String... args){<br>
+<span id = "text">//code</span><br>
+}
+</div>
+2. Fiecare astfel de argument din corpul metodei este o matrice, așa că puteți lucra la el ca pe o matrice obișnuită.<br>
+3. Argumentul varargs trebuie să fie ultimul din lista de argumente:</p>
+<div id="bg">
+<span id = "name">void</span> a(String... a, String b) <span id = "text">//acest lucru nu este posibil</span><br><br>
+<span id = "name">void</span> a(String a, String... b) <span id = "text">//yes you can</span>
+</div>
+4. În ciuda faptului că varargs este o matrice, atunci când se apelează o metodă care acceptă argumente de lungime variabilă, nu este necesar să se creeze o matrice. Este suficient să enumerați pur și simplu argumentele necesare separate prin virgule:</p>
+<div id="bg">
+<span id = "name">public class</span> <span id = "class">Main</span>{<br>
+<span id = "name">public static void</span> main(String... a){<br>
+System.out.println(<span id = "text">"Hai sa programam"</span>, <span id = "text">"Java"</span>, <span id = "text">"impreuna"</span> );<br>
+<br>
+<span id = "name">static void</span> print(String... args){<br>
+<span id = "name">for</span>(<span id = "name">int</span> i = <span id = "number">0</span>; i < words.lenght; i++){<br>
+System.out.println(args[i]);<br>
+<br>
+<br>
+<br>
+------------------------<br>
+Să programăm<br>
+Java<br>
+Împreună
+</div>
+<p>Voi pune din nou întrebarea: când să folosesc varargs? Răspunsul depinde de unde programează persoana și cine întreabă. Dacă o astfel de întrebare este pusă de un client al unui API care are metode varargs, atunci folosiți astfel de metode cât mai des posibil. Dacă dezvoltatorul API pune această întrebare, atunci ar trebui să le utilizați atunci când beneficiul este evident, adică nu ar trebui să le folosiți des. De asemenea, nu se recomandă utilizarea supraîncărcării. metode, deoarece clienții vor avea dificultăți în a înțelege care dintre metodele supraîncărcate este utilizată.
+</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Вектори</h1>
+<p><span id = "name">Вектори</span> - це основний тип даних, який представляє собою одномірний масив об'єктів одного типу. Вектори можуть бути числовими, символьними, логічними та іншими.<br>Ось приклад створення вектора:</p>
+<div id="bg">
+	numeric_vector &lt;- c(<span id = "number">1</span>, <span id = "number">2</span>, <span id = "number">3</span>, <span id = "number">4</span>, <span id = "number">5</span>)<br>
+	char_vector &lt;- c(<span id = "text">"apple"</span>, <span id = "text">"banana"</span>, <span id = "text">"peach"</span>, <span id = "text">"cherry"</span>)<br>
+	bool_vector &lt;- c(<span id = "key">TRUE</span>, <span id = "key">TRUE</span>, <span id = "key">FALSE</span>, <span id = "key">TRUE</span>, <span id = "key">FALSE</span>)
+</div>
+<p>В даному випадку ми створили вектори. Щоб створити вектор треба використати функцію <b>c</b>. Далі через кому ми записуємо дані. Дані повинні бути одного типу<br>. Щоб отримати дані з вектора ми використовуємо індекси:</p>
+<div id = "bg">
+print(numeric_vector[<span id = "number">1</span>])
+print(char_vector[<span id = "number">2</span>])
+print(bool_vector[<span id = "number">4</span>])
+</div>
+<h4>Зверніть увагу</h4>
+Індексація векторів починається з одиниці. Тобто в попередньому  прикладі ми отримає значення:
+<div id = "bg">
+<span id = "text">1<br>banana</br>TRUE</div>
+<p>Щоб змінити значення окремого індексу ми звертаємося до вектора і його ж індекса:</p>
+<div id = "bg">
+numeric_vector[<span id = "number">1</span>] &lt;- <span id = "number">99</span><br>
+char_vector[<span id = "number">3</span>] &lt;- <span id = "text">"pear"</span>
+</div>
+Ми змінили перший елемент вектора <b>numeric_vector</b> з 1 на 99. Також, ми змінили 3 елмент вектора <b>char_vector</b> на <b>pear</b><br>
+Найцікавіше - з векторами можна виконувати арифметичні операції:
+<div id = "bg">
+x &lt;- c(<span id = "number">1</span>, <span id = "number">2</span>, <span id = "number">3</span>)<br>
+y &lt;- c(<span id = "number">4</span>, <span id = "number">5</span>, <span id = "number">6</span>)<br>
+sum &lt;- x + y <br>
+<span id = "text">#5 7 9</span>
+</div>
+<h4>Зверніть увагу</h4>
+Кількість елементів обох векторів повинна бути однакова.
+<h4>Функції для роботи з векторами</h4>
+<ul>
+<li>length(): Повертає кількість елементів в векторі.</li>
+<li>mean(): Обчислює середнє значення.</li>
+<li>median(): Обчислює медіану.</li>
+<li>max() і min(): Знаходять максимальне і мінімальне значення вектора.</li>
+</ul>
+<div id = "bg">
+values &lt;- c(<span id = "number">5</span>, <span id = "number">10</span>, <span id = "number">15</span>, <span id = "number">20</span>)<br>
+print(length(values))  <span id = "text"># Виведе 4</span><br>
+print(mean(values))    <span id = "text"># Виведе 12.5</span><br>
+print(max(values))     <span id = "text"># Виведе 20</span>
+</div>
+<h4>Логічні вектори</h4>
+Логічні вектори загалом використовуються для фільтрації даних:
+<div id = "bg">
+values &lt;- c(<span id = "number">1</span>, <span id = "number">2</span>, <span id = "number">3</span>, <span id = "number">4</span>, <span id = "number">5</span>)<br>
+logical_vector &lt;- numbers > <span id = "number">3</span><br>
+print(logical_vector)  <span id = "text"># Виведе TRUE FALSE FALSE TRUE TRUE</span><br>
+print(numbers[logical_vector])  <span id = "text"># Виведе 4 5</span>
+</div>
+Розбираємо:<br>
+У першому рядку ми створюємо вектор<br>
+У другому рядку ми створюємо логічний вектор <b>logical_vector</b>. Кожен елемент цього вектора буде <b>TRUE</b>, якщо відповідний елемент вектора numbers більше 3, і <b>FALSE</b> в іншому випадку. Таким чином, <b>logical_vector</b> буде виглядати так: <b>FALSE</b>, <b>FALSE</b>, <b>FALSE</b>, <b>TRUE</b>, <b>TRUE</b>.<br>
+У третьому рядку ми виводимо логічний вектор <b>logical_vector</b>. Вивід буде: <b>TRUE FALSE FALSE TRUE TRUE</b>, що відповідає нашому вектору <b>logical_vector</b>.<br>
+У четвертому рядку ми ми використовуємо <b>logical_vector</b> для індексації вектора numbers. Коли ви використовуєте логічний вектор як індекс, R виводить лише ті значення, для яких відповідні значення в логічному векторі є <b>TRUE</b>. Таким чином, <b>numbers[logical_vector]</b> повертає підмножину вектора <b>numbers</b>, яка містить лише ті елементи, які більше 3. Отже, результатом буде виведення чисел 4 та 5.
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Varargs</h1>
+<span id = "key">Varargs</span> - аргументи змінної довжини. Вони дозволяють нам створювати методи вільним числом аргументів. Створімо приклад. Припустимо, що нам потрібно написати метод, котрий буде отримувати довільну кількіть багаточислених аргументів та складати їх разом. В нас відчиняються 2 варіанти:<br>
+1. Перевантаження:
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Calc</span>{<br>
+<span id = "key">int</span> sum (<span id = "key">int</span> a, <span id = "key">int</span> b){<span id = "text">/*код*/</span>}<br>
+<span id = "key">int</span> sum (<span id = "key">int</span> a, <span id = "key">int</span> b, <span id = "key">int</span> c){<span id = "text">/*код*/</span>}<br>
+<span id = "key">int</span> sum (<span id = "key">int</span> a, <span id = "key">int</span> b, <span id = "key">int</span> c, <span id = "key">int</span> d){<span id = "text">/*код*/</span>}<br>
+}
+</div>
+<p><b>Перевантаження</b> - методи, які мають одне й те саме ім'я, але за різними типами та/або з різною кількісю параметрів. Але використовуючи перевантаження, в нас виникають 2 проблеми. Перш за все - інколи не зрозуміло, коли треба зупинитися, а по-друге - дуже багато.</p>
+<p>2. Масиви<br>
+<div id = "bg">
+<span id = "key">class </span><span id = "class">Calc</span>{<br>
+<span id = "key">int</span> sum(<span id = "key">int</span>[ ] numbers){<span id = "text">/*код*/</span>}
+</div>
+<p>З масивами воно виглядає більш краще, але завжди є нюанс, тоді, коли викличемо метод:</p>
+<div id = "bg">
+<span id = "key">class</span> <span id = "class">Calc</span>{<br>
+<span id = "key">public static void</span> main(String... s){<br>
+Calc calculator = <span id = "key">new</span> Calc(){<br>
+<span id = "key">int</span>[] arguments = <span id = "key">new int</span> [<span id = "number">4</span>];<br>
+arguments[<span id = "number">0</span>]=<span id = "number">1</span>;<br>
+arguments[<span id = "number">1</span>]=<span id = "number">10</span>;<br>
+arguments[<span id = "number">2</span>]=<span id = "number">123</span>;<br>
+arguments[<span id = "number">3</span>]=<span id = "number">234</span>;<br>
+<span id = "key">int</span> sum = calculator.sum(arguments);<br>
+}<br>
+}<br>
+}
+</div>
+<p>Також це все можна об'єднати в більш коротший варіант:</p>
+<div id = "bg">
+<span id = "key"> class</span> <span id = "class">Calc</span>{<br>
+<span id = "key">public static void</span> main(String... s){<br>
+Calc calculator = <span id = "key">new</span> Calc(){<br>
+<span id = "key">int</span>[ ] arguments = {<span id = "number">1</span>, <span id = "number">10</span>, <span id = "number">123</span>, <span id = "number">234</span>};<br>
+<span id = "key">int</span> sum = calculator.sum(arguments);<br>
+}<br>
+}<br>
+}<br>
+</div>
+<p>Але все-одно ми не позбудемося выд зайвого коду. І тепер повернімося до но нашої теми - <b>Varargs</b>. Завдяки цьому попередній код можна записати так:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Calculator</span>{<br>
+<span id = "key">public static void</span> main(String... args){<br>
+Calculator calc = <span id = "key">new</span> Calculator();
+<span id = "key">int</span> sum = calc.sum(<span id = "number">1</span>, <span id = "number">10</span>, <span id = "number">123</span>, <span id = "number">234</span>);<br>
+}<br>
+<span id = "key">int</span> sum(<span id = "key">int</span>... numbers){<br>
+<span id = "key">return</span> Arrays.stream(numbers).sum();<br>
+}<br>
+}<br>
+</div>
+<span id = "key">Arrays</span> - клас, завдяки якому можна співпрацювати з масивами.<br>
+<span id = "key">.stream</span> - метод, який працює з потоками, які ми будемо вчити на важчому рівні.
+<p>Існує декілька правил використання <b>varargs</b>:<br>
+1. Varargs може бути вказаним тільки для деякого методу:</p>
+<div id = "bg">
+<span id = "key">void</span> a(String... args){<br>
+<span id = "text">//код</span><br>
+}
+</div>
+<p>2. Кожний такий аргумент в тілі метода є масивом, тож над ним можна працювати, як зі звичайним масивом.<br>
+3. Varargs аргумент повинен бути останнім в списку аргументів:</p>
+<div id = "bg">
+<span id = "key">void</span> a(String... a, String b) <span id = "text">//так не можна</span><br><br>
+<span id = "key">void</span> a(String a, String... b) <span id = "text">//так можна</span>
+</div>
+<p>4. Не дивлячись на те, що varargs є масив, при викликанні методи, який приймає аргументи довжини, яка може змінюватист, не обов'язково створювати масив. Достатньо просто перерахувати необхідні аргументи через кому:</p>	
+<div id ="bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String... a){<br>
+print(<span id = "text">"Програмуймо"</span>, <span id = "text">"Java"</span>, <span id = "text">"разом"</span>);<br>
+}<br>
+<span id = "key">static void</span> print(String... words){<br>
+<span id = "key">for</span>(<span id = "key">int</span> i = <span id = "number">0</span>; i < words.length; i++){<br>
+System.out.println(words[i]);<br>
+}<br>
+}<br>
+}<br>
+------------------------<br>
+Програмуймо<br>
+Java<br>
+Разом
+</div>
+<p>Поставлю питання ще раз: коли використовувати varargs? Відповідь залежить від того, де людина програмує і хто запитує. Якщо таке питання задає клієнт якогось API у якому є varargs методи, то використовуйте такі методи, якомога частіше. Якщо це питання задає розробник API, то слід використовувати їх, коли вигода очевидна, тобто не слід використовувати їх часто. Також не рекомендується використовувати перевантаження. методів, бо у клієнтів виникнуть труднощі у розумінні який із перевантажених методів використовується.
+</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Matrice dinamică (ArrayList)</h1>
+<p><span id="name">ArrayList</span> - matrice dinamică, își poate schimba lungimea. Când această matrice internă este plină, <span id="name">ArrayList</span> creează o nouă matrice, copiază datele din cea veche, scrie în cea nouă și mărește dimensiunea. Iată formula pentru dimensiunea noii matrice:<br>
+Dimensiunea noii matrice = (dimensiunea vechii matrice * 1,5)+1<br>
+După scrierea datelor într-o nouă matrice, cea veche este șters. Iată un exemplu standard:
+</p>
+<div id="bg">
+	<p>ArrayList list = <span id="name">new</span> ArrayList();</p>
+</div>
+<p>
+		Am creat o matrice dinamică cu o nouă <b>listă</b>. Spre deosebire de alte matrice, nu specificăm tipul de date aici, deoarece matricele dinamice pot accepta orice tip de date, chiar și date dintr-o altă clasă. Și aici trecem la generice:<br><span id="name">Generice</span> sunt tipuri cu un parametru. În Java, claselor de containere li se permite să-și specifice obiectele interne. Când declarăm o variabilă generică, specificăm nu un tip, ci două:
+		<ol>
+			<li>tip variabil</li>
+			<li>tip de date</li>
+		</ol>
+		<div id="bg"><p>ArrayList&lt;String><br>
+			ArrayList&lt;Integer></p></div>
+După cum puteți vedea, am specificat tipul de date între paranteze drepte, cunoscute ca simboluri mai mari decât și mai mici decât. De ce nu am pus pur și simplu un tip de date normal precum <span id="name">int</span> și altele între paranteze? Deoarece, ne referim la clasa wrapper a tipului. Iată un exemplu:
+<div id="bg"><p>
+	ArrayList &lt;String> list = <span id="name">new</span> ArrayList&lt;>();<br>
+		list.add(<span id="text">"Hi"</span>);
+</p>
+</div>
+Am creat o matrice dinamică de tip String named list. Pe linia următoare, am folosit metoda <span id="name">add</span>, care adaugă o valoare matricei. Dar adaugă acest sens la sfârșit. Există și alte metode pentru ArrayList.
+<ul>
+	<li><span id="name">add(index, element)</span> - această opțiune înregistrează valoarea elementului specificat. Valoarea indexului este numărul de ordine pentru înregistrare. Dacă nu este specificat niciun index, un element va fi adăugat la sfârșit.</li>
+<li><span id="name">get()</span> - returnează valoarea elementului specificat.</li>
+<li><span id="name">contains()</span> - verifică dacă elementul specificat este conținut în matrice.</li>
+<li><span id="name">remove()</span> - elimină un element din matrice.</li>
+<li><span id="name">clear()</span> - șterge matricea, face ca dimensiunea acesteia să fie zero.</li>
+<li><span id="name">indexOf()</span> - returnează indexul elementului căutat.</li>
+</ul>
+	</p>
+</body>
+</html>

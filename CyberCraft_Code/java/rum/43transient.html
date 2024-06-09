@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Modificator transient</h1>
+<p>Acest modificator este utilizat în procesul de serializare și deserializare a obiectelor. Să presupunem că avem un obiect care are variabile, iar aceste variabile sunt valori. Toate acestea se numesc starea obiectului.<br>
+<span id = "name">Serializare</span> - conversia stării obiectului într-o secvență de octeți. Acești octeți sunt de obicei stocați într-un fișier.<br>
+<span id = "name">Deserializarea</span> este procesul invers al serializării.<br>
+<span id = "name">transient</span> este util în mai multe scenarii:<br>
+1. Când îl utilizați pentru variabile derivate.<br>
+2. Acest lucru este util pentru variabilele care nu reprezintă starea unui obiect<br>
+3. Pentru orice referințe neserializate.<br>
+Pentru a efectua serializarea, trebuie să implementați interfața <b>Serializabilă</b>:
+</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Class</span> <span id = "name">implemente</span> Serializabile{<br>
+<span id = "text">//code</span><br>
+}
+</div>
+<p>Scopul acestui modificator este atunci când este nevoie de a salva un obiect de clasă. Modificatorul <span id = "name">transient</span> este setat înainte de declararea unei variabile de clasă internă, a cărei valoare nu trebuie păstrată în cazul salvării obiectului. Datorită acestui modificator, puteți specifica date care nu trebuie să fie stocate la serializarea obiectului:</p>
+<div id="bg">
+<span id = "name">class</span> <span id = "class">Book</span>{<br>
+String name;<br>
+String author;<br>
+<span id = "name">int</span> year;<br>
+<span id = "name">transient</span> String ID;<br>
+}
+</div>
+<p>În acest caz, variabila <b>id</b> nu este salvată pentru scriere în fișier</p>
+</body>
+</html>

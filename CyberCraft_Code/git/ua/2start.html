@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Налаштувати Git</h1>
+<p>Тепер дайте Git знати, хто ви. Це важливо для систем контролю версій, оскільки кожен коміт Git використовує цю інформацію:</p>
+<div id = "bg">
+<p>git config --global user.name "test"<br>
+git config --global user.email "usermail@gmail.com"
+</p>
+</div>
+<p><span id = "name">git</span> - команда до якої звертаємося
+<p><span id = "name">--global</span> - щоб установити ім’я користувача та електронну адресу для кожного репозиторію на вашому комп’ютері.
+
+Якщо ви хочете встановити ім’я користувача/електронну адресу лише для поточного репозиторію, ви можете видалити global
+
+<br>
+<div id ="bg">
+<p><span id = "class">mkdir</span> myproject<br>
+<span id="class">cd</span> myproject</p>
+</div>
+<p><span id = "name">mkdir</span> - створює новий каталог (папку чи теку. Як вам зручніше)</br>
+<p><span id = "name">cd</span> - переходить до цієї папки. Якщо простими словами, то переходить до місця цієї папки.</br>
+Щоб ініціалізувати Git - треба виконати команду:
+<div id = "bg">
+<span id = "class">git</span> init<br>
+Initialized empty Git repository in /Users/user/myproject/.git/
+</div>
+
+І ви щойно створили свій перший репозиторій Git.
+P.s.  Git тепер знає, що він має стежити за папкою, яку ви ініціював це. Git створює приховану папку для відстеження змін.
+
+</p>
+</p>
+</body>
+</html>

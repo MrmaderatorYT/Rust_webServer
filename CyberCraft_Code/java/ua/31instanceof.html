@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Оператор instanceof</h1>
+<p><span id = "key">instanceof</span> - оператор, який потрібен, щоб перевірити, чи був об'єкт на який посилається змінна <b><u>x</u></b>, створена на основі будь-якого класу <b><u>Y</u></b>. Виходячи з цього, ми можемо зрозуміти, що цей оператор булевий і повертає значення <span id = "key">true</span> та <span id = "key">false</span>. Створімо простий приклад:</p>
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+Integer x = <span id = "key">new</span> Integer(<span id = "number">1</span>);<br>
+System.out.println(x <span id = "key">instanceof</span> Integer);<br>
+}<br>
+}<br>
+------------<br>
+true
+</div>
+<p>Ми створили об'єкт на основі класу Integer та записали туди значення і потім ми створили перевірку: чи змінна <b>x</b> належить класу <b>Integer</b>? І так як належить, то отримали значення <span id = "key">true</span>.
+Якщо ми створили перевірку на інший клас, то отримали помилку ще до компіляції:
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+Integer x = <span id = "key">new</span> Integer(<span id = "number">1</span>);<br>
+System.out.println(x <span id = "key">instanceof</span> String);<br>
+}<br>
+}<br>
+------------<br>
+Помилка
+</div>
+<p>Також хочу зазначити, що оператор <span id = "key">instanceof</span> перевіряє походження об'єкта. Я раніше казав слово <b>змінна</b>, але надалі буду казати об'єкт (мабуть). Створімо важчий приклад:
+<div id = "bg">
+<span id = "key">class </span><span id = "class">Animal</span>{<br>
+}<br>
+<span id = "key">public class</span> <span id = "class">Main</span> <span id = "key">extends</span> <span id="class">Animal</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+Main main = <span id = "key">new</span> Main();<br>
+System.out.println(main <span id = "key">instanceof</span> Animal);<br>
+}<br>
+}<br>
+------------<br>
+true
+</div>
+<p>Ми отримаємо значення <span id = "key">true</span>, бо об'єкт <b>dog</b> має всі елементи, що й клас <b>Animal</b>. І тоді можливо виникне питання: як ми отримаємо значення <span id = "key">false</span>, якщо отримаємо помилку ще до її компіляції. Створімо приклад:
+<div id = "bg">
+<span id = "key">public class</span> <span id = "class">Main</span> <span id = "key">extends</span> <span id="class">Animal</span>{<br>
+<span id = "key">public static void</span> main(String[] args){<br>
+Main main = <span id = "key">null</span>;<br>
+System.out.println(main <span id = "key">instanceof</span> Main);<br>
+}<br>
+}<br>
+------------<br>
+false
+</div>
+<p>Ми отримаємо значення <span id = "key">false</span>, бо ми застосовуємо оператор до змінної з нульвоим значенням. Раніше я максимально пояснив про значення <span id = "key">null</span>. Зараз буде трішки більше інформації.
+<br>
+<span id = "key">null</span> - використовується тільки до об'єктів і тому буде просто оголошена і все. Пам'ять під неї не виділяється (пам'ять виділяється завдяки ключовому слову <span id = "key">new</span>.</p>
+</body>
+</html>

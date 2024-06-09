@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Pipe</h1>
+<p><span id = "name">Pipe</span> -  оператор дозволяє ланцюговано виконувати послідовні операції над даними, роблячи код більш читабельним та ефективним. Тобто таким чином ми будуємо ланцюг послідовних дій. Зазвичай, він використовується в бібліотеці <b>dplyr</b>. В цьому пакеті є функція:</p>
+
+<div id="bg">
+	my_summarise &lt;- <span id = "key">function</span>(data, group_var){<br>
+	data %>%<br>
+	group_by({{group_var}})%>%<br>
+	summrise(mean = mean(mass))<br>
+	}
+</div>
+
+<p>У функції <b>my_summarise</b> використовуються дві основні функції для маніпуляції даними: <b>group_by</b> та <b>summarise</b>. Оператор <b>%>%</b> (pipe) слугує для ланцюгового виконання цих функцій.</p>. Розберемо код:
+<div id = "bg">
+group_by({{ group_var }})
+</div>
+Ця частина групує дані за змінною, яку ви передаєте в функцію як group_var. Ви використовуєте <b>{{ group_var }}</b>для того, щоб використовувати змінну <b>group_var</b> внутрішньо в <b>group_by</b>.
+<div id = "bg">
+summarise(mean = mean(mass))
+</div>
+Ця частина обчислює середнє значення змінної mass в кожній групі, створеній функцією <b>group_by</b>. Результатом є новий стовпець <b>mean</b>, який містить середнє значення <b>mass</b> для кожної групи.
+
+<h4>А тепер, з оператором pipe</h4>
+Оператор %>% (pipe) ланцюгово передає результати з однієї функції до іншої. У нашому випадку:
+
+Вхідні дані <b>data</b> передаються до <b>group_by</b>.
+Результат від <b>group_by</b> передається до <b>summarise</b>.
+Таким чином, функція <b>my_summarise</b> приймає датафрейм data і назву змінної <b>group_var</b>, групує дані за цією змінною і обчислює середнє значення змінної mass для кожної групи.
+</body>
+</html>

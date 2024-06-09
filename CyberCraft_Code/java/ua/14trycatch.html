@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+<h1>Обробка помилкових ситуацій (try-catch)</h1>
+<p>Система обробки помилкових базується на блоці <span id="name">try-catch</span>. Цей блок допоможе обробити певну ділянку коду, що коли вона з'явиться, то не призведе до завершення програми, а просто виконається код. Ось вам стандартний шаблон:</p>
+<div id="bg">
+	<p><span id="key">try</span>{<br>
+		код, який може призвести до помилки<br>
+	}<br>
+<span id="key">catch</span>(класПомилки змінна){<br>
+опрацювання помилки<br>
+}
+</p>
+</div>
+<p>Отже тепер роз'яснення. В блоці <span id="name">try</span> ми записуємо код, який може в якийсь момент спрацюватии не правильно.<br>В блоці <span id="name">catch</span> ми вимоловлюємо цю помилку, вказавши який клас помилки буде ловити, після чого ви описуєте як її оброблювати.<br><b>Клас помилки</b> - це те що в дужках <span id="name">catch</span><br>Ось приклад:</p>
+<div id="bg">
+	<p>
+	<span id="key">import</span> java.util.Scanner;<br>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+	Scanner scanner = <span id="key">new</span> Scanner(System.in);<br>
+		<span id="key">try</span>{<br>
+		<span id="key">int</span> x = scanner.nextInt();<br>
+	}<br>
+<span id="key">catch</span>(InputMismatchException e){<br>
+System.out.println(<span id="text">"Не є числом"</span>);<br>
+}
+</p>
+</div>
+<p>Отже ми створили змінну <b>x</b>, завдяки якої будемо вводити значення типу <span id="name">int</span> в консоль. Але буває момент, коли ми введемо не число і тоді	в запуститься код, який в блоці <span id="name">catch</span>. В нашому випадку текст: Не є числом. Ось вам деяки класи помилки</p>
+<ul>
+	<li><span id="name">ArithmeticException</span> - помилка пов'язана з виконанням математичних операцій. Для простого прикладу ми не можемо ділити числа на нуль.</li>
+	<li><span id="name">ArrayStoreException</span> - помилка пов'язана зі спробою записати в масив об'єкт типу який не відповідає типу елементів масиву. Для прикладу, ми створили масив типу String та записали туди елемент типу <span id="name">char</span>.</li>
+	<li><span id = "key">ClassCastException</span> - помилка пов'язана зі спробою некоретного приведення типів.</li>
+	<li><span id="name">IllegalArgumentException</span> - ця помилка пов'язана з некоретною передачею аргументів методу.</li>
+	<li><span id="name">NumberFormatException</span> - помилка, котра виникає за спроби перетвоити на число некоректне текстове представлення для числа</li>
+	<li><span id="name">IndexOutOfBoundsException</span> - помилка, пов'язана, наприклад, з некоретно вказаним індексом масива</li>
+	<li><span id="name">StringIndexOutOfBoundsException</span> - відповідає помилці, яка виникає з некоректно вказаним індексом елемента в текстовому рядку.</li>
+	<li><span id="name">NegativeArraySizeException</span> - помилка пов'язана зі спробою створити масив від'ємного розміру</li>
+	<li><span id="name">NoSuchElementException</span> - помилка пов'язана зі зверненням до неіснуючого елемента</li>
+	<li><span id="name">NullPointerException</span> - помилка пов'язана з використанням пустого посилання (значення <span id="name">null</span>) замість посилання на об'єкт</span></li>
+	<span id="name">null</span> використовується для представлення навмисної відсутності значень.
+	<li><span id="name">UnsupportedOperationException</span> - помилка пов'язана зі спробою виконати операцію, яка не підтримується.</li>
+	<li><span id="name">ArrayIndexOutOfBoundsException</span> - помилка виникає під час звернення до елемента за індексом, який виходить за присутній діапазон значень.</li>
+	<li><span id="name">ClassNotFoundException</span> - помилка пов'язана з неможливістю отримання доступу до класу.</li>
+	<li><span id="name">IllegalAccessException</span> - помилка виникає під час отримання доступу до ресурсу.</li>
+	<li><span id="name">InstantionException</span> - помилка пов'язана з неможливістю створення об'єкта (наприклад, на основі абстрактного класу)</li>
+	<li><span id="name">InterruptedException</span> - помилка, пов'язана з перериванням одного потоку іншим потоком.</li>
+	<li><span id="name">NoSuchFieldException</span> - помилка, пов'язана з відсутністю поля.</li>
+	<li><span id="name">NoSuchMethodException</span> - помилка пов'язана з відсутністю метода.</li>
+</ul>
+<p>Також є опрацювати декілька помилок:</p>
+<div id="bg">
+	<p>
+	<span id="key">import</span> java.util.Scanner;<br>
+        	<span id="key"> public class</span> <span id="class">Main</span>{<br>
+        	<span id="key">public static void</span> main(String[] args){<br>
+	Scanner scanner = <span id="key">new</span> Scanner(System.in);<br>
+		<span id="key">try</span>{<br>
+		<span id="key">int</span> x = scanner.nextInt();<br>
+	}<br>
+<span id="key">catch</span>(InputMismatchException e){<br>
+System.out.println(<span id="text">"Не є числом"</span>);<br>
+}<br>
+<span id="key">catch</span>(NumberFormatException e){<br>
+System.out.println(<span id="text">"Не той формат чисел"</span>);<br>
+}
+</p>
+</div>
+</body>
+</html>
